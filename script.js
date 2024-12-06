@@ -18,4 +18,4 @@ function changeImage() {
   }, 500); // Wait for the fade-out effect
 }
 
-setInterval(changeImage, 3000); // Change image every 3 seconds
+setInterval(changeImage, 5000); // Change image every 3 seconds

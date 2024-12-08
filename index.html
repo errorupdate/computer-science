@@ -10,22 +10,16 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="logo">MetAi</div>
-        <div class="links">
-            <a href="#about">About</a>
-            <div class="dropdown">
-                <a href="#course" class="dropbtn">Courses</a>
-                <div class="dropdown-content">
-                    <a href="c_pro.html">C Programming</a>
-                    <a href="#course2">Python</a>
-                    <a href="#course3">Course 3</a>
-                </div>
-            </div>
-            <a href="#blog">Blog</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </div>
+    <div id="navbar"></div>  
+    <script>
+        // Load the navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading the navbar:', error));
+    </script>
     <div class="topic">
         <img id="slideshowImage" src="images/image1.jpg" alt="Slideshow Image">
         <script src="script.js"></script>

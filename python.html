@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming Course</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            margin: 0;
+        }
+
+        nav {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #45a049;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .dropdown {
+            margin: 10px 0;
+            cursor: pointer;
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            width: 100%;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown:hover {
+            background: #45a049;
+            transform: scale(1.02);
+        }
+
+        .content {
+            display: none;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.5s forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #35424a;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Python Programming Course</h1>
+        <p>Learn Python from scratch with this comprehensive course.</p>
+    </header>
+
+    <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#syllabus">Syllabus</a>
+        <a href="#practical">Practical</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="introduction">
+            <h2>Course Introduction</h2>
+            <p>This course is designed to provide a comprehensive introduction to Python programming. Whether you are a
+                beginner or looking to enhance your skills, this course will cover all the essential topics.</p>
+        </section>
+
+        <section id="syllabus">
+            <h2>Syllabus</h2>
+
+            <button class="dropdown" onclick="toggleContent('unit1')">Unit 1: Fundamentals of Python
+                Programming</button>
+            <div id="unit1" class="content">
+                <h3>1.1 Introduction to Python</h3>
+                <ul>
+                    <li>Character Set, Tokens, Variables, Lvalue and Rvalue Concepts, Comments</li>
+                </ul>
+                <h3>1.2 Overview of Data Types</h3>
+                <ul>
+                    <li>Number Types: Integer, Floating Point, Complex</li>
+                    <li>Boolean Type</li>
+                    <li>Sequence Types: String, List, Tuple</li>
+                    <li>None Type</li>
+                    <li>Mapping Type: Dictionary</li>
+                    <li>Mutable vs Immutable Data Types</li>
+                </ul>
+                <h3>1.3 Understanding Operators</h3>
+                <ul>
+                    <li>Arithmetic, Relational, Logical Operators</li>
+                    <li>Assignment, Augmented Assignment Operators</li>
+                    <li>Expressions, Statements, Type Conversion</li>
+                    <li>Input/Output Mechanisms, Operator Precedence</li>
+                </ul>
+            </div>
+
+            <button class="dropdown" onclick="toggleContent('unit2')">Unit 2: Conditional and Iterative
+                Statements</button>
+            <div id="unit2" class="content">
+                <h3>2.1 Conditional Statements</h3>
+                <ul>
+                    <li>Simple if statement</li>
+                    <li>If-else statement</li>
+                    <li>If-elif-else statement</li>
+                </ul>
+                <h3>2.2 Iterative Statements</h3>
+                <ul>
+                    <li>While loop</li>
+                    <li>For loop</li>
+                    <li>Range function</li>
+                    <li>Break and continue statements</li>
+                    <li>Nested loops</li>
+                </ul>
+            </div>
+
+            <button class="dropdown" onclick="toggleContent('unit3')">Unit 3: Strings, Lists, Tuples, Sets, and
+                Dictionaries</button>
+            <div id="unit3" class="content">
+                <h3>3.1 Strings</h3>
+                <ul>
+                    <li>Indexing, Operations, Traversing, Built-in Functions</li>
+                </ul>
+                <h3>3.2 Lists</h3>
+                <ul>
+                    <li>Introduction, Indexing, Operations, Traversing, Linear Search</li>
+                </ul>
+                <h3>3.3 Tuples</h3>
+                <ul>
+                    <li>Creating, Initializing, Accessing, Operations</li>
+                </ul>
+                <h3>3.4 Sets</h3>
+                <ul>
+                    <li>Creating, Traversing, Adding, Removing Data, Set Operations</li>
+                </ul>
+                <h3>3.5 Dictionaries</h3>
+                <ul>
+                    <li>Accessing Items, Mutability, Adding and Modifying Items</li>
+                </ul>
+            </div>
+
+            <button class="dropdown" onclick="toggleContent('unit4')">Unit 4: Python Functions, Modules, and
+                Packages</button>
+            <div id="unit4" class="content">
+                <h3>4.1 Functions</h3>
+                <ul>
+                    <li>Types of Functions: Built-in, User-defined</li>
+                    <li>Arguments and Parameters, Default Parameters</li>
+                    <li>Lambda Functions, Returning Values</li>
+                    <li>Scope of Variables: Global and Local</li>
+                </ul>
+                <h3>4.2 Modules and Packages</h3>
+                <ul>
+                    <li>Importing Modules, Creating Modules</li>
+                    <li>Using Packages, Python Package Index (PyPI)</li>
+                </ul>
+            </div>
+
+            <button class="dropdown" onclick="toggleContent('unit5')">Unit 5: NumPy</button>
+            <div id="unit5" class="content">
+                <h3>5.1 Introduction to NumPy</h3>
+                <ul>
+                    <li>Installation of NumPy</li>
+                    <li>Understanding NumPy Arrays</li>
+                </ul>
+                <h3>5.2 NumPy Arrays</h3>
+                <ul>
+                    <li>Creation of Arrays: np.array(), np.zeros(), np.ones()</li>
+                    <li>Exploring Array Attributes: Shape, Size, Dimensions</li>
+                </ul>
+                <h3>5.3 Array Indexing and Slicing</h3>
+                <ul>
+                    <li>Accessing Elements and Subarrays</li>
+                    <li>One-dimensional vs Multi-dimensional Array Indexing</li>
+                </ul>
+                <h3>5.4 Array Operations</h3>
+                <ul>
+                    <li>Element-wise Operations,</li>
+                    <li>Universal Functions (ufuncs)</li>
+                </ul>
+                <h3>5.5 Linear Algebra with NumPy</h3>
+                <ul>
+                    <li>Matrix Operations: Multiplication, Determinant, Inverse</li>
+                </ul>
+                <h3>5.6 File Input and Output with NumPy</h3>
+                <ul>
+                    <li>Reading and Writing Files</li>
+                </ul>
+                <h3>5.7 Broadcasting in NumPy</h3>
+                <ul>
+                    <li>Understanding Broadcasting Rules</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="practical">
+            <h2>Practical Exercises</h2>
+            <p>Each unit includes practical exercises to reinforce learning:</p>
+            <ul>
+                <li><strong>Unit 1:</strong> Write a program to demonstrate variable types and operators.</li>
+                <li><strong>Unit 2:</strong> Create a program that uses conditional statements and loops.</li>
+                <li><strong>Unit 3:</strong> Implement string and list operations in a program.</li>
+                <li><strong>Unit 4:</strong> Develop user-defined functions and demonstrate their use.</li>
+                <li><strong>Unit 5:</strong> Use NumPy to perform array operations and linear algebra calculations.</li>
+            </ul>
+        </section>
+
+        <section id="outcomes">
+            <h2>Course Outcomes</h2>
+            <p>By the end of this course, students will be able to:</p>
+            <ul>
+                <li>Understand and apply Python syntax and semantics.</li>
+                <li>Utilize various data types and operators in Python.</li>
+                <li>Implement control structures for decision-making and iteration.</li>
+                <li>Work with built-in data structures such as strings, lists, tuples, sets, and dictionaries.</li>
+                <li>Create and use functions, modules, and packages effectively.</li>
+                <li>Perform numerical computations using NumPy and understand its array operations.</li>
+            </ul>
+        </section>
+
+        <section id="resources">
+            <h2>Resources</h2>
+            <p>Here are some additional resources to help you with your learning:</p>
+            <ul>
+                <li><a href="https://www.python.org/doc/">Official Python Documentation</a></li>
+                <li><a href="https://www.w3schools.com/python/">W3Schools Python Tutorial</a></li>
+                <li><a href="https://www.learnpython.org/">Learn Python</a></li>
+                <li><a href="https://numpy.org/doc/stable/">NumPy Documentation</a></li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <p>If you have any questions or need further assistance, feel free to reach out:</p>
+            <p>Email: <a href="mailto:infouttam9122@gmail.com">infouttam9122@gmail.com</a></p>
+            <p>Phone: 100</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Interactive Python Programming Course. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleContent(unitId) {
+            const content = document.getElementById(unitId);
+            if (content.style.display === "block") {
+                content.style.display = "none"; // Hide content
+            } else {
+                content.style.display = "block"; // Show content
+            }
+        }
+    </script>
+</body>
+
+</html>

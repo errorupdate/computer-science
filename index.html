@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>"C" Programming language</title>
+    <title>Computer World</title>
     <link rel="icon" href="images/image1.jpg" type="image/jpeg">
 
 </head>
+</html>
+<body>
+    <div id="navbar"></div>
     <div class="topic">
         <img id="slideshowImage" src="images/image1.jpg" alt="Slideshow Image">
         <script src="script.js"></script>
@@ -24,6 +28,29 @@
             <a href="#"><i class='bx bxl-youtube'></i></a>
         </div>
     </div>
+    <script>
+        // Load the navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+
+                // Dropdown functionality
+                const button = document.getElementById('options-menu');
+                const dropdown = document.getElementById('dropdown-menu');
+
+                button.addEventListener('click', () => {
+                    dropdown.classList.toggle('hidden');
+                });
+
+                // Close dropdown when clicking outside
+                window.addEventListener('click', (event) => {
+                    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                        dropdown.classList.add('hidden');
+                    }
+                });
+            });
+    </script>
 </body>
 
 </html>

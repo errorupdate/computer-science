@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentals of IT through C Programming</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-600 text-white p-6">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Fundamentals of IT</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#" class="nav-link" data-target="overview">Overview</a></li>
+                <li><a href="#" class="nav-link" data-target="outcomes">Outcomes</a></li>
+                <li><a href="#" class="nav-link" data-target="curriculum">Curriculum</a></li>
+                <li><a href="#" class="nav-link" data-target="resources">Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-6">
+        <section id="overview" class="fade-in hidden">
+            <h2 class="text-2xl font-semibold mb-4">Course Overview</h2>
+            <p>This course provides a foundational understanding of Information Technology (IT) and programming using
+                the C language. It covers essential concepts in computer systems, networking, and programming skills
+                necessary for students to thrive in various educational, business, and industrial domains.</p>
+            <p>Information technology encompasses the entire range of information generation, storage, transmission,
+                retrieval, and processing. Most organizations now rely heavily on their information systems (IS) and IT.
+                Therefore, students must possess basic skills to use IT and IS effectively.</p>
+            <p>The C programming language is widely used for developing both basic and advanced applications, making it
+                essential for students to learn programming logic, algorithm development, and program writing.</p>
+        </section>
+
+        <section id="outcomes" class="fade-in hidden">
+            <h2 class="text-2xl font-semibold mb-4">Course Outcomes</h2>
+            <ul class="list-disc list-inside">
+                <li>Appraise computer systems and their applications in various domains.</li>
+                <li>Set up a small computer network.</li>
+                <li>Write C programs to solve given arithmetic expressions.</li>
+                <li>Develop C programs using control structures.</li>
+                <li>Work with arrays in C programming.</li>
+                <li>Create functions for a modular programming approach in C.</li>
+            </ul>
+        </section>
+
+        <section id="curriculum" class="fade-in hidden">
+            <h2 class="text-2xl font-semibold mb-4">Course Curriculum</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="font-bold">Unit 1: Basics of Computer System</h3>
+                    <p>This unit covers the anatomy of computer systems, including:</p>
+                    <ul class="list-disc list-inside">
+                        <li>Components of a computer system (CPU, memory, storage).</li>
+                        <li>Input and output devices.</li>
+                        <li>Types of memory (primary and secondary).</li>
+                        <li>Communication processes between components.</li>
+                        <li>Functionality of computer systems.</li>
+                        <li>Introduction to Internet digital platforms (e.g., BHIM, Digi-Locker).</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="font-bold">Unit 2: Basic Network Concepts</h3>
+                    <p>This unit introduces networking concepts, including:</p>
+                    <ul class="list-disc list-inside">
+                        <li>Various computer network topologies (Bus, Mesh, Star, Ring, Hybrid).</li>
+                        <li>Types of networks (LAN, WAN).</li>
+                        ```html
+                        <li>IP addressing system and URL.</li>
+                        <li>Functions of networking devices (Switch, Router, Gateway).</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="font-bold">Unit 3: Basics of ‘C’ Programming and Control Structures</h3>
+                    <p>This unit covers fundamental programming concepts, including:</p>
+                    <ul class="list-disc list-inside">
+                        <li>Understanding algorithms and pseudo-code conventions.</li>
+                        <li>Flowcharting techniques and symbols.</li>
+                        <li>General structure of a C program.</li>
+                        <li>Data types, operators, and expressions in C.</li>
+                        <li>Input and output statements using printf() and scanf().</li>
+                        <li>Control structures: decision-making (if, switch) and looping (for, while).</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="font-bold">Unit 4: Arrays and Pointers</h3>
+                    <p>This unit focuses on:</p>
+                    <ul class="list-disc list-inside">
+                        <li>Characteristics and operations on one-dimensional and two-dimensional arrays.</li>
+                        <li>Pointer concepts: declaration, initialization, and accessing memory locations.</li>
+                        <li>Manipulating arrays of characters and strings.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <h3 class="font-bold">Unit 5: Concept and Need of Functions</h3>
+                    <p>This unit discusses:</p>
+                    <ul class="list-disc list-inside">
+                        <li>Library functions and their usage.</li>
+                        <li>Creating user-defined functions and understanding scope of variables.</li>
+                        <li>Parameter passing techniques: call by value and call by reference.</li>
+                        <li>Recursive functions and their applications.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="fade-in hidden">
+            <h2 class="text-2xl font-semibold mb-4">Learning Resources</h2>
+            <p>Recommended books and online resources for further study:</p>
+            <ul class="list-disc list-inside">
+                <li><strong>Computer Fundamentals and Programming in C</strong> by Reema Thareja, Oxford University
+                    Press.</li>
+                <li><strong>Let Us C</strong> by Yashavant Kanetkar, BPB Publications.</li>
+                <li><strong>Programming in ANSI C</strong> by E. Balagurusamy, McGraw Hill Education.</li>
+                <li>Online resources:
+                    <ul>
+                        <li><a rel="noopener" href="https://nptel.ac.in/courses/106104128" target="_blank">NPTEL Course</a></li>
+                        <li><a rel="noopener" href="https://www.w3schools.com/c/" target="_blank">W3Schools C Tutorial</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const links = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = e.target.getAttribute('data-target');
+
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+
+                document.getElementById(target).classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>

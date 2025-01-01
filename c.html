@@ -6,377 +6,320 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programming with C Course</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            animation: fadeIn 1s ease-in-out;
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+    animation: fadeIn 1s ease-in;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+    animation: slideIn 0.5s ease-in;
+}
+
+nav {
+    background-color: #0056b3;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid #007BFF;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+ .backToMenu {
+            position: fixed; /* Fixed position to stay in place */
+            top: 20px; /* Distance from the top */
+            left: 20px; /* Distance from the left */
+            z-index: 1000; /* Ensure it stays on top of other elements */
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
+        .backToMenu buttons {
+            background-color: #ff0000; /* Red background */
+            color: white; /* White text */
+            padding: 10px 20px; /* Padding for size */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
 
-            to {
-                opacity: 1;
-            }
         }
 
-        header {
-            background-color: rgba(0, 123, 255, 0.8);
-            color: white;
-            padding: 20px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            animation: slideDown 0.5s ease-in-out;
+        .backToMenu button:hover {
+            background-color: #cc0000; /* Darker red on hover */
         }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-20px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .nav {
-            position: fixed;
-            left: 20px;
-            top: 100px;
-            background-color: rgba(0, 123, 255, 0.8);
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-        }
-
-        .nav a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin: 5px 0;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .nav a:hover {
-            background-color: #0056b3;
-            transform: scale(1.1);
-        }
-
-        .container {
-            max-width: 800px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            margin: 20px;
-            transition: transform 0.3s;
-            flex-grow: 1;
-            margin-left: 250px;
-            /* Leave space for the navigation */
-        }
-
-        .container:hover {
-            transform: scale(1.02);
-        }
-
-        .topic {
-            margin: 20px 0;
-            padding: 15px;
-            border-left: 5px solid #007BFF;
-            background-color: #e9ecef;
-            transition: background-color 0.3s, transform 0.3s;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .topic:hover {
-            background-color: #d1e7dd;
-            transform: translateY(-5px);
-        }
-
-        .topic h2 {
-            margin: 0;
-            color: #007BFF;
-            transition: color 0.3s;
-        }
-
-        .topic h2:hover {
-            color: #0056b3;
-        }
-
-        .content {
-            display: none;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-            margin-top: 10px;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        .content p,
-        .content ul {
-            font-size: 1.2em;
-            /* Increase font size */
-            color: #333;
-            /* Darker text color */
-            line-height: 1.5;
-            /* Increase line height for readability */
-        }
-
-        .content ul {
-            list-style-type: square;
-            /* Change bullet style */
-            padding-left: 20px;
-            /* Add padding to the left */
-        }
-
-        .content li {
-            color: #007BFF;
-            /* Colorful list items */
-            transition: color 0 .3s;
-        }
-
-        .content li:hover {
-            color: #0056b3;
-            /* Darker color on hover */
-        }
-
-        footer {
-            margin-top: auto;
-            padding: 10px;
-            text-align: center;
-            background-color: rgba(0, 123, 255, 0.8);
-            color: white;
-            width: 100%;
-            position: relative;
-            animation: slideUp 0.5s ease-in-out;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
+        .backToMenu buttons a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the button's text color */
+}
     </style>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
+    <div class="backToMenu">
+        <buttons><a href="/cse/computer-science/index.html">Home</a></buttons>
+    </div>
     <header>
-        <h1>Programming with C Course Outline</h1>
+        <h1>Diploma in Computer Science & Engineering</h1>
+        <h2>Programming with C Course</h2>
+        <p id="greeting"></p>
     </header>
-
-    <div class="nav">
-        <a href="javascript:void(0)" onclick="toggleContent('course-code')">A) Course Code and Title</a>
-        <a href="javascript:void(0)" onclick="toggleContent('rationale')">B) Rationale</a>
-        <a href="javascript:void(0)" onclick="toggleContent('outcomes')">C) Course Outcomes</a>
-        <a href="javascript:void(0)" onclick="toggleContent('teaching-scheme')">D) Teaching and Learning Scheme</a>
-        <a href="javascript:void(0)" onclick="toggleContent('assessment')">E) Assessment Scheme</a>
-        <a href="javascript:void(0)" onclick="toggleContent('curriculum')">F) Course Curriculum Details</a>
-    </div>
-
-    <div class="container">
-        <div class="description">
-            <div id="course-code" class="content">
-                <ul>
-                    <li>Course Code: 2418101</li>
-                    <li>Course Title: Programming with C (CSE, AIML)</li>
-                </ul>
-            </div>
-
-            <div id="rationale" class="content">
-                <p>This course is designed to develop foundational skills in programming using the C language, enabling
-                    students to create algorithms, flowcharts, and code effectively.</p>
-            </div>
-
-            <div id="outcomes" class="content">
-                <ul>
-                    <li>CO-1: Develop flowchart and algorithm to solve problems logically.</li>
-                    <li>CO-2: Write simple ‘C’ programs using arithmetic expressions.</li>
-                    <li>CO-3: Develop ‘C’ programs using control structures.</li>
-                    <li>CO-4: Develop ‘C’ programs using arrays and structures.</li>
-                    <li>CO-5: Develop/Use functions in C programs for modular programming approach.</li>
-                    <li>CO-6: Develop ‘C’ programs using pointers.</li>
-                </ul>
-            </div>
-
-            <div id="teaching-scheme" class="content">
-                <p>Classroom Instruction: 3 hours/week</p>
-                <p>Lab Instruction: 2 hours/week</p>
-                <p>Total Credits: 6</p>
-            </div>
-
-            <div id="assessment" class="content">
-                <ul>
-                    <li>Theory Assessment: 30 marks (Internal), 70 marks (External)</li>
-                    <li>Lab Assessment: 20 marks</li>
-                    <li>Term Work & Self Learning Assessment: 30 marks</li>
-                </ul>
-            </div>
-
-            <div id="curriculum" class="content">
-                <h3>Unit 1: Program Logic Development</h3>
-                <ul>
-                    <li>1.1 Fundamentals of Algorithms
-                        <ul>
-                            <li>Definition of an algorithm</li>
-                            <li>Pseudo-code conventions</li>
-                        </ul>
-                    </li>
-                    <li>1.2 Algorithmic Problems
-                        <ul>
-                            <li>Solving arithmetic expressions</li>
-                            <li>Finding the greatest of three numbers</li>
-                            <li>Determining if a number is even or odd</li>
-                            <li>Checking if a number is prime</li>
-                        </ul>
-                    </li>
-                    <li>1.3 Flowchart
-                        <ul>
-                            <li>Understanding flowchart symbols</li>
-                            <li>Guidelines for preparing flowcharts</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3>Unit 2: Basics of C Programming</h3>
-                <ul>
-                    <li>2.1 Introduction to C
-                        <ul>
-                            <li>History of C</li>
-                            <li>General structure of a C program</li>
-                        </ul </li>
-                    <li>2.2 Data Concepts
-                        <ul>
-                            <li>Character set, tokens, keywords</li>
-                            <li>Identifiers, variables, constants</li>
-                            <li>Data types and operators</li>
-                        </ul>
-                    </li>
-                    <li>2.3 Basic Input/Output
-                        <ul>
-                            <li>Using printf() and scanf()</li>
-                            <li>Input/output formatting</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3>Unit 3: Decision Making and Branching</h3>
-                <ul>
-                    <li>3.1 Decision Making
-                        <ul>
-                            <li>Relational and logical operators</li>
-                            <li>If statements, nested if-else</li>
-                            <li>Switch statements</li>
-                        </ul>
-                    </li>
-                    <li>3.2 Looping
-                        <ul>
-                            <li>While, do-while, and for loops</li>
-                            <li>Using break and continue statements</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3>Unit 4: Arrays and Structures</h3>
-                <ul>
-                    <li>4.1 Characteristics of Arrays
-                        <ul>
-                            <li>One-dimensional and two-dimensional arrays</li>
-                            <li>Array declaration and initialization</li>
-                        </ul>
-                    </li>
-                    <li>4.2 Structures
-                        <ul>
-                            <li>Introduction to structures</li>
-                            <li>Declaration and initialization of structures</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3>Unit 5: Functions</h3>
-                <ul>
-                    <li>5.1 Library Functions
-                        <ul>
-                            <li>Math functions, string handling functions</li>
-                        </ul>
-                    </li>
-                    <li>5.2 User Defined Functions
-                        <ul>
-                            <li>Writing user-defined functions</li>
-                            <li>Parameter passing: call by value and call by reference</li>
-                        </ul>
-                    </li>
-                    <li>5.3 Recursive Functions
-                        <ul>
-                            <li>Understanding recursion</li>
-                            <li>Writing recursive functions</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3>Unit 6: Pointers</h3>
-                <ul>
-                    <li>6.1 Concepts of Pointers
-                        <ul>
-                            <li>Declaring and initializing pointers</li>
-                            <li>Pointer arithmetic</li>
-                        </ul>
-                    </li>
-                    <li>6.2 Handling Arrays and Structures with Pointers
-                        <ul>
-                            <li>Accessing array elements using pointers</li>
-                            <li>Using pointers with structures</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
+    <nav>
+        <ul>
+            <li><a href="#rationale">Rationale</a></li>
+            <li><a href="#outcomes">Course Outcomes</a></li>
+            <li><a href="#curriculum">Course Curriculum</a></li>
+            <li><a href="#syllabus">Syllabus</a></li>
+            <li><a href="#assessment">Assessment Scheme</a></li>
+            <li><a href="#resources">Learning Resources</a></li>
+            <li><a href="#lecture-plan">Lecture Plan</a></li>
+            <li><a href="#lab-sessions">Lab Sessions</a></li>
+            <li><button id="moreInfoBtn">More Info</button></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="rationale">
+            <h3>Rationale</h3>
+            <p>This course is designed to develop programming skills using the C programming language, which is widely
+                used for various IT solutions.</p>
+        </section>
+        <section id="outcomes">
+            <h3>Course Outcomes</h3>
+            <ul>
+                <li>Develop flowchart and algorithm to solve problems logically.</li>
+                <li>Write simple ‘C’ programs using arithmetic expressions.</li>
+                <li>Develop ‘C’ programs using control structures.</li>
+                <li>Develop ‘C’ programs using arrays and structures.</li>
+                <li>Develop/Use functions in C programs for modular programming approach.</li>
+                <li>Develop ‘C’ programs using pointers.</li>
+            </ul>
+        </section>
+        <section id="curriculum">
+            <h3>Course Curriculum</h3>
+            <p>The course covers the following units:</p>
+            <ol>
+                <li>Program Logic Development</li>
+                <li>Basics of C Programming</li>
+                <li>Decision Making and Branching</li>
+                <li>Array and Structure</li>
+                <li>Concept and Need of Functions</li>
+                <li>Pointers</li>
+            </ol>
+        </section>
+        <section id="syllabus">
+            <h3>Syllabus</h3>
+            <p>Download the complete syllabus for the Programming with C course:</p>
+            <ul>
+                <li><a href="documents/18. Computer Science & Engineering.pdf" rel="noopener" class="text-blue-500 hover:underline">Download Course
+                        Notes (PDF)</a></li>
+            </ul>
+        </section>
+        <section id="assessment">
+            <h3>Assessment Scheme</h3>
+            <p>The assessment includes:</p>
+            <ul>
+                <li>Theory Assessment: 30 marks (Internal) + 70 marks (External)</li>
+                <li>Lab Assessment: 20 marks</li>
+                <li>Term Work & Self Learning Assessment: 30 marks</li>
+            </ul>
+        </section>
+        <section id="resources">
+            <h3>Learning Resources</h3>
+            <p>Recommended books:</p>
+            <ul>
+                <li>Programming in ANSI C by E. Balagurusamy</li>
+                <li>The C Programming Language by Brian W. Kernighan and Dennis Ritchie</li>
+                <li>Let Us C by Yashavant Kanetkar</li>
+            </ul>
+        </section>
+        <section id="lecture-plan">
+            <h3>Lecture Plan</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Topics</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Introduction to C Programming</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Data Types and Variables</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Operators and Expressions</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Control Structures 
+                            : If, Switch</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Loops: For, While, Do-While</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Functions: Declaration and Definition</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Arrays: One-Dimensional and Two-Dimensional</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Structures and Unions</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Pointers: Basics and Applications</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>File Handling in C</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="lab-sessions">
+            <h3>Lab Sessions</h3>
+            <p>The lab sessions will focus on practical implementation of the concepts learned in lectures. Below are
+                the planned lab activities:</p>
+            <ul>
+                <li>Lab 1: Writing and executing simple C programs.</li>
+                <li>Lab 2: Using control structures in C.</li>
+                <li>Lab 3: Working with arrays and strings.</li>
+                <li>Lab 4: Implementing functions and recursion.</li>
+                <li>Lab 5: Using pointers and dynamic memory allocation.</li>
+                <li>Lab 6: File operations in C.</li>
+            </ul>
+        </section>
+    </main>
     <footer>
-        <p>&copy; 2024 Programming with C Course. All rights reserved.</p>
+        <p>&copy; 2024 Diploma in Computer Science & Engineering, SBTE, Bihar</p>
     </footer>
-
     <script>
-        
-        function toggleContent(id) {
-            const contents = document.querySelectorAll('.content');
-            contents.forEach(content => {
-                content.style.display = 'none'; // Hide all content
+        // Function to display a greeting message based on the time of day
+            function displayGreeting() {
+                const greetingElement = document.getElementById('greeting');
+                const currentHour = new Date().getHours();
+                let greetingMessage;
+
+                if (currentHour < 12) {
+                    greetingMessage = "Good Morning!";
+                } else if (currentHour < 18) {
+                    greetingMessage = "Good Afternoon!";
+                } else {
+                    greetingMessage = "Good Evening!";
+                }
+
+                greetingElement.textContent = greetingMessage;
+            }
+
+            // Function to reveal more information about the course
+            function revealMoreInfo() {
+                const moreInfoSection = document.createElement('div');
+                moreInfoSection.innerHTML = `
+        <h3>Additional Course Information</h3>
+        <p>This course not only covers the basics of C programming but also delves into advanced topics such as data structures and algorithms.</p>
+        <p>Students will engage in hands-on projects that will enhance their coding skills and prepare them for real-world applications.</p>
+    `;
+                moreInfoSection.style.backgroundColor = '#e7f3fe';
+                moreInfoSection.style.padding = '20px';
+                moreInfoSection.style.borderRadius = '5px';
+                moreInfoSection.style.marginTop = '20px';
+                document.body.appendChild(moreInfoSection);
+            }
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
             });
 
-            const activeContent = document.getElementById(id);
-            if (activeContent) {
-                activeContent.style.display = 'block'; // Show the clicked content
-            }
-        }
+            // Event listener for the More Info button
+            document.getElementById('moreInfoBtn').addEventListener('click', revealMoreInfo);
+
+            // Call the greeting function on page load
+            window.onload = displayGreeting;
     </script>
 </body>
 

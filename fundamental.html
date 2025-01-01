@@ -24,9 +24,37 @@
         .hidden {
             display: none;
         }
+         .backToMenu {
+            position: fixed; /* Fixed position to stay in place */
+            top: 20px; /* Distance from the top */
+            left: 20px; /* Distance from the left */
+            z-index: 1000; /* Ensure it stays on top of other elements */
+        }
+
+        .backToMenu buttons {
+            background-color: #ff0000; /* Red background */
+            color: white; /* White text */
+            padding: 10px 20px; /* Padding for size */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+
+        }
+
+        .backToMenu button:hover {
+            background-color: #cc0000; /* Darker red on hover */
+        }
+        .backToMenu buttons a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the button's text color */
+}
     </style>
 </head>
-
+<div class="backToMenu">
+    <buttons><a href="/cse/computer-science/index.html">Home</a></buttons>
+</div>
 <body class="bg-gray-100 text-gray-800">
     <header class="bg-blue-600 text-white p-6">
         <nav class="container mx-auto flex justify-between items-center">

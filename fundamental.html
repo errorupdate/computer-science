@@ -4,189 +4,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundamentals of IT through C Programming</title>
+    <title>Fundamentals of IT and C Programming</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         .fade-in {
-            animation: fadeIn 1s ease-in-out;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+        .fade-in-active {
+            opacity: 1;
         }
-
-        .hidden {
-            display: none;
-        }
-         .backToMenu {
-            position: fixed; /* Fixed position to stay in place */
-            top: 20px; /* Distance from the top */
-            left: 20px; /* Distance from the left */
-            z-index: 1000; /* Ensure it stays on top of other elements */
+        .backToMenu {
+            position: fixed;
+            /* Fixed position to stay in place */
+            top: 20px;
+            /* Distance from the top */
+            left: 20px;
+            /* Distance from the left */
+            z-index: 1000;
+            /* Ensure it stays on top of other elements */
         }
 
         .backToMenu buttons {
-            background-color: #ff0000; /* Red background */
-            color: white; /* White text */
-            padding: 10px 20px; /* Padding for size */
-            border: none; /* Remove border */
-            border-radius: 5px; /* Rounded corners */
-            font-size: 16px; /* Font size */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background-color 0.3s ease; /* Smooth hover effect */
+            background-color: #ff0000;
+            /* Red background */
+            color: white;
+            /* White text */
+            padding: 10px 20px;
+            /* Padding for size */
+            border: none;
+            /* Remove border */
+            border-radius: 5px;
+            /* Rounded corners */
+            font-size: 16px;
+            /* Font size */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            transition: background-color 0.3s ease;
+            /* Smooth hover effect */
 
         }
 
         .backToMenu button:hover {
-            background-color: #cc0000; /* Darker red on hover */
+            background-color: #cc0000;
+            /* Darker red on hover */
         }
+
         .backToMenu buttons a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit the button's text color */
-}
+            text-decoration: none;
+            /* Remove underline */
+            color: inherit;
+            /* Inherit the button's text color */
+        }
+
+        .lecNotes {
+            position: fixed;
+            /* Fixed position to stay in place */
+            top: 20px;
+            /* Distance from the top */
+            right: 20px;
+            /* Distance from the right */
+            z-index: 1000;
+            /* Ensure it stays on top of other elements */
+        }
+
+        .lecNotes buttons {
+            background-color: #007BFF;
+            /* Blue background */
+            color: white;
+            /* White text */
+            padding: 10px 20px;
+            /* Padding for size */
+            border: none;
+            /* Remove border */
+            border-radius: 5px;
+            /* Rounded corners */
+            font-size: 16px;
+            /* Font size */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            transition: background-color 0.3s ease;
+            /* Smooth hover effect */
+        }
+
+        .lecNotes buttons:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
+
+        .lecNotes buttons a {
+            text-decoration: none;
+            /* Remove underline */
+            color: inherit;
+            /* Inherit the button's text color */
+        }
     </style>
 </head>
+
+<body class="bg-gray-100">
+    <header class="bg-gray-800 text-white text-center py-5">
+        <h1 class="text-3xl">Diploma in Electrical & Electronics Engineering</h1>
+        <h2 class="text-xl">Semester - II</h2>
+        <h3 class="text-lg">Course Title: Fundamentals of IT and C Programming</h3>
+    </header>
 <div class="backToMenu">
     <buttons><a href="/cse/computer-science/index.html">Home</a></buttons>
 </div>
-<body class="bg-gray-100 text-gray-800">
-    <header class="bg-blue-600 text-white p-6">
-        <nav class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-bold">Fundamentals of IT through C</h1>
-            <ul class="flex space-x-4">
-                <li><a href="#" class="nav-link" data-target="overview">Overview</a></li>
-                <li><a href="#" class="nav-link" data-target="outcomes">Outcomes</a></li>
-                <li><a href="#" class="nav-link" data-target="curriculum">Curriculum</a></li>
-                <li><a href="#" class="nav-link" data-target="resources">Resources</a></li>
-                <li><a href="#" class="nav-link" data-target="notes">Notes</a></li>
+<div class="lecNotes">
+    <buttons><a href="documents/Fundamental of IT through C.pdf">lecNotes</a></buttons>
+</div>
+    <main class="container mx-auto p-5">
+        <section class="fade-in" id="course-details">
+            <h2 class="text-2xl font-bold mb-3">Course Details</h2>
+            <ul class="list-disc pl-5">
+                <li><strong>Course Code:</strong> 2418105</li>
+                <li><strong>Pre-requisite Course(s):</strong> None</li>
+                <li><strong>Rationale:</strong> Information technology is essential for various organizations...</li>
             </ul>
-        </nav>
-    </header>
-
-    <main class="container mx-auto p-6">
-        <section id="overview" class="fade-in hidden">
-            <h2 class="text-2xl font-semibold mb-4">Course Overview</h2>
-            <p>This course provides a foundational understanding of Information Technology (IT) and programming using
-                the C language. It covers essential concepts in computer systems, networking, and programming skills
-                necessary for students to thrive in various educational, business, and industrial domains.</p>
-        </section>
-
-        <section id="outcomes" class="fade-in hidden">
-            <h2 class="text-2xl font-semibold mb-4">Course Outcomes</h2>
-            <ul class="list-disc list-inside">
-                <li>Appraise computer systems and their applications in various domains.</li>
-                <li>Set up a small computer network.</li>
-                <li>Write C programs to solve given arithmetic expressions.</li>
-                <li>Develop C programs using control structures.</li>
-                <li>Work with arrays in C programming.</li>
-                <li>Create functions for a modular programming approach in C.</li>
-            </ul>
-        </section>
-
-        <section id="curriculum" class="fade-in hidden">
-            <h2 class="text-2xl font-semibold mb-4">Course Curriculum</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-white p-4 rounded shadow">
-                    <h3 class="font-bold">Unit 1: Basics of Computer System</h3>
-                    <p>This unit covers the anatomy of computer systems, including:</p>
-                    <ul class="list-disc list-inside">
-                        <li>Components of a computer system (CPU, memory, storage).</li>
-                        <li>Input and output devices.</li>
-                        <li>Types of memory (primary and secondary).</li>
-                        <li>Communication processes between components.</li>
-                        <li>Functionality of computer systems.</li>
-                        <li>Introduction to Internet digital platforms (e.g., BHIM, Digi-Locker).</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-4 rounded shadow">
-                    <h3 class="font-bold">Unit 2: Basic Network Concepts</h3>
-                    <p>This unit introduces networking concepts, including:</p>
-                    <ul class="list-disc list-inside">
-                        <li>Various computer network topologies (Bus, Mesh, Star, Ring, Hybrid).</li>
-                        <li>Types of networks (LAN, WAN).</li>
-                        <li>IP addressing system and URL.</li>
-                        <li>Functions of networking devices (Switch, Router, Gateway).</li>
-                    </ul>
-                </div>
-                <div class="bg-white 
-                <div class=" bg-white p-4 rounded shadow">
-                    <h3 class="font-bold">Unit 3: Introduction to C Programming</h3>
-                    <p>This unit covers the fundamentals of programming in C, including:</p>
-                    <ul class="list-disc list-inside">
-                        <li>Basic syntax and structure of C programs.</li>
-                        <li>Data types and variables.</li>
-                        <li>Operators and expressions.</li>
-                        <li>Control structures (if, switch, loops).</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-4 rounded shadow">
-                    <h3 class="font-bold">Unit 4: Advanced C Programming</h3>
-                    <p>This unit delves into more complex programming concepts, including:</p>
-                    <ul class="list-disc list-inside">
-                        <li>Functions and modular programming.</li>
-                        <li>Arrays and strings.</li>
-                        <li>Pointers and memory management.</li>
-                        <li>File handling in C.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-6">
-            <ul class="list-disc pl-4 mb-4">
-                <li><a href="fundamental of it thorugh c.pdf" rel="noopener" class="text-blue-500 hover:underline">Download Course
+            <h3>Syllabus</h3>
+            <p>Download the complete syllabus for the Programming with C course:</p>
+            <ul>
+                <li><a href="documents/fundamental of it thorugh c.pdf" rel="noopener"
+                        class="text-blue-500 hover:underline">Download Course
                         Notes (PDF)</a></li>
             </ul>
-            </div>
         </section>
 
-        <section id="resources" class="fade-in hidden">
-            <h2 class="text-2xl font-semibold mb-4">Resources</h2>
-            <p>Additional resources for further learning:</p>
-            <ul class="list-disc list-inside">
-                <li><a href="https://www.learn-c.org/" class="text-blue-500 hover:underline">Learn C Programming</a>
-                </li>
-                <li><a href="https://www.geeksforgeeks.org/c-programming-language/"
-                        class="text-blue-500 hover:underline">GeeksforGeeks C Programming</a></li>
-                <li><a href="https://www.cprogramming.com/" class="text-blue-500 hover:underline">CProgramming.com</a>
-                </li>
-            </ul>
+        <section class="fade-in" id="course-outcomes">
+            <h2 class="text-2xl font-bold mb-3">Course Outcomes (COs)</h2>
+            <ol class="list-decimal pl-5">
+                <li>Appraise computer systems and its applications.</li>
+                <li>Setup a small computer Network.</li>
+                <li>Write ‘C’ Program to solve given arithmetic expression.</li>
+                <li>Develop ‘C’ program using control structure.</li>
+                <li>Develop ‘C’ programs using arrays.</li>
+                <li>Create functions in C programs for modular programming approach.</li>
+            </ol>
         </section>
 
-        <section id="notes" class="fade-in hidden">
-            <h2 class="text-2xl font-semibold mb-4">Notes</h2>
-            <p>Here are some useful notes and resources related to the course:</p>
-            <ul class="list-disc pl-4 mb-4">
-                <li><a href="Fundamental of IT through C.pdf"  rel="noopener" class="text-blue-500 hover:underline">Download Course
-                        Notes (PDF)</a></li>
-            </ul>
+        <section class="fade-in" id="teaching-learning-scheme">
+            <h2 class="text-2xl font-bold mb-3">Teaching & Learning Scheme</h2>
+            <p><strong>Total Hours:</strong> 09</p>
+            <p><strong>Total Credits:</strong> 06</p>
+        </section>
+
+        <section class="fade-in" id="assessment-scheme">
+            <h2 class="text-2xl font-bold mb-3">Assessment Scheme</h2>
+            <table class="min-w-full bg-white border border-gray-300">
+                <thead>
+                    <tr>
+                        <th class="border px-4 py-2">Assessment Type</th>
+                        <th class="border px-4 py-2">Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border px-4 py-2">Theory Assessment (TA)</td>
+                        <td class="border px-4 py-2">30</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Term Work & Self-Learning Assessment (TWA)</td>
+                        <td class="border px-4 py-2">70</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Lab Assessment (LA)</td>
+                        <td class="border px-4 py-2">20</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Total Marks</td>
+                        <td class="border px-4 py-2">200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="fade-in" id="lecture-plan">
+            <h2 class="text-2xl font-bold mb-3">Lecture Plan</h2>
+            <table class="min-w-full bg-white border border-gray-300">
+                <thead>
+                    <tr>
+                        <th class="border px-4 py-2">Week</th>
+                        <th class="border px ```html
+                        <th class=" border px-4 py-2">Topics</th>
+                        <th class="border px-4 py-2">COs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border px-4 py-2">1</td>
+                        <td class="border px-4 py-2">Basics of Computer System</td>
+                        <td class="border px-4 py-2">CO - 1</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">2</td>
+                        <td class="border px-4 py-2">Basic Network Concepts</td>
+                        <td class="border px-4 py-2">CO - 2</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">3</td>
+                        <td class="border px-4 py-2">Introduction to C Programming</td>
+                        <td class="border px-4 py-2">CO - 3</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">4</td>
+                        <td class="border px-4 py-2">Control Structures in C</td>
+                        <td class="border px-4 py-2">CO - 4</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">5</td>
+                        <td class="border px-4 py-2">Arrays and Pointers</td>
+                        <td class="border px-4 py-2">CO - 5</td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">6</td>
+                        <td class="border px-4 py-2">Functions in C</td>
+                        <td class="border px-4 py-2">CO - 6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="fade-in" id="laboratory-experiments">
+            <h2 class="text-2xl font-bold mb-3">Laboratory Experiments</h2>
+            <ol class="list-decimal pl-5">
+                <li>Install device drivers.</li>
+                <li>Install given software on your system.</li>
+                <li>Perform registration process of Digital India platform.</li>
+                <li>Connect two/three computers to form a network using wire/wireless connectivity.</li>
+                <li>Write and execute simple ‘C’ programs using control structures.</li>
+                <li>Develop programs using arrays and pointers.</li>
+                <li>Create user-defined functions in C.</li>
+            </ol>
+        </section>
+
+        <section class="fade-in" id="important-questions">
+            <h2 class="text-2xl font-bold mb-3">Important Questions</h2>
+            <ol class="list-decimal pl-5">
+                <li>What are the main components of a computer system?</li>
+                <li>Explain the different types of networks and their topologies.</li>
+                <li>How do you write a simple C program to solve an arithmetic expression?</li>
+                <li>What are control structures in C, and how are they used?</li>
+                <li>Describe the concept of arrays and pointers in C programming.</li>
+                <li>What is the significance of functions in C, and how do you create them?</li>
+            </ol>
         </section>
     </main>
 
-    <footer class="bg-blue-600 text-white p-4 text-center">
-        <p>&copy; 2024 Fundamentals of IT through C Programming. All rights reserved.</p>
+    <footer class="bg-gray-800 text-white text-center py-5">
+        <p>&copy; 2023 Diploma in Electrical & Electronics Engineering</p>
     </footer>
 
     <script>
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('section');
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = e.target.getAttribute('data-target');
-
-                sections.forEach(section => {
-                    section.classList.add('hidden');
-                });
-
-                const targetSection = document.getElementById(targetId);
-                targetSection.classList.remove('hidden');
-                targetSection.classList.add('fade-in');
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll('.fade-in');
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.classList.add('fade-in-active');
+                }, index * 300); // Stagger the animations
             });
         });
     </script>

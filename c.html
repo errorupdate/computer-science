@@ -6,117 +6,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programming with C Course</title>
     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+            animation: fadeIn 1s ease-in;
+        }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to right, #f0f4f8, #d9e2ec);
-    animation: fadeIn 1s ease-in;
-}
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+            animation: slideIn 0.5s ease-in;
+        }
 
-header {
-    text-align: center;
-    padding: 20px;
-    background-color: #007BFF;
-    color: white;
-    animation: slideIn 0.5s ease-in;
-}
+        nav {
+            background-color: #0056b3;
+            padding: 10px;
+        }
 
-nav {
-    background-color: #0056b3;
-    padding: 10px;
-}
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
 
-nav ul li a:hover {
-    color: #ffcc00;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
+        table th,
+        table td {
+            border: 1px solid #007BFF;
+            padding: 10px;
+            text-align: left;
+        }
 
-table th, table td {
-    border: 1px solid #007BFF;
-    padding: 10px;
-    text-align: left;
-}
+        table th {
+            background-color: #007BFF;
+            color: white;
+        }
 
-table th {
-    background-color: #007BFF;
-    color: white;
-}
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
 
-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
 
-button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
-}
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
 
-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+            to {
+                opacity: 1;
+            }
+        }
 
-@keyframes slideIn {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
- .backToMenu {
-            position: fixed; /* Fixed position to stay in place */
-            top: 20px; /* Distance from the top */
-            left: 20px; /* Distance from the left */
-            z-index: 1000; /* Ensure it stays on top of other elements */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .backToMenu {
+            position: fixed;
+            /* Fixed position to stay in place */
+            top: 20px;
+            /* Distance from the top */
+            left: 20px;
+            /* Distance from the left */
+            z-index: 1000;
+            /* Ensure it stays on top of other elements */
         }
 
         .backToMenu buttons {
-            background-color: #ff0000; /* Red background */
-            color: white; /* White text */
-            padding: 10px 20px; /* Padding for size */
-            border: none; /* Remove border */
-            border-radius: 5px; /* Rounded corners */
-            font-size: 16px; /* Font size */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background-color 0.3s ease; /* Smooth hover effect */
+            background-color: #ff0000;
+            /* Red background */
+            color: white;
+            /* White text */
+            padding: 10px 20px;
+            /* Padding for size */
+            border: none;
+            /* Remove border */
+            border-radius: 5px;
+            /* Rounded corners */
+            font-size: 16px;
+            /* Font size */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            transition: background-color 0.3s ease;
+            /* Smooth hover effect */
 
         }
 
         .backToMenu button:hover {
-            background-color: #cc0000; /* Darker red on hover */
+            background-color: #cc0000;
+            /* Darker red on hover */
         }
+
         .backToMenu buttons a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit the button's text color */
-}
+            text-decoration: none;
+            /* Remove underline */
+            color: inherit;
+            /* Inherit the button's text color */
+        }
+
+        .lecNotes {
+            position: fixed;
+            /* Fixed position to stay in place */
+            top: 20px;
+            /* Distance from the top */
+            right: 20px;
+            /* Distance from the right */
+            z-index: 1000;
+            /* Ensure it stays on top of other elements */
+        }
+
+        .lecNotes buttons {
+            background-color: #007BFF;
+            /* Blue background */
+            color: white;
+            /* White text */
+            padding: 10px 20px;
+            /* Padding for size */
+            border: none;
+            /* Remove border */
+            border-radius: 5px;
+            /* Rounded corners */
+            font-size: 16px;
+            /* Font size */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            transition: background-color 0.3s ease;
+            /* Smooth hover effect */
+        }
+
+        .lecNotes buttons:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
+
+        .lecNotes buttons a {
+            text-decoration: none;
+            /* Remove underline */
+            color: inherit;
+            /* Inherit the button's text color */
+        }
     </style>
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -126,6 +197,9 @@ button:hover {
 <body>
     <div class="backToMenu">
         <buttons><a href="/cse/computer-science/index.html">Home</a></buttons>
+    </div>
+    <div class="lecNotes">
+        <buttons><a href="lecNotes.html">lecNotes</a></buttons>
     </div>
     <header>
         <h1>Diploma in Computer Science & Engineering</h1>
@@ -142,7 +216,6 @@ button:hover {
             <li><a href="#resources">Learning Resources</a></li>
             <li><a href="#lecture-plan">Lecture Plan</a></li>
             <li><a href="#lab-sessions">Lab Sessions</a></li>
-            <li><button id="moreInfoBtn">More Info</button></li>
         </ul>
     </nav>
     <main>
@@ -178,7 +251,8 @@ button:hover {
             <h3>Syllabus</h3>
             <p>Download the complete syllabus for the Programming with C course:</p>
             <ul>
-                <li><a href="documents/18. Computer Science & Engineering.pdf" rel="noopener" class="text-blue-500 hover:underline">Download Course
+                <li><a href="documents/18. Computer Science & Engineering.pdf" rel="noopener"
+                        class="text-blue-500 hover:underline">Download Course
                         Notes (PDF)</a></li>
             </ul>
         </section>
@@ -224,7 +298,7 @@ button:hover {
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td>Control Structures 
+                        <td>Control Structures
                             : If, Switch</td>
                     </tr>
                     <tr>
@@ -273,53 +347,53 @@ button:hover {
     </footer>
     <script>
         // Function to display a greeting message based on the time of day
-            function displayGreeting() {
-                const greetingElement = document.getElementById('greeting');
-                const currentHour = new Date().getHours();
-                let greetingMessage;
+        function displayGreeting() {
+            const greetingElement = document.getElementById('greeting');
+            const currentHour = new Date().getHours();
+            let greetingMessage;
 
-                if (currentHour < 12) {
-                    greetingMessage = "Good Morning!";
-                } else if (currentHour < 18) {
-                    greetingMessage = "Good Afternoon!";
-                } else {
-                    greetingMessage = "Good Evening!";
-                }
-
-                greetingElement.textContent = greetingMessage;
+            if (currentHour < 12) {
+                greetingMessage = "Good Morning!";
+            } else if (currentHour < 18) {
+                greetingMessage = "Good Afternoon!";
+            } else {
+                greetingMessage = "Good Evening!";
             }
 
-            // Function to reveal more information about the course
-            function revealMoreInfo() {
-                const moreInfoSection = document.createElement('div');
-                moreInfoSection.innerHTML = `
+            greetingElement.textContent = greetingMessage;
+        }
+
+        // Function to reveal more information about the course
+        function revealMoreInfo() {
+            const moreInfoSection = document.createElement('div');
+            moreInfoSection.innerHTML = `
         <h3>Additional Course Information</h3>
         <p>This course not only covers the basics of C programming but also delves into advanced topics such as data structures and algorithms.</p>
         <p>Students will engage in hands-on projects that will enhance their coding skills and prepare them for real-world applications.</p>
     `;
-                moreInfoSection.style.backgroundColor = '#e7f3fe';
-                moreInfoSection.style.padding = '20px';
-                moreInfoSection.style.borderRadius = '5px';
-                moreInfoSection.style.marginTop = '20px';
-                document.body.appendChild(moreInfoSection);
-            }
+            moreInfoSection.style.backgroundColor = '#e7f3fe';
+            moreInfoSection.style.padding = '20px';
+            moreInfoSection.style.borderRadius = '5px';
+            moreInfoSection.style.marginTop = '20px';
+            document.body.appendChild(moreInfoSection);
+        }
 
-            // Smooth scroll for navigation links
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    document.querySelector(targetId).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+        // Smooth scroll for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
+        });
 
-            // Event listener for the More Info button
-            document.getElementById('moreInfoBtn').addEventListener('click', revealMoreInfo);
+        // Event listener for the More Info button
+        document.getElementById('moreInfoBtn').addEventListener('click', revealMoreInfo);
 
-            // Call the greeting function on page load
-            window.onload = displayGreeting;
+        // Call the greeting function on page load
+        window.onload = displayGreeting;
     </script>
 </body>
 

@@ -115,41 +115,102 @@
             bottom: 0;
             width: 100%;
         }
-     .backToMenu {
-            position: fixed; /* Fixed position to stay in place */
-            top: 20px; /* Distance from the top */
-            left: 20px; /* Distance from the left */
-            z-index: 1000; /* Ensure it stays on top of other elements */
+
+        .backToMenu {
+            position: fixed;
+            /* Fixed position to stay in place */
+            top: 20px;
+            /* Distance from the top */
+            left: 20px;
+            /* Distance from the left */
+            z-index: 1000;
+            /* Ensure it stays on top of other elements */
         }
 
         .backToMenu buttons {
-            background-color: #ff0000; /* Red background */
-            color: white; /* White text */
-            padding: 10px 20px; /* Padding for size */
-            border: none; /* Remove border */
-            border-radius: 5px; /* Rounded corners */
-            font-size: 16px; /* Font size */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background-color 0.3s ease; /* Smooth hover effect */
+            background-color: #ff0000;
+            /* Red background */
+            color: white;
+            /* White text */
+            padding: 10px 20px;
+            /* Padding for size */
+            border: none;
+            /* Remove border */
+            border-radius: 5px;
+            /* Rounded corners */
+            font-size: 16px;
+            /* Font size */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            transition: background-color 0.3s ease;
+            /* Smooth hover effect */
 
         }
 
         .backToMenu button:hover {
-            background-color: #cc0000; /* Darker red on hover */
+            background-color: #cc0000;
+            /* Darker red on hover */
         }
+
         .backToMenu buttons a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit the button's text color */
-}
-       
+            text-decoration: none;
+            /* Remove underline */
+            color: inherit;
+            /* Inherit the button's text color */
+        }
+
+        .lecNotes {
+            position: fixed;
+            /* Fixed position to stay in place */
+            top: 20px;
+            /* Distance from the top */
+            right: 20px;
+            /* Distance from the right */
+            z-index: 1000;
+            /* Ensure it stays on top of other elements */
+        }
+
+        .lecNotes buttons {
+            background-color: #007BFF;
+            /* Blue background */
+            color: white;
+            /* White text */
+            padding: 10px 20px;
+            /* Padding for size */
+            border: none;
+            /* Remove border */
+            border-radius: 5px;
+            /* Rounded corners */
+            font-size: 16px;
+            /* Font size */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            transition: background-color 0.3s ease;
+            /* Smooth hover effect */
+        }
+
+        .lecNotes buttons:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+        }
+
+        .lecNotes buttons a {
+            text-decoration: none;
+            /* Remove underline */
+            color: inherit;
+            /* Inherit the button's text color */
+        }
     </style>
 </head>
 
 <body>
 
-<div class="backToMenu">
-    <buttons><a href="/cse/computer-science/index.html">Home</a></buttons>
-</div>
+    <div class="backToMenu">
+        <buttons><a href="/cse/computer-science/index.html">Home</a></buttons>
+    </div>
+    <div class="lecNotes">
+        <buttons><a href="">lecNotes</a></buttons>
+    </div>
     <header>
         <h1>Python Programming Course</h1>
         <p>Learn Python from scratch with this comprehensive course.</p>
@@ -169,6 +230,13 @@
             <h2>Course Introduction</h2>
             <p>This course is designed to provide a comprehensive introduction to Python programming. Whether you are a
                 beginner or looking to enhance your skills, this course will cover all the essential topics.</p>
+                <h3>Syllabus</h3>
+                <p>Download the complete syllabus for the Programming with C course:</p>
+                <ul>
+                    <li><a href="documents/python.pdf" rel="noopener"
+                            class="text-blue-500 hover:underline">Download Course
+                            Notes (PDF)</a></li>
+                </ul>
         </section>
 
         <section id="syllabus">

@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Paper 1</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 1px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        /* styles.css */
+
+        .question {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 5px solid #007BFF;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .question:hover {
+            background-color: #e9ecef;
+        }
+
+        .question:hover, .question p:hover, .question ul li:hover, .question h3:hover {
+            color: #007BFF;
+        }
+
+        .answer {
+            display: none;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .toggle-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Question Bank</h1>
+        <div class="toggle-bar" onclick="toggleAnswers()">Show/Hide Answers</div>
+    </header>
+    <main>
+        <section id="section-a">
+            <h2>Section A: Multiple Choice Questions (MCQs)</h2>
+            <div class="question">
+                <h3>(a)</h3>
+                <p>Python has______function for taking user input.</p>
+                <ul>
+                    <li>A. output</li>
+                    <li>B. input</li>
+                    <li>C. get</li>
+                    <li>D. </li>
+                </ul>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <h2 class="answer">Answer: (B)</h2>
+            </div>
+            <div class="question">
+                <h3>(b)</h3>
+                <p>An_______ is a combination of values, variable, and operators.</p>
+                <ul>
+                    <li>A. explanation</li>
+                    <li>B. Expression</li>
+                    <li>C. Logic</li>
+                    <li>D. </li>
+                </ul>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <h2 class="answer">Answer: (B)</h2>
+            </div>
+            <div class="question">
+                <h3>(c)</h3>
+                <p>True or False</p>
+                <p>A while loop will always execute at least one.</p>
+                <ul>
+                    <li>True/False</li>
+                </ul>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <h2 class="answer">Answer:False</h2>
+            </div>
+            <div class="question">
+                <h3>(d)</h3>
+                <p>True or False</p>
+                <p>A python program may have more than one elif statement.</p>
+                <ul>
+                    <li>True/False</li>
+                </ul>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <h2 class="answer">Answer:True</h2>
+            </div>
+            <div class="question">
+                <h3>(f)</h3>
+                <p>True or False</p>
+                <p>List is immutable data structure.</p>
+                <ul>
+                    <li>True/False</li>
+                </ul>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <h2 class="answer">Answer:False</h2>
+            </div>
+            <div class="question">
+                <h3>(g)</h3>
+                <p>Find Odd one Out:</p>
+                <ul>
+                    <li>A. Dictionary</li>
+                    <li>B. List</li>
+                    <li>C. Set</li>
+                    <li>D. Function</li>
+                </ul>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <h2 class="answer">Answer: (c)</h2>
+            </div>
+            <div class="question">
+                <h3>(h)</h3>
+                <p>Dictionary supports___Pairs.</p>
+                <ul>
+                    <li>A. key:value</li>
+                    <li>B. key:Lock</li>
+                    <li>C. index:value</li>
+                    <li>D. </li>
+                </ul>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <h2 class="answer">Answer: (a)</h2>
+            </div>
+            <div class="question">
+                <h3>(i)</h3>
+                <p>Find Odd one Out:</p>
+                <ul>
+                    <li>A. if</li>
+                    <li>B. else</li>
+                    <li>C. elif</li>
+                    <li>D. else if</li>
+                </ul>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <h2 class="answer">Answer: (d)</h2>
+            </div>
+            <div class="question">
+                <h3>(j)</h3>
+                <p>True or False</p>
+                <p>Tuple and list both are same.</p>
+                <ul>
+                    <li>True/False</li>
+                </ul>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <h2 class="answer">Answer:False</h2>
+            </div>
+            <!-- Add more MCQs as needed -->
+        </section>
+        <section id="section-b">
+            <h2>Section B: Descriptive Questions</h2>
+            <div class="question">
+                <h3>Question 1:</h3>
+                <p> Describe the process of setting up the Python path and installing Python on a
+                    computer</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>Installing Python</h4>
+                    <li>Download Python from the official website (https://www.python.org/downloads/)</li>
+                    <li>Run the installer and select these options:</li>
+                    <li>Add Python to PATH (recommended)</li>
+                    <li>Install for all users (Windows) or just yourself (macOS/Linux)</li>
+                    <li>Keep default installation directory</li>
+                    <h4>Verifying Installation</h4>
+                    <li>Open command prompt/terminal</li>
+                    <li>Type python --version to check installation</li>
+                    <li>Expected output: Python 3.x.x</li>
+                    <h4>Setting Up Python Path</h4>
+                    <li>Built-in modules directory</li>
+                    <li>Site-packages directory for third-party libraries</li>
+                    <li>Current working directory</li>
+                    <h4>Viewing Python Path</h4>
+                    <pre>
+                                            <code>
+                                                import sys
+                                                print(sys.path)
+                                            </code>
+                                        </pre>
+                    <h4>Updating Python Path</h4>
+                    <p>Temporarily add directories in code:</p>
+                    <pre>
+                                                                    <code>
+                                                                    import sys
+                                                                    sys.path.append("C:/my_python_code")
+                                                                    </code>
+                                                                </pre>
+                    <li>Permanently add directories by modifying environment variables:
+                        Windows: System Properties > Environment Variables > PATH</li>
+                </div>
+            </div>
+            <div class="question">
+                <h3>Question 2</h3>
+                <p>Explain various data types used in Python.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <ol>
+                        <li>Numeric Types</li>
+                        <ul>Integers(int)</ul>
+                        <ul>Whole numbers without decimal points.</ul>
+                        <ul>Example: x = 10 (type: float)</ul>
+                        <ul>Floating-point Number(float)</ul>
+                        <ul>Numbers with decimal points.</ul>
+                        <ul>Example: x = 10.5 (type: float)</ul>
+                        <ul>Complex Number(complex)</ul>
+                        <ul>Numbers with real and imaginary parts.</ul>
+                        <ul>Example: x = 1 + 2j (type: complex)</ul>
+                        <li>String Type(str)</li>
+                        <p>Strings are used to store sequences of characters. They are defined using single quotes ('),
+                            double quotes ("), or
+                            triple quotes (''' or """). </p>
+                        <p>Example: x = "Hello, World!" (type: str)</p>
+                        <p>Strings support various operations like concatenation, slicing, and methods for manipulation.
+                        </p>
+                        <li>List Type(list)</li>
+                        <p>Lists are ordered collections of items. They are defined using square brackets [] and can
+                            contain
+                            elements of different data types.</p>
+                        <p>Example: x = [1, 2, "apple"] (type: list)</p>
+                        <h4>Key characteristics:</h4>
+                        <ul>Mutable: Elements can be changed or modified.</ul>
+                        <ul>Ordered: Elements have a specific order.</ul>
+                        <ul>Allows duplicates: Elements can be repeated.</ul>
+                        <li>Tuple Type(tuple)</li>
+                        <p>Tuples are ordered collections of items similar to lists. They are defined using parentheses
+                            ()
+                            and can contain elements of different data types.</p>
+                        <p>Example: x = (1, 2, "apple") (type: tuple)</p>
+                        <h4>Key characteristics:</h4>
+                        <ul>Immutable: Elements cannot be changed or modified.</ul>
+                        <ul>Ordered: Elements have a specific order.</ul>
+                        <ul>Allows duplicates: Elements can be repeated.</ul>
+
+                        <li>Dictionary Type(dict)</li>
+                        <p>Dictionaries are unordered collections of items. They are defined using curly braces {} and
+                            consist of key-value pairs.</p>
+                        <p>Example: x = {"name": "Alice", "age": 25} (type: dict)</p>
+                        <h4>Key characteristics:</h4>
+                        <ul>Mutable: Elements can be changed or modified.</ul>
+                        <ul>Unordered: Elements do not have a specific order.</ul>
+                        <ul>No duplicates: Keys must be unique.</ul>
+
+                        <li>Boolean Type(bool)</li>
+                        <p>Booleans represent truth values. They can have two values: True or False.</p>
+                        <p>Example: x = True (type: bool)</p>
+                        <p>Booleans are often used in conditional statements and comparisons.</p>
+                    </ol>
+                    <p>Summary of Data Types</p>
+                    <ul>
+                        <li>Numeric Types: int, float, complex</li>
+                        <li>String Type: str</li>
+                        <li>Sequence Types: list, tuple</li>
+                        <li>Mapping Type: dict</li>
+                        <li>Boolean Type: bool</li>
+                    </ul>
+                    <p>Understanding the different data types in Python is crucial for effective programming. Each data
+                        type
+                        has its own characteristics and uses, allowing developers to work with various types of data
+                        efficiently.</p>
+                </div>
+            </div>
+            <div class="question">
+                <h3>Question 3</h3>
+                <p>Explain coding blocks in Python with the help of an example.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>What are Code Blocks in Python?</h4>
+                    <p>In Python, code blocks are sections of code that are grouped together and executed as a
+                        single unit. They are
+                        defined by indentation and are used in control structures like loops, conditional
+                        statements, functions, and
+                        classes.</p>
+
+                    <h4>How to Define a Code Block</h4>
+                    <ol>
+                        <li>Use indentation (4 spaces or a tab) to indicate the start of a code block.</li>
+                        <li>Code within the same indentation level belongs to the same block.</li>
+                        <li>End the block by dedenting (reducing the indentation level) to return to the previous
+                            level.</li>
+                    </ol>
+
+                    <h4>Examples of Code Blocks</h4>
+
+                    <h5>1. If Statement</h5>
+                    <p>An if statement executes a block of code only if a specified condition is true.</p>
+                    <pre>
+                                <code>
+                                    x = 10
+                                    if x > 5:
+                                        print("x is greater than 5")
+                                        print("This is part of the if block")
+                                    print("This is outside the if block")
+                                </code>
+                            </pre>
+
+                    <h5>2. Function Declaration</h5>
+                    <p>A function is a reusable block of code that performs a specific task.</p>
+                    <pre>
+                                <code>
+                                    def greet(name):
+                                        """This function prints a greeting."""
+                                        print(f"Hello, {name}!")
+                                    
+                                    greet("Alice")
+                                </code>
+                            </pre>
+
+                    <h5>3. Module</h5>
+                    <p>A module is a file containing Python code that can be imported and used in other programs.
+                    </p>
+                    <pre>
+                                <code>
+                                    # Save this as my_module.py
+                                    def add_numbers(a, b):
+                                        """Add two numbers and return the result."""
+                                        return a + b
+                                    
+                                    # Import and use the module
+                                    import my_module
+                                    
+                                    result = my_module.add_numbers(5, 3)
+                                    print(result)  # Output: 8
+                                </code>
+                            </pre>
+
+                    <h5>4. Class Definition</h5>
+                    <p>A class is a blueprint for creating objects (instances) that have specific properties and
+                        methods.</p>
+                    <pre>
+                                <code>
+                                    class Dog:
+                                        def __init__(self, name, age):
+                                            self.name = name
+                                            self.age = age
+                                        
+                                        def bark(self):
+                                            print(f"{self.name} says woof!")
+                                    
+                                    my_dog = Dog("Buddy", 3)
+                                    my_dog.bark()  # Output: Buddy says woof!
+                                </code>
+                            </pre>
+
+                    <h4>Why Indentation is Important</h4>
+                    <ul>
+                        <li>Indentation defines the structure and flow of the code.</li>
+                        <li>It helps in identifying which lines of code belong to which block.</li>
+                        <li>Consistent indentation makes the code more readable and maintainable.</li>
+                    </ul>
+
+                    <p>By properly indenting your code, you ensure that Python understands which lines of code
+                        should be executed
+                        together as a block.</p>
+                </div>
+            </div>
+            </div>
+            <div class="question">
+                <h3>Question 4</h3>
+                <p>Explain the use of if-else statements for creating conditional blocks in Python.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>What are if-else Statements?</h4>
+                    <p>if-else statements in Python are used to create conditional blocks of code, which allow different
+                        actions to
+                        be taken based on whether a condition is true or false. The `if` statement evaluates a
+                        condition, and if the
+                        condition is true, the code block within the `if` statement is executed. If the condition is
+                        false, the code
+                        block within the `else` statement (if present) is executed.</p>
+
+                    <h4>How to Use if-else Statements</h4>
+                    <p>The basic syntax of an if-else statement is as follows:</p>
+                    <pre>
+                            <code>
+                                if condition:
+                                    # code block to execute if condition is true
+                                else:
+                                    # code block to execute if condition is false
+                            </code>
+                        </pre>
+
+                    <h4>Examples of if-else Statements</h4>
+
+                    <h5>1. Simple if-else Statement</h5>
+                    <p>This example checks if a person is an adult based on their age.</p>
+                    <pre>
+                            <code>
+                                age = 20
+                                
+                                if age >= 18:
+                                    print("You are an adult.")
+                                else:
+                                    print("You are a minor.")
+                            </code>
+                        </pre>
+                    <p>Output:</p>
+                    <pre>
+                            <code>
+                                You are an adult.
+                            </code>
+                        </pre>
+
+                    <h5>2. if-elif-else Statement</h5>
+                    <p>This example demonstrates using multiple conditions with elif statements.</p>
+                    <pre>
+                            <code>
+                                score = 75
+                                
+                                if score >= 90:
+                                    print("A")
+                                elif score >= 80:
+                                    print("B")
+                                elif score >= 70:
+                                    print("C")
+                                else:
+                                    print("D")
+                            </code>
+                        </pre>
+                    <p>Output:</p>
+                    <pre>
+                            <code>
+                                C
+                            </code>
+                        </pre>
+
+                    <h4>Why Use if-else Statements?</h4>
+                    <ul>
+                        <li>They allow programs to make decisions and handle different scenarios.</li>
+                        <li>They add flexibility and adaptability to the code.</li>
+                        <li>They help in controlling the flow of execution based on conditions.</li>
+                    </ul>
+
+                    <p>By using if-else statements, you can create more dynamic and responsive programs that can handle
+                        a variety of
+                        situations based on the conditions you define.</p>
+                </div>
+            </div>
+
+            </div>
+            <div class="question">
+                <div class="question">
+                    <h3>Question 5</h3>
+                    <p>Explain the concept of arrays in Python with the help of example.</p>
+
+                    <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                    <div class="answer">
+                        <h4>What are Arrays in Python?</h4>
+                        <p>In Python, arrays are data structures that store a collection of elements, all of the same
+                            data type, in
+                            contiguous memory locations. They are part of the `array` module and provide a more
+                            memory-efficient way to
+                            store and manipulate large datasets compared to standard Python lists.</p>
+
+                        <h4>How to Use Arrays in Python</h4>
+                        <p>To use arrays in Python, you need to import the `array` module. Here's an example of how to
+                            create and
+                            manipulate arrays:</p>
+                        <pre>
+                            <code>
+                                import array as arr
+                                
+                                # Creating an array of integers
+                                my_array = arr.array('i', [1, 2, 3, 4, 5])
+                                
+                                # Accessing elements
+                                print(my_array[0])  # Output: 1
+                                print(my_array[2])  # Output: 3
+                                
+                                # Slicing an array
+                                sliced_array = my_array[1:4]
+                                print(sliced_array)  # Output: array('i', [2, 3, 4])
+                                
+                                # Iterating through an array
+                                for num in my_array:
+                                    print(num, end=' ')
+                                # Output: 1 2 3 4 5 
+                                
+                                # Adding elements
+                                my_array.append(6)
+                                print(my_array)  # Output: array('i', [1, 2, 3, 4, 5, 6])
+                                
+                                # Removing elements
+                                my_array.remove(3)
+                                print(my_array)  # Output: array('i', [1, 2, 4, 5, 6])
+                            </code>
+                        </pre>
+
+                        <h4>Differences Between Arrays and Lists</h4>
+                        <ul>
+                            <li><strong>Data Type:</strong> Arrays store elements of the same data type, while lists can
+                                store elements
+                                of different data types.</li>
+                            <li><strong>Memory Efficiency:</strong> Arrays are more memory-efficient than lists,
+                                especially for large
+                                datasets.</li>
+                            <li><strong>Performance:</strong> Arrays can be faster for certain operations, such as
+                                mathematical
+                                computations, due to their homogeneous data type.</li>
+                        </ul>
+
+                        <h4>When to Use Arrays</h4>
+                        <p>Arrays are particularly useful when working with large datasets or when you need to perform
+                            mathematical
+                            operations on the data. They are commonly used in scientific computing, data analysis, and
+                            applications
+                            where memory usage is a critical concern.</p>
+
+                        <h4>Example: Calculating the Average of an Array</h4>
+                        <p>Here's an example that demonstrates how to calculate the average of an array of numbers:</p>
+                        <pre>
+                            <code>
+                                import array as arr
+                                
+                                # Creating an array of floats
+                                numbers = arr.array('f', [10.5, 20.3, 30.7, 40.2])
+                                
+                                # Calculating the average
+                                total = 0.0
+                                for num in numbers:
+                                    total += num
+                                average = total / len(numbers)
+                                
+                                print("Average:", average)  # Output: Average: 25.425
+                            </code>
+                        </pre>
+
+                        <p>By using arrays, you can efficiently store and manipulate large datasets, making your Python
+                            programs more
+                            performant and memory-efficient.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <h3>Question 6</h3>
+                <p>Differentiate between tuples and list with the help of examples.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>What are Tuples and Lists?</h4>
+                    <p>Both tuples and lists are used to store collections of items in Python, but they have distinct
+                        characteristics and use cases.</p>
+
+                    <h4>Differences Between Tuples and Lists</h4>
+                    <table>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>List</th>
+                            <th>Tuple</th>
+                        </tr>
+                        <tr>
+                            <td>Mutability</td>
+                            <td>Mutable (can be modified)</td>
+                            <td>Immutable (cannot be modified)</td>
+                        </tr>
+                        <tr>
+                            <td>Syntax</td>
+                            <td>Defined using square brackets `[]`</td>
+                            <td>Defined using parentheses `()`</td>
+                        </tr>
+                        <tr>
+                            <td>Use Case</td>
+                            <td>Used for collections of items that may change during program execution</td>
+                            <td>Used for collections of items that are meant to remain constant</td>
+                        </tr>
+                        <tr>
+                            <td>Performance</td>
+                            <td>Less memory efficient and slower for large datasets</td>
+                            <td>More memory efficient and faster for large datasets</td>
+                        </tr>
+                    </table>
+
+                    <h4>Examples</h4>
+
+                    <h5>1. List Example</h5>
+                    <pre>
+                        <code>
+                            # Creating a list
+                            my_list = [1, 2, 3, "apple"]
+                            
+                            # Modifying the list
+                            my_list.append(4)
+                            my_list[2] = "banana"
+                            
+                            print(my_list)  # Output: [1, 2, 'banana', 'apple', 4]
+                        </code>
+                    </pre>
+
+                    <h5>2. Tuple Example</h5>
+                    <pre>
+                        <code>
+                            # Creating a tuple
+                            my_tuple = (1, 2, 3, "apple")
+                            
+                            # Tuples cannot be modified
+                            # The following line will cause an error
+                            # my_tuple[2] = "banana"
+                            
+                            print(my_tuple)  # Output: (1, 2, 3, 'apple')
+                        </code>
+                    </pre>
+
+                    <p>Choosing between a list and a tuple depends on whether you need a mutable or immutable collection
+                        of items.
+                        Use lists when you need to modify the collection later, and tuples when you want to ensure the
+                        collection
+                        remains constant.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Question 7</h3>
+                <p>Demonstrate the concept of function in Python with the help of example.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>What is a Function?</h4>
+                    <p>A function is a reusable block of code that performs a specific task. It allows you to organize
+                        your code
+                        into logical, manageable chunks, making your programs more modular and easier to maintain.</p>
+
+                    <h4>Why Use Functions?</h4>
+                    <ul>
+                        <li>Encapsulate functionality to avoid code duplication</li>
+                        <li>Improve code readability and maintainability</li>
+                        <li>Enable code reuse across different parts of a program or different programs</li>
+                    </ul>
+
+                    <h4>Example of a Function</h4>
+                    <pre>
+                        <code>
+                            # Defining a function
+                            def calculate_factorial(n):
+                                """Calculate the factorial of a number."""
+                                if n == 0:
+                                    return 1
+                                else:
+                                    return n * calculate_factorial(n - 1)
+                            
+                            # Using the function
+                            result = calculate_factorial(5)
+                            print("Factorial of 5 is:", result)  # Output: Factorial of 5 is: 120
+                        </code>
+                    </pre>
+
+                    <p>In this example, the `calculate_factorial` function takes an integer `n` as input and returns its
+                        factorial.
+                        The function uses recursion to compute the result. By encapsulating the factorial calculation in
+                        a function,
+                        we can reuse this logic multiple times without rewriting the code.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Question 8</h3>
+                <p>Demonstrate the concept of module in Python with the help of example.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>What is a Module?</h4>
+                    <p>A module is a file containing Python code that can be imported and used in other programs.
+                        Modules are used
+                        to organize code into reusable components, making programs more modular and easier to manage.
+                    </p>
+
+                    <h4>How to Create and Use a Module</h4>
+                    <pre>
+                        <code>
+                            # Save this as my_module.py
+                            def greet(name):
+                                """Print a greeting message."""
+                                print(f"Hello, {name}!")
+                            
+                            def add_numbers(a, b):
+                                """Add two numbers and return the result."""
+                                return a + b
+                        </code>
+                    </pre>
+
+                    <p>To use the module in another script:</p>
+                    <pre>
+                        <code>
+                            # Importing the module
+                            import my_module
+                            
+                            # Using functions from the module
+                            my_module.greet("Alice")
+                            result = my_module.add_numbers(5, 3)
+                            print("Sum:", result)  # Output: Sum: 8
+                        </code>
+                    </pre>
+
+                    <p>Modules promote code reuse and organization. You can create your own modules or use built-in
+                        modules from
+                        Python's standard library to extend the functionality of your programs.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Question 9</h3>
+                <p>Discuss File input and output and their importance in Python.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>What are File Input/Output Operations?</h4>
+                    <p>File input/output (I/O) operations involve reading from and writing to files. These operations
+                        are essential
+                        for data persistence, allowing programs to store data for future use or retrieve data stored in
+                        files.</p>
+
+                    <h4>Why are File I/O Operations Important?</h4>
+                    <ul>
+                        <li>Data persistence: Data stored in files remains available even after the program terminates
+                        </li>
+                        <li>Data sharing: Files can be shared between different programs or users</li>
+                        <li>Large datasets: Handling large amounts of data efficiently</li>
+                        <li>Configuration and logging: Storing program settings and logging program activity</li>
+                    </ul>
+
+                    <h4>Example of File I/O Operations</h4>
+                    <pre>
+                        <code>
+                            # Writing to a file
+                            with open("example.txt", "w") as file:
+                                file.write("Hello, World!\n")
+                                file.write("This is a sample file.")
+                            
+                            # Reading from a file
+                            with open("example.txt", "r") as file:
+                                content = file.read()
+                                print(content)
+                            # Output:
+                            # Hello, World!
+                            # This is a sample file.
+                        </code>
+                    </pre>
+
+                    <p>File I/O operations are fundamental in programming, enabling programs to interact with external
+                        data sources
+                        and persist data beyond the program's execution.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Question 10</h3>
+                <p>Discuss the process to append text to a file and displaying the text in Python.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>Appending Text to a File</h4>
+                    <p>To append text to an existing file in Python, you can open the file in append mode (`'a'`). This
+                        mode allows
+                        you to add new content to the end of the file without overwriting the existing content.</p>
+
+                    <h4>Example of Appending Text</h4>
+                    <pre>
+                        <code>
+                            # Appending text to a file
+                            with open("example.txt", "a") as file:
+                                file.write("\nAppending new line.")
+                            
+                            # Reading the updated file
+                            with open("example.txt", "r") as file:
+                                content = file.read()
+                                print(content)
+                            # Output:
+                            # Hello, World!
+                            # This is a sample file.
+                            # Appending new line.
+                        </code>
+                    </pre>
+
+                    <h4>Displaying the Text</h4>
+                    <p>After appending text to a file, you can read and display the updated content using the `read()`
+                        method or by
+                        iterating over the file lines.</p>
+
+                    <h4>Complete Example</h4>
+                    <pre>
+                        <code>
+                            # Appending text
+                            with open("example.txt", "a") as file:
+                                file.write("\nNew line added at the end.")
+                            
+                            # Displaying the text
+                            with open("example.txt", "r") as file:
+                                print("File content after appending:")
+                                print(file.read())
+                            # Output:
+                            # File content after appending:
+                            # Hello, World!
+                            # This is a sample file.
+                            # New line added at the end.
+                        </code>
+                    </pre>
+
+                    <p>Appending text to a file is a common operation for logging, data collection, and maintaining
+                        dynamic data
+                        sources. Displaying the text allows you to verify the changes and work with the updated data.
+                    </p>
+                </div>
+            </div>
+            <div class="question">
+                <h3>Question 11</h3>
+                <p>Explain the use of "continue" and "break" statements for loop manipulation in Python.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>Loop Control Statements in Python</h4>
+                    <p>Python provides two loop control statements: `break` and `continue`. These statements allow you
+                        to modify the
+                        flow of a loop based on certain conditions.</p>
+
+                    <h4>1. The `break` Statement</h4>
+                    <p>The `break` statement is used to exit a loop prematurely, i.e., before the loop has completed all
+                        its
+                        iterations. When `break` is encountered inside a loop, the loop terminates immediately, and the
+                        program
+                        control resumes at the next statement following the loop.</p>
+                    <h5>Example of `break`</h5>
+                    <pre>
+                        <code>
+                            # Loop through numbers 1 to 10
+                            for i in range(1, 11):
+                                if i == 5:
+                                    break  # Exit loop when i is 5
+                                print(i)
+                            
+                            print("Loop ended")
+                        </code>
+                    </pre>
+                    <p>Output:</p>
+                    <pre>
+                        <code>
+                            1
+                            2
+                            3
+                            4
+                            Loop ended
+                        </code>
+                    </pre>
+
+                    <h4>2. The `continue` Statement</h4>
+                    <p>The `continue` statement is used to skip the current iteration of a loop and move to the next
+                        iteration. When
+                        `continue` is encountered, the remaining code inside the loop for the current iteration is
+                        skipped, and the
+                        loop proceeds to the next iteration.</p>
+                    <h5>Example of `continue`</h5>
+                    <pre>
+                        <code>
+                            # Print even numbers between 1 and 10
+                            for i in range(1, 11):
+                                if i % 2 != 0:
+                                    continue  # Skip odd numbers
+                                print(i)
+                        </code>
+                    </pre>
+                    <p>Output:</p>
+                    <pre>
+                        <code>
+                            2
+                            4
+                            6
+                            8
+                            10
+                        </code>
+                    </pre>
+
+                    <h4>When to Use `break` and `continue`</h4>
+                    <ul>
+                        <li>Use `break` when you want to exit a loop early based on a certain condition.</li>
+                        <li>Use `continue` when you want to skip certain iterations of a loop without exiting the loop
+                            entirely.
+                        </li>
+                    </ul>
+
+                    <p>These statements provide fine-grained control over loop execution, allowing you to tailor the
+                        behavior of
+                        your loops to meet specific requirements.</p>
+                </div>
+            </div>
+            <div class="question">
+                <h3>Question 12</h3>
+                <p>Write a Python program that uses a loop to print all prime numbers between 1 and 100.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>Prime Numbers Between 1 and 100</h4>
+                    <p>A prime number is a natural number greater than 1 that has no positive divisors other than 1 and
+                        itself.
+                        Here's a Python program to find and print all prime numbers between 1 and 100:</p>
+                    <pre>
+                        <code>
+                            # Function to check if a number is prime
+                            def is_prime(num):
+                                if num < 2:
+                                    return False
+                                for i in range(2, int(num ** 0.5) + 1):
+                                    if num % i == 0:
+                                        return False
+                                return True
+            
+                            # Print all prime numbers between 1 and 100
+                            print("Prime numbers between 1 and 100:")
+                            for number in range(1, 101):
+                                if is_prime(number):
+                                    print(number, end=" ")
+                            print()
+                        </code>
+                    </pre>
+                    <p>Output:</p>
+                    <pre>
+                        <code>
+                            Prime numbers between 1 and 100:
+                            2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Question 13</h3>
+                <p>Explain the purpose of functions in Python. Provide an example of defining and using a function.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>Purpose of Functions in Python</h4>
+                    <p>Functions in Python are reusable blocks of code that perform a specific task. They help in
+                        modularizing the
+                        code, making it more organized, readable, and maintainable. Functions can be called multiple
+                        times with
+                        different inputs, promoting code reuse.</p>
+                    <h4>Example of a Function</h4>
+                    <pre>
+                        <code>
+                            # Define a function to calculate the square of a number
+                            def square(number):
+                                return number ** 2
+            
+                            # Call the function
+                            result = square(5)
+                            print("Square of 5 is:", result)
+                        </code>
+                    </pre>
+                    <p>Output:</p>
+                    <pre>
+                        <code>
+                            Square of 5 is: 25
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Question 14</h3>
+                <p>Differentiate between a module and a package in Python.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>Modules and Packages in Python</h4>
+                    <ul>
+                        <li><strong>Module:</strong> A module is a single Python file containing Python code (functions,
+                            variables,
+                            classes, etc.). It serves as a reusable piece of code that can be imported and used in other
+                            programs.
+                            For example, `math.py` could be a module containing mathematical functions.</li>
+                        <li><strong>Package:</strong> A package is a collection of modules organized into a directory
+                            structure. It
+                            allows for a hierarchical organization of code, making it easier to manage and distribute.
+                            For example,
+                            the `numpy` library is a package containing multiple modules for numerical computations.
+                        </li>
+                    </ul>
+                    <p>In summary, a module is a single file, while a package is a directory containing multiple modules
+                        and
+                        possibly sub-packages.</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Question 15</h3>
+                <p>Discuss read and write functions for file operations in Python.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>File Operations in Python</h4>
+                    <p>Python provides built-in functions to handle file operations. The `open()` function is used to
+                        open a file,
+                        and the `close()` method is used to close it. Files can be opened in read (`'r'`), write
+                        (`'w'`), or append
+                        (`'a'`) modes.</p>
+                    <h4>Reading from a File</h4>
+                    <pre>
+                        <code>
+                            # Open and read a file
+                            file = open("example.txt", "r")
+                            content = file.read()
+                            print(content)
+                            file.close()
+                        </code>
+                    </pre>
+                    <h4>Writing to a File</h4>
+                    <pre>
+                        <code>
+                            # Open and write to a file
+                            file = open("example.txt", "w")
+                            file.write("Hello, World!")
+                            file.close()
+                        </code>
+                    </pre>
+                    <p>Using the `with` statement is a more efficient and safer way to handle files, as it automatically
+                        closes the
+                        file after the block of code is executed:</p>
+                    <pre>
+                        <code>
+                            with open("example.txt", "r") as file:
+                                content = file.read()
+                                print(content)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Question 16</h3>
+                <p>Write a Python program that reads a text file, counts the number of words, and prints the count.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>Count Words in a Text File</h4>
+                    <p>Here's a Python program to read a text file, count the number of words, and print the result:</p>
+                    <pre>
+                        <code>
+                            # Read the file and count words
+                            with open("example.txt", "r") as file:
+                                content = file.read()
+                                words = content.split()
+                                word_count = len(words)
+                                print("Number of words in the file:", word_count)
+                        </code>
+                    </pre>
+                    <p>Assuming the file `example.txt` contains:</p>
+                    <pre>
+                        <code>
+                            Hello, World! This is an example file.
+                        </code>
+                    </pre>
+                    <p>Output:</p>
+                    <pre>
+                        <code>
+                            Number of words in the file: 6
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Question 17</h3>
+                <p>Explain the purpose of a framework in programming. Name two Python web frameworks.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>Purpose of a Framework</h4>
+                    <p>A framework is a structure or skeleton that provides a foundation for building applications. It
+                        offers
+                        pre-defined modules, libraries, and tools that handle common tasks, allowing developers to focus
+                        on the
+                        unique aspects of their application.</p>
+                    <h4>Python Web Frameworks</h4>
+                    <ul>
+                        <li><strong>Django:</strong> A high-level web framework that encourages rapid development and
+                            clean,
+                            pragmatic design. It includes features like an ORM, admin panel, and routing system.</li>
+                        <li><strong>Flask:</strong> A micro web framework that provides essential tools and libraries
+                            for building
+                            web applications. It is lightweight and flexible, allowing developers to choose their own
+                            tools and
+                            extensions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Question 18</h3>
+                <p>Choose one of the mentioned frameworks (Web2Py or Django) and briefly describe its key features.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>Django Framework</h4>
+                    <p>Django is a popular Python web framework known for its "batteries-included" philosophy. Some of
+                        its key
+                        features include:</p>
+                    <ul>
+                        <li><strong>ORM (Object-Relational Mapping):</strong> Simplifies database operations by
+                            providing a
+                            high-level abstraction layer.</li>
+                        <li><strong>Admin Interface:</strong> Automatically generates a web-based admin interface for
+                            managing site
+                            content.</li>
+                        <li><strong>URL Routing:</strong> Flexible URL dispatching system that maps URLs to views.</li>
+                        <li><strong>Template Engine:</strong> Powerful template system for generating HTML pages.</li>
+                        <li><strong>Security Features:</strong> Built-in protection against common web vulnerabilities
+                            like XSS and
+                            CSRF attacks.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Question 19</h3>
+                <p>Write a Python program that uses a loop to print all the factors of 128. (e.g., factors of 8 are 1,
+                    2, 4, and 8)
+                </p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>Factors of 128</h4>
+                    <p>Here's a Python program to find and print all the factors of 128:</p>
+                    <pre>
+                        <code>
+                            number = 128
+                            print(f"Factors of {number}:")
+                            for i in range(1, number + 1):
+                                if number % i == 0:
+                                    print(i, end=" ")
+                            print()
+                        </code>
+                    </pre>
+                    <p>Output:</p>
+                    <pre>
+                        <code>
+                            Factors of 128:
+                            1 2 4 8 16 32 64 128 
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>Question 20</h3>
+                <p>Write a Python program to find the factorial of a number (e.g., 8) using a for loop.</p>
+
+                <button onclick="toggleAnswer(this)">Show/Hide Answer</button>
+                <div class="answer">
+                    <h4>Factorial of a Number</h4>
+                    <p>Here's a Python program to calculate the factorial of a number using a for loop:</p>
+                    <pre>
+                        <code>
+                            number = 8
+                            factorial = 1
+                            for i in range(1, number + 1):
+                                factorial *= i
+                            print(f"Factorial of {number} is: {factorial}")
+                        </code>
+                    </pre>
+                    <p>Output:</p>
+                    <pre>
+                        <code>
+                            Factorial of 8 is: 40320
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Python Question Bank. All rights reserved.</p>
+    </footer>
+    <script>
+        function toggleAnswer(button) {
+            const answer = button.nextElementSibling;
+            if (answer.style.display === "none" || answer.style.display === "") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+
+        function toggleAnswers() {
+            const answers = document.querySelectorAll('.answer');
+            answers.forEach(answer => {
+                if (answer.style.display === "none" || answer.style.display === "") {
+                    answer.style.display = "block";
+                } else {
+                    answer.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -58,7 +58,10 @@
             background-color: #e9ecef;
         }
 
-        .question:hover, .question p:hover, .question ul li:hover, .question h3:hover {
+        .question:hover,
+        .question p:hover,
+        .question ul li:hover,
+        .question h3:hover {
             color: #007BFF;
         }
 
@@ -70,10 +73,11 @@
             background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 5px 0;
             position: fixed;
             width: 100%;
             bottom: 0;
+            font-size: 12px;
         }
 
         .toggle-bar {
@@ -84,7 +88,34 @@
             color: white;
             padding: 10px;
             cursor: pointer;
-            user-select: none;
+            /* user-select: none; */
+        }
+
+        .question-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .question-table th,
+        .question-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .question-table th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .question-table a {
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        .question-table a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -95,6 +126,106 @@
         <div class="toggle-bar" onclick="toggleAnswers()">Show/Hide Answers</div>
     </header>
     <main>
+        <table class="question-table">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Question</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="#q1">Describe the process of setting up the Python path and installing Python on a
+                            computer</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="#q2">Explain various data types used in Python.</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="#q3">Explain coding blocks in Python with the help of an example.</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="#q4">Explain the use of if-else statements for creating conditional blocks in
+                            Python.</a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><a href="#q5">Explain the concept of arrays in Python with the help of example.</a></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><a href="#q6">Differentiate between tuples and list with the help of examples.</a></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><a href="#q7">Demonstrate the concept of function in Python with the help of example.</a></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><a href="#q8">Demonstrate the concept of module in Python with the help of example.</a></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><a href="#q9">Discuss File input and output and their importance in Python.</a></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td><a href="#q10">Discuss the process to append text to a file and displaying the text in
+                            Python.</a></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td><a href="#q11">Explain the use of "continue" and "break" statements for loop manipulation in
+                            Python.</a></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td><a href="#q12">Write a Python program that uses a loop to print all prime numbers between 1 and
+                            100.</a></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td><a href="#q13">Explain the purpose of functions in Python. Provide an example of defining and
+                            using a function.</a></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td><a href="#q14">Differentiate between a module and a package in Python.</a></td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td><a href="#q15">Discuss read and write functions for file operations in Python.</a></td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td><a href="#q16">Write a Python program that reads a text file, counts the number of words, and
+                            prints the count.</a></td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td><a href="#q17">Explain the purpose of a framework in programming. Name two Python web
+                            frameworks.</a></td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td><a href="#q18">Choose one of the mentioned frameworks (Web2Py or Django) and briefly describe
+                            its key features.</a></td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td><a href="#q19">Write a Python program that uses a loop to print all the factors of 128.</a></td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td><a href="#q20">Write a Python program to find the factorial of a number (e.g., 8) using a for
+                            loop.</a></td>
+                </tr>
+            </tbody>
+        </table>
         <section id="section-a">
             <h2>Section A: Multiple Choice Questions (MCQs)</h2>
             <div class="question">
@@ -210,7 +341,7 @@
         </section>
         <section id="section-b">
             <h2>Section B: Descriptive Questions</h2>
-            <div class="question">
+            <div class="question" id="q1">
                 <h3>Question 1:</h3>
                 <p> Describe the process of setting up the Python path and installing Python on a
                     computer</p>
@@ -250,7 +381,7 @@
                         Windows: System Properties > Environment Variables > PATH</li>
                 </div>
             </div>
-            <div class="question">
+            <div class="question" id="q2">
                 <h3>Question 2</h3>
                 <p>Explain various data types used in Python.</p>
 
@@ -321,7 +452,7 @@
                         efficiently.</p>
                 </div>
             </div>
-            <div class="question">
+            <div class="question" id="q3">
                 <h3>Question 3</h3>
                 <p>Explain coding blocks in Python with the help of an example.</p>
 
@@ -417,7 +548,7 @@
                 </div>
             </div>
             </div>
-            <div class="question">
+            <div class="question" id="q4">
                 <h3>Question 4</h3>
                 <p>Explain the use of if-else statements for creating conditional blocks in Python.</p>
 
@@ -501,7 +632,7 @@
             </div>
 
             </div>
-            <div class="question">
+            <div class="question" id="q5">
                 <div class="question">
                     <h3>Question 5</h3>
                     <p>Explain the concept of arrays in Python with the help of example.</p>
@@ -594,7 +725,7 @@
                     </div>
                 </div>
             </div>
-            <div class="question">
+            <div class="question" id="q6">
                 <h3>Question 6</h3>
                 <p>Differentiate between tuples and list with the help of examples.</p>
 
@@ -671,7 +802,7 @@
                 </div>
             </div>
 
-            <div class="question">
+            <div class="question" id="q7">
                 <h3>Question 7</h3>
                 <p>Demonstrate the concept of function in Python with the help of example.</p>
 
@@ -714,7 +845,7 @@
                 </div>
             </div>
 
-            <div class="question">
+            <div class="question" id="q8">
                 <h3>Question 8</h3>
                 <p>Demonstrate the concept of module in Python with the help of example.</p>
 
@@ -759,7 +890,7 @@
                 </div>
             </div>
 
-            <div class="question">
+            <div class="question" id="q9">
                 <h3>Question 9</h3>
                 <p>Discuss File input and output and their importance in Python.</p>
 
@@ -804,7 +935,7 @@
                 </div>
             </div>
 
-            <div class="question">
+            <div class="question" id="q10">
                 <h3>Question 10</h3>
                 <p>Discuss the process to append text to a file and displaying the text in Python.</p>
 
@@ -863,7 +994,7 @@
                     </p>
                 </div>
             </div>
-            <div class="question">
+            <div class="question" id="q11">
                 <h3>Question 11</h3>
                 <p>Explain the use of "continue" and "break" statements for loop manipulation in Python.</p>
 
@@ -943,7 +1074,7 @@
                         your loops to meet specific requirements.</p>
                 </div>
             </div>
-            <div class="question">
+            <div class="question" id="q12">
                 <h3>Question 12</h3>
                 <p>Write a Python program that uses a loop to print all prime numbers between 1 and 100.</p>
 
@@ -982,7 +1113,7 @@
                 </div>
             </div>
 
-            <div class="question">
+            <div class="question" id="q13">
                 <h3>Question 13</h3>
                 <p>Explain the purpose of functions in Python. Provide an example of defining and using a function.</p>
 
@@ -1015,7 +1146,7 @@
                 </div>
             </div>
 
-            <div class="question">
+            <div class="question" id="q14">
                 <h3>Question 14</h3>
                 <p>Differentiate between a module and a package in Python.</p>
 
@@ -1041,7 +1172,7 @@
                 </div>
             </div>
 
-            <div class="question">
+            <div class="question" id="q15">
                 <h3>Question 15</h3>
                 <p>Discuss read and write functions for file operations in Python.</p>
 
@@ -1085,7 +1216,7 @@
                 </div>
             </div>
 
-            <div class="question">
+            <div class="question" id="q16">
                 <h3>Question 16</h3>
                 <p>Write a Python program that reads a text file, counts the number of words, and prints the count.</p>
 
@@ -1118,7 +1249,7 @@
                 </div>
             </div>
 
-            <div class="question">
+            <div class="question" id="q17">
                 <h3>Question 17</h3>
                 <p>Explain the purpose of a framework in programming. Name two Python web frameworks.</p>
 
@@ -1144,7 +1275,7 @@
                 </div>
             </div>
 
-            <div class="question">
+            <div class="question" id="q18">
                 <h3>Question 18</h3>
                 <p>Choose one of the mentioned frameworks (Web2Py or Django) and briefly describe its key features.</p>
 
@@ -1170,7 +1301,7 @@
                 </div>
             </div>
 
-            <div class="question">
+            <div class="question" id="q19">
                 <h3>Question 19</h3>
                 <p>Write a Python program that uses a loop to print all the factors of 128. (e.g., factors of 8 are 1,
                     2, 4, and 8)
@@ -1200,7 +1331,7 @@
                 </div>
             </div>
 
-            <div class="question">
+            <div class="question" id="q20">
                 <h3>Question 20</h3>
                 <p>Write a Python program to find the factorial of a number (e.g., 8) using a for loop.</p>
 

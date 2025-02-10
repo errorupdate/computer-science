@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Notes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 1px solid #3498db;
+            padding-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .unit {
+            margin-bottom: 20px;
+        }
+
+        .unit h3 {
+            color: #3498db;
+            cursor: pointer;
+        }
+
+        .unit h4 {
+            color: #3498db;
+            cursor: pointer;
+        }
+
+        .unit .content {
+            display: none;
+            margin-left: 20px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .unit .content.show {
+            display: block;
+            max-height: 1000px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Python Notes</h1>
+    </header>
+    <main>
+        <section class="unit" id="unit1">
+            <h2 onclick="toggleContent(this)">Unit 1: Introduction to Python</h2>
+            <div class="content">
+                <h3 onclick="toggleContent(this)">1.1 Overview of Python</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">1.1.1 Introduction to Python Character Set</h4>
+                    <div class="content">
+                        <p>The Python character set includes letters, digits, and special symbols that are used to write Python programs. It consists of:</p>
+                        <ul>
+                            <li><strong>Letters:</strong> A-Z, a-z</li>
+                            <li><strong>Digits:</strong> 0-9</li>
+                            <li><strong>Special Symbols:</strong> + - * / % = <> ( ) [ ] { } , . : ; ' " # @</li>
+                            <li><strong>Whitespace characters:</strong> space, tab, newline</li>
+                        </ul>
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.1.2 Python Tokens</h4>
+                    <div class="content">
+                        <p>Tokens are the smallest units in a Python program. They include:</p>
+                        <ul>
+                            <li><strong>Keywords:</strong> Reserved words with special meaning, e.g., <code>if</code>, <code>else</code>, <code>while</code>, <code>for</code>, <code>def</code>, <code>return</code>.</li>
+                            <li><strong>Identifiers:</strong> Names given to variables, functions, classes, etc. Must start with a letter or underscore, followed by letters, digits, or underscores.</li>
+                            <li><strong>Literals:</strong> Fixed values such as numbers (<code>123</code>), strings (<code>"hello"</code>), booleans (<code>True</code>, <code>False</code>).</li>
+                            <li><strong>Operators:</strong> Symbols that perform operations, e.g., <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>==</code>, <code>!=</code>.</li>
+                            <li><strong>Delimiters:</strong> Characters that separate tokens, e.g., <code>()</code>, <code>{}</code>, <code>[]</code>, <code>,</code>, <code>:</code>, <code>.</code>.</li>
+                        </ul>
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.1.3 Variables</h4>
+                    <div class="content">
+                        <p>Variables are used to store data values. In Python, you don't need to declare a variable before using it. You can assign a value to a variable using the assignment operator <code>=</code>.</p>
+                        <pre><code>example_integer = 42
+negative_integer = -42</code></pre>
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.1.4 Lvalue and Rvalue Concepts</h4>
+                    <div class="content">
+                        <p><strong>Lvalue (Left Value):</strong> Refers to a memory location that identifies an object. It appears on the left-hand side of an assignment operator.</p>
+                        <p><strong>Rvalue (Right Value):</strong> Refers to the data value that is stored at some address in memory. It appears on the right-hand side of an assignment operator.</p>
+                        <pre><code>x = 5</code></pre>
+                        <p>Here, <code>x</code> is an Lvalue, and <code>5</code> is an Rvalue.</p>
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.1.5 Use of Comments</h4>
+                    <div class="content">
+                        <p>Comments are used to explain code and make it more readable. They are ignored by the Python interpreter.</p>
+                        <ul>
+                            <li><strong>Single-line comments:</strong> Start with <code>#</code>.</li>
+                            <pre><code># This is a single-line comment
+x = 10  # This is an inline comment</code></pre>
+                            <li><strong>Multi-line comments:</strong> Enclosed in triple quotes (<code>'''</code> or <code>"""</code>).</li>
+                            <pre><code>"""
+This is a multi-line comment
+that spans multiple lines.
+"""</code></pre>
+                        </ul>
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">1.2 Overview of Data Types</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">1.2.1 Number Types : Integer, Floating point, Complex</h4>
+                    <div class="content">
+                        <!-- Content for Number Types -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.2.5 Boolean Type</h4>
+                    <div class="content">
+                        <!-- Content for Boolean Type -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.2.2 Sequence Types: String, List, Tuple</h4>
+                    <div class="content">
+                        <!-- Content for Sequence Types -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.2.6 None Type</h4>
+                    <div class="content">
+                        <!-- Content for None Type -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.2.3 Mapping Type: Dictionary</h4>
+                    <div class="content">
+                        <!-- Content for Mapping Type -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.2.4 Distinction between Mutable and Immutable data Types.</h4>
+                    <div class="content">
+                        <!-- Content for Distinction between Mutable and Immutable data Types -->
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">1.3 Understanding Operators</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">1.3.1 Arithmetic Operators</h4>
+                    <div class="content">
+                        <!-- Content for Arithmetic Operators -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.3.2 Relational Operators</h4>
+                    <div class="content">
+                        <!-- Content for Relational Operators -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.3.3 Logical Operators</h4>
+                    <div class="content">
+                        <!-- Content for Logical Operators -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.3.5 Assignment Operators</h4>
+                    <div class="content">
+                        <!-- Content for Assignment Operators -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.3.4 Augmented Assignment Operators</h4>
+                    <div class="content">
+                        <!-- Content for Augmented Assignment Operators -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.3.6 Expression and Statements</h4>
+                    <div class="content">
+                        <!-- Content for Expression and Statements -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.3.7 Type Conversion and Input/Output Mechanisms</h4>
+                    <div class="content">
+                        <!-- Content for Type Conversion and Input/Output Mechanisms -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.3.8 Precedence of Operator</h4>
+                    <div class="content">
+                        <!-- Content for Precedence of Operator -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.3.9 Expressions Evaluation</h4>
+                    <div class="content">
+                        <!-- Content for Expressions Evaluation -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="unit">
+            <h2 onclick="toggleContent(this)">Unit 2: Conditional and Iterative statements</h2>
+            <div class="content">
+                <h3 onclick="toggleContent(this)">2.1 Conditional Statements</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">2.1.1 simple if Statement</h4>
+                    <div class="content">
+                        <!-- Content for simple if Statement -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.1.2 if-else Statement</h4>
+                    <div class="content">
+                        <!-- Content for if-else Statement -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.1.3 if-elif-else Statement</h4>
+                    <div class="content">
+                        <!-- Content for if-elif-else Statement -->
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">2.2 Iterative statements</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">2.2.2 while Loop</h4>
+                    <div class="content">
+                        <!-- Content for while Loop -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.2.1 for Loop</h4>
+                    <div class="content">
+                        <!-- Content for for Loop -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.2.3 Range function</h4>
+                    <div class="content">
+                        <!-- Content for Range function -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.2.4 Break and continue statements</h4>
+                    <div class="content">
+                        <!-- Content for Break and continue statements -->
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.2.5 nested loops</h4>
+                    <div class="content">
+                        <!-- Content for nested loops -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="unit" id="unit3">
+            <h2 onclick="toggleContent(this)">Unit 3: String, List, Tuples, Set, and Dictionary</h2>
+            <div class="content">
+                <h3 onclick="toggleContent(this)">3.1 String</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">3.1.1 String Basics</h4>
+                    <div class="content">
+                        <p>Strings in Python are sequences of characters. They are immutable, meaning they cannot be changed after they are
+                            created.</p>
+                        </div>
+                        <h4 onclick="toggleContent(this)">3.1.2 String Operations</h4>
+                        <div class="content">
+                            <h5>Indexing</h5>
+                            <p>Accessing individual characters in a string using their position (index).</p>
+                            <pre><code>str1 = "Hello"
+                        print(str1[0])  # Output: H
+                        print(str1[1])  # Output: e</code></pre>
+                        
+                            <h5>Concatenation</h5>
+                            <p>Combining two or more strings using the <code>+</code> operator.</p>
+                            <pre><code>str1 = "Hello"
+                        str2 = "World"
+                        result = str1 + " " + str2
+                        print(result)  # Output: Hello World</code></pre>
+                        
+                            <h5>Repetition</h5>
+                            <p>Repeating a string multiple times using the <code>*</code> operator.</p>
+                            <pre><code>str1 = "Hello"
+                        result = str1 * 3
+                        print(result)  # Output: HelloHelloHello</code></pre>
+                        
+                            <h5>Membership</h5>
+                            <p>Checking if a substring exists within a string using the <code>in</code> operator.</p>
+                            <pre><code>str1 = "Hello World"
+                        print("World" in str1)  # Output: True
+                        print("world" in str1)  # Output: False</code></pre>
+                        
+                            <h5>Slicing</h5>
+                            <p>Extracting a portion of a string using the slicing syntax <code>string[start:end]</code>.</p>
+                            <pre><code>str1 = "Hello World"
+                        print(str1[0:5])  # Output: Hello
+                        print(str1[6:])   # Output: World</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">3.1.3 Traversing a String Using Loops</h4>
+                        <div class="content">
+                            <p>You can traverse a string using loops to access each character individually.</p>
+                            <pre><code>str1 = "Hello"
+                        for char in str1:
+                            print(char)
+                        # Output:
+                        # H
+                        # e
+                        # l
+                        # l
+                        # o</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">3.1.4 Built-in Functions</h4>
+                        <div class="content">
+                            <p>Python provides several built-in functions for string manipulation:</p>
+                            <ul>
+                                <li><code>len()</code>: Returns the length of the string.</li>
+                                <li><code>str()</code>: Converts a value to a string.</li>
+                                <li><code>upper()</code>: Converts all characters to uppercase.</li>
+                                <li><code>lower()</code>: Converts all characters to lowercase.</li>
+                                <li><code>replace()</code>: Replaces a substring with another substring.</li>
+                            </ul>
+                            <pre><code>str1 = "Hello World"
+                        print(len(str1))          # Output: 11
+                        print(str1.upper())       # Output: HELLO WORLD
+                        print(str1.lower())       # Output: hello world
+                        print(str1.replace("World", "Python"))  # Output: Hello Python</code></pre>
+                        </div>
+                    </div>
+                <h3 onclick="toggleContent(this)">3.2 Lists</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">3.2.1 List Basics</h4>
+                    <div class="content">
+                        <h4 onclick="toggleContent(this)">3.2.1 Introduction</h4>
+                        <div class="content">
+                            <p>Lists are ordered collections of items that are mutable and can contain elements of different types.</p>
+                        </div>
+                        <h4 onclick="toggleContent(this)">3.2.2 Indexing in List</h4>
+                        <div class="content">
+                            <p>Accessing individual elements in a list using their position (index).</p>
+                            <pre><code>my_list = [10, 20, 30, 40, 50]
+                    print(my_list[0])  # Output: 10
+                    print(my_list[2])  # Output: 30</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">3.2.3 List Operations</h4>
+                        <div class="content">
+                            <h5>Concatenation</h5>
+                            <p>Combining two or more lists using the <code>+</code> operator.</p>
+                            <pre><code>list1 = [1, 2, 3]
+                    list2 = [4, 5, 6]
+                    result = list1 + list2
+                    print(result)  # Output: [1, 2, 3, 4, 5, 6]</code></pre>
+                    
+                            <h5>Repetition</h5>
+                            <p>Repeating a list multiple times using the <code>*</code> operator.</p>
+                            <pre><code>my_list = [1, 2, 3]
+                    result = my_list * 3
+                    print(result)  # Output: [1, 2, 3, 1, 2, 3, 1, 2, 3]</code></pre>
+                    
+                            <h5>Membership</h5>
+                            <p>Checking if an element exists within a list using the <code>in</code> operator.</p>
+                            <pre><code>my_list = [10, 20, 30, 40, 50]
+                    print(20 in my_list)  # Output: True
+                    print(60 in my_list)  # Output: False</code></pre>
+                    
+                            <h5>Slicing</h5>
+                            <p>Extracting a portion of a list using the slicing syntax <code>list[start:end]</code>.</p>
+                            <pre><code>my_list = [10, 20, 30, 40, 50]
+                    print(my_list[1:4])  # Output: [20, 30, 40]
+                    print(my_list[:3])   # Output: [10, 20, 30]</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">3.2.4 Traversing a List</h4>
+                        <div class="content">
+                            <p>Iterating over each element in a list using loops.</p>
+                            <pre><code>my_list = [10, 20, 30, 40, 50]
+                    for item in my_list:
+                        print(item)
+                    # Output:
+                    # 10
+                    # 20
+                    # 30
+                    # 40
+                    # 50</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">3.2.5 Built-in List Functions</h4>
+                        <div class="content">
+                            <p>Python provides several built-in functions for list manipulation:</p>
+                            <ul>
+                                <li><code>len()</code>: Returns the length of the list.</li>
+                                <li><code>append()</code>: Adds an element to the end of the list.</li>
+                                <li><code>extend()</code>: Adds all elements of a list to another list.</li>
+                                <li><code>insert()</code>: Inserts an element at a specified position.</li>
+                                <li><code>remove()</code>: Removes the first occurrence of an element.</li>
+                                <li><code>pop()</code>: Removes and returns the element at a specified position.</li>
+                                <li><code>clear()</code>: Removes all elements from the list.</li>
+                                <li><code>index()</code>: Returns the index of the first occurrence of an element.</li>
+                                <li><code>count()</code>: Returns the number of occurrences of an element.</li>
+                                <li><code>sort()</code>: Sorts the list in ascending order.</li>
+                                <li><code>reverse()</code>: Reverses the order of the list.</li>
+                            </ul>
+                            <pre><code>my_list = [10, 20, 30, 40, 50]
+                    print(len(my_list))  # Output: 5
+                    my_list.append(60)
+                    print(my_list)  # Output: [10, 20, 30, 40, 50, 60]
+                    my_list.extend([70, 80])
+                    print(my_list)  # Output: [10, 20, 30, 40, 50, 60, 70, 80]
+                    my_list.insert(2, 25)
+                    print(my_list)  # Output: [10, 20, 25, 30, 40, 50, 60, 70, 80]
+                    my_list.remove(25)
+                    print(my_list)  # Output: [10, 20, 30, 40, 50, 60, 70, 80]
+                    print(my_list.pop(3))  # Output: 40
+                    print(my_list)  # Output: [10, 20, 30, 50, 60, 70, 80]
+                    my_list.clear()
+                    print(my_list)  # Output: []</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">3.2.6 Linear Search on List of Numbers</h4>
+                        <div class="content">
+                            <p>Searching for an element in a list by checking each element sequentially.</p>
+                            <pre><code>def linear_search(lst, target):
+                        for i in range(len(lst)):
+                            if lst[i] == target:
+                                return i
+                        return -1
+                    
+                    my_list = [10, 20, 30, 40, 50]
+                    print(linear_search(my_list, 30))  # Output: 2
+                    print(linear_search(my_list, 60))  # Output: -1</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">3.2.7 Counting the Frequency of Elements in a List</h4>
+                        <div class="content">
+                            <p>Counting how many times each element appears in a list.</p>
+                            <pre><code>from collections import Counter
+                    
+                    my_list = [10, 20, 30, 20, 40, 30, 30, 50]
+                    frequency = Counter(my_list)
+                    print(frequency)  # Output: Counter({30: 3, 20: 2, 10: 1, 40: 1, 50: 1})</code></pre>
+                        </div>
+                    </div>
+
+                </div>
+                <h3 onclick="toggleContent(this)">3.3 Tuples</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">3.3.1 Tuple Basics</h4>
+                    <div class="content">
+                        <!-- Content for Tuple Basics -->
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">3.4 Set</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">3.4.1 Set Basics</h4>
+                    <div class="content">
+                        <!-- Content for Set Basics -->
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">3.5 Dictionary</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">3.5.1 Dictionary Basics</h4>
+                    <div class="content">
+                        <!-- Content for Dictionary Basics -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="unit">
+            <h2 onclick="toggleContent(this)">Unit 4: Python Functions, Modules and packages</h2>
+            <div class="content">
+                <h3 onclick="toggleContent(this)">4.1 Functions</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">4.1.1 Function Basics</h4>
+                    <div class="content">
+                        <!-- Content for Function Basics -->
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">4.2 Modules and Packages</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">4.2.1 Module Basics</h4>
+                    <div class="content">
+                        <!-- Content for Module Basics -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="unit">
+            <h2 onclick="toggleContent(this)">Unit 5: Numpy</h2>
+            <div class="content">
+                <h3 onclick="toggleContent(this)">5.1 Introduction to NumPY</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">5.1.1 NumPY Basics</h4>
+                    <div class="content">
+                        <!-- Content for NumPY Basics -->
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">5.2 Installation of NumPy</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">5.2.1 Installing NumPY</h4>
+                    <div class="content">
+                        <!-- Content for Installing NumPY -->
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">5.3 NumPY Arrays</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">5.3.1 Array Basics</h4>
+                    <div class="content">
+                        <!-- Content for Array Basics -->
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">5.4 Array indexing and Slicing</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">5.4.1 Indexing and Slicing Basics</h4>
+                    <div class="content">
+                        <!-- Content for Indexing and Slicing Basics -->
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">5.5 Array Operations</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">5.5.1 Array Operations Basics</h4>
+                    <div class="content">
+                        <!-- Content for Array Operations Basics -->
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">5.6 Linear Algebra with NumPY</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">5.6.1 Linear Algebra Basics</h4>
+                    <div class="content">
+                        <!-- Content for Linear Algebra Basics -->
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">5.7 Files input and output with NumPy</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">5.7.1 File I/O Basics</h4>
+                    <div class="content">
+                        <!-- Content for File I/O Basics -->
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">5.8 Broadcasting in NumPY</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">5.8.1 Broadcasting Basics</h4>
+                    <div class="content">
+                        <!-- Content for Broadcasting Basics -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="unit">
+            <h2 onclick="toggleContent(this)">Unit 6: Exception and File Handling in Python</h2>
+            <div class="content">
+                <h3 onclick="toggleContent(this)">6.1 Exception Handling</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">6.1.1 Exception Basics</h4>
+                    <div class="content">
+                        <!-- Content for Exception Basics -->
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)">6.2 File Handling</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">6.2.1 File Handling Basics</h4>
+                    <div class="content">
+                        <!-- Content for File Handling Basics -->
+                         <p> Uttam Kumar</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function toggleContent(element) {
+            const content = element.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

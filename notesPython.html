@@ -19,14 +19,18 @@
             color: white;
             padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         header h1 {
             margin: 0;
+            font-size:2em;
+            animation: fadeIn 2s ease-in-out;
         }
 
         main {
             padding: 20px;
+            animation: slideIn 2s ease-in-out;
         }
 
         section {
@@ -38,6 +42,10 @@
             border-bottom: 1px solid #3498db;
             padding-bottom: 5px;
             cursor: pointer;
+            transition: colored 0.3s ease;
+        }
+        h2:hover {
+            color: #3498db;
         }
 
         .unit {
@@ -47,11 +55,19 @@
         .unit h3 {
             color: #3498db;
             cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .unit h3:hover {
+            color: #2c3e50;
         }
 
         .unit h4 {
             color: #3498db;
             cursor: pointer;
+            transition:color 0.3s ease;
+        }
+        .unit h4:hover {
+            color: #2c3e50;
         }
 
         .unit .content {
@@ -69,6 +85,55 @@
             border-radius: 5px;
             font-family: Arial, sans-serif;
             color: #333;
+            opacity: 1;
+        }
+        pre {
+            background-color: #e8e8e8;
+            padding:10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background-color: #e8e8e8;
+            padding: 2px 4px;
+            border-radius:3px;
+        }
+        @media(max-width:600px){
+            body{
+                padding:10px;
+
+            }
+            header{
+                padding:10px 0;
+            }
+            main{
+                padding: 10px;
+            }
+            .unit .content{
+                margin-left:10px;
+                padding:10px;
+            }
+            pre{
+                padding:5px;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -106,9 +171,79 @@
                     </div>
                     <h4 onclick="toggleContent(this)">1.1.3 Variables</h4>
                     <div class="content">
-                        <p>Variables are used to store data values. In Python, you don't need to declare a variable before using it. You can assign a value to a variable using the assignment operator <code>=</code>.</p>
+                        <p>Variables are used to store data values. In Python, you don't need to declare a variable before using it. You can assign a value to a variable using the assignment operator.<p>Variables are a big part of Python and all computer programming languages.
+                        A variable is simply a placeholder for information that may vary (change). For
+                        example, when you browse Amazon today, you can see your name and “member
+                        since” date appear on their home page.</p></p>
                         <pre><code>example_integer = 42
 negative_integer = -42</code></pre>
+                            <h5>Creating valid variable names</h5>
+                            <ol>
+                                <li>The variable start with letter or underscore(_).</li>
+                                <li>After the first letter use letters,numbers,or underscores.</li>
+                                <li>Variable names are case-sensitive, so once you make up a name, any other
+                                reference to that variable must use the same uppercase and lowercase letters
+                                as the name you originally made up</li>
+                                <li>Variable names cannot be enclosed in, or contain, single or double quotation
+                                marks.</li>
+                            </ol>
+                            <h3>some built-in function for numbers</h3>
+                            <ul>
+                                <li>math.acos(x) Returns the arc cosine of x in radians.</li>
+                                <li>math.atan(x) Returns the arc tangent of x, in radians.</li>
+                                <li>math.atan2(y, x) Returns atan(y / x), in radians.</li>
+                                <li>math.ceil(x) Returns the ceiling of x, the smallest integer greater than or equal to x.</li>
+                                <li>math.cos(x) Returns the cosine of x radians.</li>
+                                <li>math.degrees(x) Converts angle x from radians to degrees.</li>
+                                <li>math.e Returns the mathematical constant e (2.718281 . . .).</li>
+                                <li>math.exp(x) Returns e raised to the power x, where e is the base of natural logarithms.</li>
+                                <li>math.factorial(x) Returns the factorial of x.</li>
+                                <li>math.floor() Returns the floor of x, the largest integer less than or equal to x.</li>
+                                <li>math.isnan(x) Returns True if x is not a number, otherwise returns False.</li>
+                                <li>math.log(x,y) Returns the natural logarithm of x to base y.</li>
+                                <li>math.log2(x) Returns the base-2 logarithm of x.</li>
+                                <li>math.pi Returns the mathematical constant pi (3.141592 . . .).</li>
+                                <li>math.pow(x, y) Returns x raised to the power y.</li>
+                                <li>math.radians(x) Converts angle x from degrees to radians.</li>
+                                <li>math.sin(x) Returns the arc sine of x, in radians.</li>
+                                <li>math.sqrt(x) Takes any number of numeric arguments and returns whichever one is
+                                the smallest.</li>
+                                <li>math.tan(x) Returns the tangent of x radians.</li>
+                                <li>math.tau() Returns the mathematical constant tau (6.283185 . . .).</li>
+                            </ul>
+                            <pre>
+                                <code>
+                                    pi = 3.14159265358979
+                                    x = 128
+                                    y = -345.6789087
+                                    z = -999.9999
+                                    print(abs(z))
+                                    print(int(z))
+                                    print(int(abs(z)))
+                                    print(round(pi,4))
+                                    print(bin(x))
+                                    print(hex(x))
+                                    print(oct(x))
+                                    print(max(pi,x,y,z))
+                                    print(min(pi,x,y,z))
+                                    print(type(pi))
+                                    print(type(str(y)))
+                                </code>
+                                <code>
+                                    999.9999
+                                    -999
+                                    999
+                                    3.1416
+                                    0b10000000
+                                    0x80
+                                    0o200
+                                    128
+                                    -999.9999
+                                    <class 'float'>
+                                        <class 'str'>
+
+                                </code>
+                            </pre>
                     </div>
                     <h4 onclick="toggleContent(this)">1.1.4 Lvalue and Rvalue Concepts</h4>
                     <div class="content">
@@ -134,73 +269,194 @@ that spans multiple lines.
                 </div>
                 <h3 onclick="toggleContent(this)">1.2 Overview of Data Types</h3>
                 <div class="content">
-                    <h4 onclick="toggleContent(this)">1.2.1 Number Types : Integer, Floating point, Complex</h4>
-                    <div class="content">
-                        <!-- Content for Number Types -->
-                    </div>
-                    <h4 onclick="toggleContent(this)">1.2.5 Boolean Type</h4>
-                    <div class="content">
-                        <!-- Content for Boolean Type -->
-                    </div>
-                    <h4 onclick="toggleContent(this)">1.2.2 Sequence Types: String, List, Tuple</h4>
-                    <div class="content">
-                        <!-- Content for Sequence Types -->
-                    </div>
-                    <h4 onclick="toggleContent(this)">1.2.6 None Type</h4>
-                    <div class="content">
-                        <!-- Content for None Type -->
-                    </div>
-                    <h4 onclick="toggleContent(this)">1.2.3 Mapping Type: Dictionary</h4>
-                    <div class="content">
-                        <!-- Content for Mapping Type -->
-                    </div>
-                    <h4 onclick="toggleContent(this)">1.2.4 Distinction between Mutable and Immutable data Types.</h4>
-                    <div class="content">
-                        <!-- Content for Distinction between Mutable and Immutable data Types -->
+                        <h4 onclick="toggleContent(this)">1.2.1 Number Types: Integer, Floating Point, Complex</h4>
+                        <div class="content">
+                            <h5>Integer</h5>
+                            <p>Whole numbers without a fractional part. They can be positive or negative.</p>
+                            <p>
+                            <h5>Definition:</h5> An integer is a whole number that can be positive, negative, or zero. It does not have a fractional
+                            part.</p>
+                            <p>
+                            <h5>Characteristic:</h5> Integers in Python can be of arbitrary size, limited only by the available memory of the
+                            system.
+                            <br>Integers in Python can be of arbitrary size, limited only by the available memory of the system.
+                            </p>
+                            <pre><code>example_integer = 42
+                    negative_integer = -42</code></pre>
+                    <pre>
+                        <code>a = 10 # Decimal integer
+                        b = -5 # Negative integer
+                        c = 0 # Zero
+                        d = 0b1010 # Binary representation (10 in decimal)
+                        e = 0o12 # Octal representation (10 in decimal)
+                        f = 0xA # Hexadecimal representation (10 in decimal)
+                        print(a, b, c, d, e, f)
+                        print(a+b+c)</code>
+                        <code>
+                            10 -5 0 10 10 10
+                            5
+                        </code>
+                    </pre>
+                            <h5>Floating Point</h5>
+                            <p>Numbers with a decimal point. They are used to represent real numbers.</p>
+                            <pre><code>example_float = 3.14
+                    negative_float = -3.14</code></pre>
+                            <h5>Complex</h5>
+                            <p>Numbers with a real and an imaginary part. They are written in the form <code>a + bj</code>, where
+                                <code>a</code> is the real part and <code>b</code> is the imaginary part.</p>
+                            <pre><code>example_complex = 2 + 3j
+                    negative_complex = -2 - 3j</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">1.2.2 Boolean Type</h4>
+                        <div class="content">
+                            <p>Represents one of two values: <code>True</code> or <code>False</code>.</p>
+                            <pre><code>is_active = True
+                    is_closed = False</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">1.2.3 Sequence Types: String, List, Tuple</h4>
+                        <div class="content">
+                            <h5>String</h5>
+                            <p>A sequence of characters. Strings are immutable.</p>
+                            <pre><code>example_string = "Hello, World!"</code></pre>
+                            <h5>List</h5>
+                            <p>An ordered collection of items that are mutable and can contain elements of different types.</p>
+                            <pre><code>example_list = [1, 2, 3, "a", "b", "c"]</code></pre>
+                            <h5>Tuple</h5>
+                            <p>An ordered collection of items that are immutable and can contain elements of different types.</p>
+                            <pre><code>example_tuple = (1, 2, 3, "a", "b", "c")</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">1.2.4 None Type</h4>
+                        <div class="content">
+                            <p>Represents the absence of a value or a null value. It is an object of its own datatype, the
+                                <code>NoneType</code>.</p>
+                            <pre><code>example_none = None</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">1.2.5 Mapping Type: Dictionary</h4>
+                        <div class="content">
+                            <p>An unordered collection of key-value pairs. Keys must be unique and immutable.</p>
+                            <pre><code>example_dict = {"name": "Alice", "age": 25, "city": "New York"}</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">1.2.6 Distinction between Mutable and Immutable Data Types</h4>
+                        <div class="content">
+                            <h5>Mutable</h5>
+                            <p>Objects that can be changed after they are created (e.g., lists, dictionaries).</p>
+                            <pre><code>example_list = [1, 2, 3]
+                    example_list[0] = 10  # List is mutable</code></pre>
+                            <h5>Immutable</h5>
+                            <p>Objects that cannot be changed after they are created (e.g., strings, tuples).</p>
+                            <pre><code>example_string = "Hello"
+                    # example_string[0] = "h"  # This will raise an error because strings are immutable</code></pre>
+                        
                     </div>
                 </div>
                 <h3 onclick="toggleContent(this)">1.3 Understanding Operators</h3>
                 <div class="content">
                     <h4 onclick="toggleContent(this)">1.3.1 Arithmetic Operators</h4>
                     <div class="content">
-                        <!-- Content for Arithmetic Operators -->
+                        <p>Arithmetic operators are used to perform mathematical operations such as addition, subtraction, multiplication,
+                            division, modulus, exponentiation, and floor division.</p>
+                        <pre><code>a = 10
+                    b = 3
+                    print(a + b)  # Addition: 13
+                    print(a - b)  # Subtraction: 7
+                    print(a * b)  # Multiplication: 30
+                    print(a / b)  # Division: 3.3333333333333335
+                    print(a % b)  # Modulus: 1
+                    print(a ** b) # Exponentiation: 1000
+                    print(a // b) # Floor Division: 3</code></pre>
                     </div>
                     <h4 onclick="toggleContent(this)">1.3.2 Relational Operators</h4>
                     <div class="content">
-                        <!-- Content for Relational Operators -->
+                        <p>Relational operators are used to compare two values. They include operators like equal to, not equal to, greater
+                            than, less than, greater than or equal to, and less than or equal to.</p>
+                        <pre><code>a = 10
+                    b = 3
+                    print(a == b)  # Equal to: False
+                    print(a != b)  # Not equal to: True
+                    print(a > b)   # Greater than: True
+                    print(a < b)   # Less than: False
+                    print(a >= b)  # Greater than or equal to: True
+                    print(a <= b)  # Less than or equal to: False</code></pre>
                     </div>
                     <h4 onclick="toggleContent(this)">1.3.3 Logical Operators</h4>
                     <div class="content">
-                        <!-- Content for Logical Operators -->
-                    </div>
-                    <h4 onclick="toggleContent(this)">1.3.5 Assignment Operators</h4>
-                    <div class="content">
-                        <!-- Content for Assignment Operators -->
+                        <p>Logical operators are used to combine conditional statements. They include <code>and</code>, <code>or</code>, and
+                            <code>not</code>.</p>
+                        <pre><code>a = True
+                    b = False
+                    print(a and b)  # Logical AND: False
+                    print(a or b)   # Logical OR: True
+                    print(not a)    # Logical NOT: False</code></pre>
                     </div>
                     <h4 onclick="toggleContent(this)">1.3.4 Augmented Assignment Operators</h4>
                     <div class="content">
-                        <!-- Content for Augmented Assignment Operators -->
+                        <p>Augmented assignment operators are used to assign a value to a variable after performing an operation on it. They
+                            include <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>**=</code>,
+                            and <code>//=</code>.</p>
+                        <pre><code>a = 10
+                    a += 3  # Equivalent to a = a + 3
+                    print(a)  # 13
+                    a -= 3  # Equivalent to a = a - 3
+                    print(a)  # 10
+                    a *= 3  # Equivalent to a = a * 3
+                    print(a)  # 30
+                    a /= 3  # Equivalent to a = a / 3
+                    print(a)  # 10.0
+                    a %= 3  # Equivalent to a = a % 3
+                    print(a)  # 1.0
+                    a **= 3  # Equivalent to a = a ** 3
+                    print(a)  # 1.0
+                    a //= 3  # Equivalent to a = a // 3
+                    print(a)  # 0.0</code></pre>
+                    </div>
+                    <h4 onclick="toggleContent(this)">1.3.5 Assignment Operators</h4>
+                    <div class="content">
+                        <p>Assignment operators are used to assign values to variables. The basic assignment operator is <code>=</code>.</p>
+                        <pre><code>a = 10
+                    b = 3
+                    c = a + b
+                    print(c)  # 13</code></pre>
                     </div>
                     <h4 onclick="toggleContent(this)">1.3.6 Expression and Statements</h4>
                     <div class="content">
-                        <!-- Content for Expression and Statements -->
+                        <p>An expression is a combination of values, variables, operators, and function calls that are evaluated to produce
+                            a result. A statement is an instruction that the Python interpreter can execute.</p>
+                        <pre><code>a = 10
+                    b = 3
+                    c = a + b  # Expression
+                    print(c)  # Statement</code></pre>
                     </div>
                     <h4 onclick="toggleContent(this)">1.3.7 Type Conversion and Input/Output Mechanisms</h4>
                     <div class="content">
-                        <!-- Content for Type Conversion and Input/Output Mechanisms -->
+                        <p>Type conversion is converting one data type to another using functions like <code>int()</code>,
+                            <code>float()</code>, <code>str()</code>, etc. Input/Output mechanisms include functions like
+                            <code>input()</code> for taking input from the user and <code>print()</code> for displaying output.</p>
+                        <pre><code>a = "10"
+                    b = int(a)  # Type conversion from string to integer
+                    print(b)  # 10
+                    c = float(a)  # Type conversion from string to float
+                    print(c)  # 10.0
+                    d = str(b)  # Type conversion from integer to string
+                    print(d)  # "10"
+                    name = input("Enter your name: ")  # Input from user
+                    print("Hello, " + name)  # Output to user</code></pre>
                     </div>
-                    <h4 onclick="toggleContent(this)">1.3.8 Precedence of Operator</h4>
+                    <h4 onclick="toggleContent(this)">1.3.8 Precedence of Operators</h4>
                     <div class="content">
-                        <!-- Content for Precedence of Operator -->
-                    </div>
-                    <h4 onclick="toggleContent(this)">1.3.9 Expressions Evaluation</h4>
-                    <div class="content">
-                        <!-- Content for Expressions Evaluation -->
+                        <p>The precedence of operators is the order in which operations are performed in an expression. Operators with
+                            higher precedence are evaluated before operators with lower precedence.</p>
+                        <pre><code>a = 10
+                    b = 3
+                    c = 2
+                    result = a + b * c  # Multiplication has higher precedence than addition
+                    print(result)  # 16
+                    result = (a + b) * c  # Parentheses change the order of evaluation
+                    print(result)  # 26</code></pre>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="unit">
+        <section class="unit" id="unit2">
             <h2 onclick="toggleContent(this)">Unit 2: Conditional and Iterative statements</h2>
             <div class="content">
                 <h3 onclick="toggleContent(this)">2.1 Conditional Statements</h3>
@@ -208,38 +464,110 @@ that spans multiple lines.
                     <h4 onclick="toggleContent(this)">2.1.1 simple if Statement</h4>
                     <div class="content">
                         <!-- Content for simple if Statement -->
+                    <p>Executes a block of code if a specified condition is true.</p>
+                    <pre><code>age = 18
+                    if age >= 18:
+                        print("You are an adult.")  # Output: You are an adult.</code></pre>
                     </div>
                     <h4 onclick="toggleContent(this)">2.1.2 if-else Statement</h4>
                     <div class="content">
-                        <!-- Content for if-else Statement -->
+                        <p>Executes one block of code if a specified condition is true, and another block of code if it is false.</p>
+                        <pre><code>age = 16
+                    if age >= 18:
+                        print("You are an adult.")
+                    else:
+                        print("You are a minor.")  # Output: You are a minor.</code></pre>
                     </div>
                     <h4 onclick="toggleContent(this)">2.1.3 if-elif-else Statement</h4>
                     <div class="content">
-                        <!-- Content for if-elif-else Statement -->
+                        <p>Executes one block of code if a specified condition is true, another block of code if a different condition is
+                            true, and another block of code if none of the conditions are true.</p>
+                        <pre><code>age = 20
+                    if age < 13:
+                        print("You are a child.")
+                    elif age < 18:
+                        print("You are a teenager.")
+                    else:
+                        print("You are an adult.")  # Output: You are an adult.</code></pre>
                     </div>
-                </div>
-                <h3 onclick="toggleContent(this)">2.2 Iterative statements</h3>
-                <div class="content">
-                    <h4 onclick="toggleContent(this)">2.2.2 while Loop</h4>
+                    </div>
+                    <h3 onclick="toggleContent(this)">2.2 Iterative Statements</h3>
                     <div class="content">
-                        <!-- Content for while Loop -->
-                    </div>
-                    <h4 onclick="toggleContent(this)">2.2.1 for Loop</h4>
-                    <div class="content">
-                        <!-- Content for for Loop -->
-                    </div>
-                    <h4 onclick="toggleContent(this)">2.2.3 Range function</h4>
-                    <div class="content">
-                        <!-- Content for Range function -->
-                    </div>
-                    <h4 onclick="toggleContent(this)">2.2.4 Break and continue statements</h4>
-                    <div class="content">
-                        <!-- Content for Break and continue statements -->
-                    </div>
-                    <h4 onclick="toggleContent(this)">2.2.5 nested loops</h4>
-                    <div class="content">
-                        <!-- Content for nested loops -->
-                    </div>
+                        <h4 onclick="toggleContent(this)">2.2.1 for Loop</h4>
+                        <div class="content">
+                            <p>Iterates over a sequence (such as a list, tuple, string, or range) and executes a block of code for each item
+                                in the sequence.</p>
+                            <pre><code>fruits = ["apple", "banana", "cherry"]
+                    for fruit in fruits:
+                        print(fruit)
+                    # Output:
+                    # apple
+                    # banana
+                    # cherry</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">2.2.2 while Loop</h4>
+                        <div class="content">
+                            <p>Repeatedly executes a block of code as long as a specified condition is true.</p>
+                            <pre><code>count = 0
+                    while count < 5:
+                        print(count)
+                        count += 1
+                    # Output:
+                    # 0
+                    # 1
+                    # 2
+                    # 3
+                    # 4</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">2.2.3 Range Function</h4>
+                        <div class="content">
+                            <p>Generates a sequence of numbers, which is commonly used in for loops.</p>
+                            <pre><code>for i in range(5):
+                        print(i)
+                    # Output:
+                    # 0
+                    # 1
+                    # 2
+                    # 3
+                    # 4</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">2.2.4 Break and Continue Statements</h4>
+                        <div class="content">
+                            <p><code>break</code> exits the loop prematurely, while <code>continue</code> skips the rest of the code inside
+                                the loop for the current iteration and moves to the next iteration.</p>
+                            <pre><code>for i in range(5):
+                        if i == 3:
+                            break
+                        print(i)
+                    # Output:
+                    # 0
+                    # 1
+                    # 2
+                    
+                    for i in range(5):
+                        if i == 3:
+                            continue
+                        print(i)
+                    # Output:
+                    # 0
+                    # 1
+                    # 2
+                    # 4</code></pre>
+                        </div>
+                        <h4 onclick="toggleContent(this)">2.2.5 Nested Loops</h4>
+                        <div class="content">
+                            <p>A loop inside another loop.</p>
+                            <pre><code>for i in range(3):
+                        for j in range(2):
+                            print(f"i = {i}, j = {j}")
+                    # Output:
+                    # i = 0, j = 0
+                    # i = 0, j = 1
+                    # i = 1, j = 0
+                    # i = 1, j = 1
+                    # i = 2, j = 0
+                    # i = 2, j = 1</code></pre>
+                        </div>
                 </div>
             </div>
         </section>
@@ -255,36 +583,45 @@ that spans multiple lines.
                         </div>
                         <h4 onclick="toggleContent(this)">3.1.2 String Operations</h4>
                         <div class="content">
-                            <h5>Indexing</h5>
-                            <p>Accessing individual characters in a string using their position (index).</p>
-                            <pre><code>str1 = "Hello"
-                        print(str1[0])  # Output: H
-                        print(str1[1])  # Output: e</code></pre>
-                        
-                            <h5>Concatenation</h5>
-                            <p>Combining two or more strings using the <code>+</code> operator.</p>
-                            <pre><code>str1 = "Hello"
-                        str2 = "World"
-                        result = str1 + " " + str2
-                        print(result)  # Output: Hello World</code></pre>
-                        
-                            <h5>Repetition</h5>
-                            <p>Repeating a string multiple times using the <code>*</code> operator.</p>
-                            <pre><code>str1 = "Hello"
-                        result = str1 * 3
-                        print(result)  # Output: HelloHelloHello</code></pre>
-                        
-                            <h5>Membership</h5>
-                            <p>Checking if a substring exists within a string using the <code>in</code> operator.</p>
-                            <pre><code>str1 = "Hello World"
-                        print("World" in str1)  # Output: True
-                        print("world" in str1)  # Output: False</code></pre>
-                        
-                            <h5>Slicing</h5>
-                            <p>Extracting a portion of a string using the slicing syntax <code>string[start:end]</code>.</p>
-                            <pre><code>str1 = "Hello World"
-                        print(str1[0:5])  # Output: Hello
-                        print(str1[6:])   # Output: World</code></pre>
+                            <h5>len()</h5>
+                            <p>Returns the length of the string.</p>
+                            <pre><code>s = " Hello, World! " <br>print("Length:", len(s)) # Output: 18
+                            </code></pre>
+                            <h5>str.lower()</h5>
+                            <p>Converts all characters in the string to lowercase.</p>
+                            <pre><code>s = " Hello, World! "<br># Convert to lowercase<br>print("Lowercase:", s.lower()) # Output: hello, world!</code></pre>
+                            <h5>str.upper()</h5>
+                            <p>Converts all character in the string to uppercase.</p>
+                            <pre><code></code></pre>
+                            <h5>str.capitalize()</h5>
+                            <p>Capitalizes the first Character of the string.</p>
+                            <pre><code></code></pre>
+                            <h5>str.title()</h5>
+                            <p>Converts thr first character of each word to uppercase.</p>
+                            <pre><code></code></pre>
+                            <h5>str.strip()</h5>
+                            <p>Removes leading and trailing whitespace.</p>
+                            <pre><code></code></pre>
+                            <h5>str.replace(old,new)</h5>
+                            <p>Replaces occurrences of a substring with another substring.</p>
+                            <pre><code></code></pre>
+                            <h5>str.split(separator)</h5>
+                            <p>Splits the string into a list of substring based on the separator.</p>
+                            <pre><code></code></pre>
+                            <h5>str.join(iterable)</h5>
+                            <p>Joins elements of an iterable with the string as separator.</p>
+                            <pre><code></code></pre>
+                            <h5>str.find(sub)</h5>
+                            <p>Return the lowest index of the substring if found, otherwise -1.</p>
+                            <pre><code></code></pre>
+                            <h5>str.startswith(prefix)</h5>
+                            <p>Checks if the string starts with the specified prefix.</p>
+                            <pre><code></code></pre>
+                            <h5>str.endswith(prefix)</h5>
+                            <p>Checks if the string ends with the specified suffix.</p>
+                            <pre><code></code></pre>
+                            
+
                         </div>
                         <h4 onclick="toggleContent(this)">3.1.3 Traversing a String Using Loops</h4>
                         <div class="content">
@@ -317,8 +654,6 @@ that spans multiple lines.
                         </div>
                     </div>
                 <h3 onclick="toggleContent(this)">3.2 Lists</h3>
-                <div class="content">
-                    <h4 onclick="toggleContent(this)">3.2.1 List Basics</h4>
                     <div class="content">
                         <h4 onclick="toggleContent(this)">3.2.1 Introduction</h4>
                         <div class="content">
@@ -424,33 +759,109 @@ that spans multiple lines.
                     frequency = Counter(my_list)
                     print(frequency)  # Output: Counter({30: 3, 20: 2, 10: 1, 40: 1, 50: 1})</code></pre>
                         </div>
-                    </div>
+                    
 
                 </div>
                 <h3 onclick="toggleContent(this)">3.3 Tuples</h3>
                 <div class="content">
                     <h4 onclick="toggleContent(this)">3.3.1 Tuple Basics</h4>
                     <div class="content">
-                        <!-- Content for Tuple Basics -->
+                        <p>Tuples are ordered collections of items that are immutable and can contain elements of different types.</p>
+                        <pre><code>example_tuple = (1, 2, 3, "a", "b", "c")
+                    empty_tuple = ()
+                    single_element_tuple = (1,)</code></pre>
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.3.2 Creating and Initializing Tuples</h4>
+                    <div class="content">
+                        <p>Tuples are created by placing a sequence of values separated by commas inside parentheses <code>()</code>. Tuples
+                            can also be created without parentheses.</p>
+                        <pre><code>example_tuple = (1, 2, 3, "a", "b", "c")
+                    another_tuple = 1, 2, 3, "a", "b", "c"</code></pre>
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.3.3 Accessing Elements</h4>
+                    <div class="content">
+                        <p>Elements in a tuple can be accessed using indexing, similar to lists.</p>
+                        <pre><code>example_tuple = (1, 2, 3, "a", "b", "c")
+                    print(example_tuple[0])  # Output: 1
+                    print(example_tuple[3])  # Output: a</code></pre>
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.3.4 Tuple Assignment</h4>
+                    <div class="content">
+                        <p>Tuples support unpacking, which allows you to assign multiple variables at once.</p>
+                        <pre><code>example_tuple = (1, 2, 3)
+                    a, b, c = example_tuple
+                    print(a)  # Output: 1
+                    print(b)  # Output: 2
+                    print(c)  # Output: 3</code></pre>
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.3.5 Performing Operations on Tuples</h4>
+                    <div class="content">
+                        <h5>Concatenation</h5>
+                        <p>Combining two or more tuples using the <code>+</code> operator.</p>
+                        <pre><code>tuple1 = (1, 2, 3)
+                    tuple2 = (4, 5, 6)
+                    result = tuple1 + tuple2
+                    print(result)  # Output: (1, 2, 3, 4, 5, 6)</code></pre>
+                    
+                        <h5>Repetition</h5>
+                        <p>Repeating a tuple multiple times using the <code>*</code> operator.</p>
+                        <pre><code>example_tuple = (1, 2, 3)
+                    result = example_tuple * 3
+                    print(result)  # Output: (1, 2, 3, 1, 2, 3, 1, 2, 3)</code></pre>
+                    
+                        <h5>Membership</h5>
+                        <p>Checking if an element exists within a tuple using the <code>in</code> operator.</p>
+                        <pre><code>example_tuple = (1, 2, 3, "a", "b", "c")
+                    print(2 in example_tuple)  # Output: True
+                    print(4 in example_tuple)  # Output: False</code></pre>
+                    
+                        <h5>Slicing</h5>
+                        <p>Extracting a portion of a tuple using the slicing syntax <code>tuple[start:end]</code>.</p>
+                        <pre><code>example_tuple = (1, 2, 3, "a", "b", "c")
+                    print(example_tuple[1:4])  # Output: (2, 3, 'a')
+                    print(example_tuple[:3])   # Output: (1, 2, 3)</code></pre>
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.3.6 Tuple Methods and Built-in Functions</h4>
+                    <div class="content">
+                        <p>Tuples have a few methods and support several built-in functions:</p>
+                        <ul>
+                            <li><code>count()</code>: Returns the number of times a specified value appears in the tuple.</li>
+                            <li><code>index()</code>: Returns the index of the first occurrence of a specified value.</li>
+                            <li><code>len()</code>: Returns the length of the tuple.</li>
+                            <li><code>max()</code>: Returns the largest item in the tuple.</li>
+                            <li><code>min()</code>: Returns the smallest item in the tuple.</li>
+                            <li><code>sum()</code>: Returns the sum of all items in the tuple.</li>
+                            <li><code>sorted()</code>: Returns a sorted list of the tuple's elements.</li>
+                        </ul>
+                        <pre><code>example_tuple = (1, 2, 3, 2, 4, 2)
+                    print(example_tuple.count(2))  # Output: 3
+                    print(example_tuple.index(3))  # Output: 2
+                    print(len(example_tuple))      # Output: 6
+                    print(max(example_tuple))      # Output: 4
+                    print(min(example_tuple))      # Output: 1
+                    print(sum(example_tuple))      # Output: 14
+                    print(sorted(example_tuple))   # Output: [1, 2, 2, 2, 3, 4]</code></pre>
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.3.7 Nested Tuples</h4>
+                    <div class="content">
+                        <p>Tuples can contain other tuples as elements, creating nested tuples.</p>
+                        <pre><code>nested_tuple = (1, 2, (3, 4), (5, 6, 7))
+                    print(nested_tuple[2])       # Output: (3, 4)
+                    print(nested_tuple[2][1])    # Output: 4
+                    print(nested_tuple[3][2])    # Output: 7</code></pre>
                     </div>
                 </div>
-                <h3 onclick="toggleContent(this)">3.4 Set</h3>
+                <h3 onclick="toggleContent(this)">3.4 Sets</h3>
                 <div class="content">
-                    <h4 onclick="toggleContent(this)">3.4.1 Set Basics</h4>
-                    <div class="content">
-                        <!-- Content for Set Basics -->
-                    </div>
+
                 </div>
                 <h3 onclick="toggleContent(this)">3.5 Dictionary</h3>
                 <div class="content">
-                    <h4 onclick="toggleContent(this)">3.5.1 Dictionary Basics</h4>
-                    <div class="content">
-                        <!-- Content for Dictionary Basics -->
-                    </div>
+
                 </div>
             </div>
         </section>
-        <section class="unit">
+        <section class="unit" id="unit4">
             <h2 onclick="toggleContent(this)">Unit 4: Python Functions, Modules and packages</h2>
             <div class="content">
                 <h3 onclick="toggleContent(this)">4.1 Functions</h3>
@@ -469,7 +880,7 @@ that spans multiple lines.
                 </div>
             </div>
         </section>
-        <section class="unit">
+        <section class="unit" id="unit5">
             <h2 onclick="toggleContent(this)">Unit 5: Numpy</h2>
             <div class="content">
                 <h3 onclick="toggleContent(this)">5.1 Introduction to NumPY</h3>
@@ -530,7 +941,7 @@ that spans multiple lines.
                 </div>
             </div>
         </section>
-        <section class="unit">
+        <section class="unit" id="unit6">
             <h2 onclick="toggleContent(this)">Unit 6: Exception and File Handling in Python</h2>
             <div class="content">
                 <h3 onclick="toggleContent(this)">6.1 Exception Handling</h3>

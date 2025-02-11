@@ -581,7 +581,7 @@ that spans multiple lines.
                         <p>Strings in Python are sequences of characters. They are immutable, meaning they cannot be changed after they are
                             created.</p>
                         </div>
-                        <h4 onclick="toggleContent(this)">3.1.2 String Operations</h4>
+                        <h4 onclick="toggleContent(this)">3.1.2 String Operations and built-in function</h4>
                         <div class="content">
                             <h5>len()</h5>
                             <p>Returns the length of the string.</p>
@@ -592,35 +592,37 @@ that spans multiple lines.
                             <pre><code>s = " Hello, World! "<br># Convert to lowercase<br>print("Lowercase:", s.lower()) # Output: hello, world!</code></pre>
                             <h5>str.upper()</h5>
                             <p>Converts all character in the string to uppercase.</p>
-                            <pre><code></code></pre>
+                            <pre><code>s = "   Hello, World!   "<br># Convert to uppercase <br>print("Uppercase:", s.upper()) # Output: HELLO, WORLD!</code></pre>
                             <h5>str.capitalize()</h5>
                             <p>Capitalizes the first Character of the string.</p>
-                            <pre><code></code></pre>
+                            <pre><code>s = "   Hello, World!   "<br># Capitalize the first character<br>print("Capitalized:", s.capitalize()) # Output: hello, world!</code></pre>
                             <h5>str.title()</h5>
                             <p>Converts thr first character of each word to uppercase.</p>
-                            <pre><code></code></pre>
+                            <pre><code>s = "   Hello, World!   "<br># Title case<br>print("Title Case:", s.title()) # Output: Hello, World!</code></pre>
                             <h5>str.strip()</h5>
                             <p>Removes leading and trailing whitespace.</p>
-                            <pre><code></code></pre>
+                            <pre><code>s = "   Hello, World!   "<br>print("Stripped:", s.strip()) # Output: Hello, World!<br></code></pre>
                             <h5>str.replace(old,new)</h5>
                             <p>Replaces occurrences of a substring with another substring.</p>
-                            <pre><code></code></pre>
+                            <pre><code>s = "   Hello, World!   "<br>print("Replaced:", s.replace("World", "Python")) # Output: Hello, Python!<br></code></pre>
                             <h5>str.split(separator)</h5>
                             <p>Splits the string into a list of substring based on the separator.</p>
-                            <pre><code></code></pre>
+                            <pre><code>s = "   Hello, World!   "<br># Split the string<br>print("Split:", s.split(", ")) # Output: [' Hello', 'World! ']</code></pre>
                             <h5>str.join(iterable)</h5>
                             <p>Joins elements of an iterable with the string as separator.</p>
-                            <pre><code></code></pre>
+                            <pre><code>s = "   Hello, World!   "<br># Join a list of strings<br>words = ["Hello", "World"]<br>print("Joined:", ", ".join(words)) # Output: Hello, World</code></pre>
                             <h5>str.find(sub)</h5>
                             <p>Return the lowest index of the substring if found, otherwise -1.</p>
-                            <pre><code></code></pre>
+                            <pre><code>s = "   Hello, World!   "<br># Find a substring<br>print("Find 'World':", s.find("World")) # Output: 10<br>print("Find 'Python':", s.find("Python")) # Output: -1</code></pre>
                             <h5>str.startswith(prefix)</h5>
                             <p>Checks if the string starts with the specified prefix.</p>
-                            <pre><code></code></pre>
+                            <pre><code>s = "   Hello, World!   "<br># Check if the string starts with a prefix<br>print("Starts with 'Hello':", s.startswith("Hello")) # Output: False<br>print("Starts with ' Hello':", s.startswith(" Hello")) # Output: True</code></pre>
                             <h5>str.endswith(prefix)</h5>
                             <p>Checks if the string ends with the specified suffix.</p>
-                            <pre><code></code></pre>
-                            
+                            <pre><code>s = "   Hello, World!   "<br># Check if the string ends with a suffix<br>print("Ends with 'World! ':", s.endswith("World! ")) # Output: True<br>print("Ends with 'Hello':", s.endswith("Hello")) # Output: False</code></pre>
+                            <code>
+                                Length: 19<br>Lowercase:    hello, world!   <br>Uppercase:    HELLO, WORLD!   <br>Capitalized:    hello, world!   <br>Title Case:    Hello, World!   <br>Stripped: Hello, World!<br>Replaced:    Hello, Python!   <br>Split: ['   Hello', 'World!   ']<br>Joined: Hello, World<br>Find 'World': 10<br>Find 'Python': -1<br>Starts with 'Hello': False<br>Starts with '   Hello': True<br>Ends with 'World!   ': True<br>Ends with 'Hello': False
+                            </code>
 
                         </div>
                         <h4 onclick="toggleContent(this)">3.1.3 Traversing a String Using Loops</h4>
@@ -636,22 +638,7 @@ that spans multiple lines.
                         # l
                         # o</code></pre>
                         </div>
-                        <h4 onclick="toggleContent(this)">3.1.4 Built-in Functions</h4>
-                        <div class="content">
-                            <p>Python provides several built-in functions for string manipulation:</p>
-                            <ul>
-                                <li><code>len()</code>: Returns the length of the string.</li>
-                                <li><code>str()</code>: Converts a value to a string.</li>
-                                <li><code>upper()</code>: Converts all characters to uppercase.</li>
-                                <li><code>lower()</code>: Converts all characters to lowercase.</li>
-                                <li><code>replace()</code>: Replaces a substring with another substring.</li>
-                            </ul>
-                            <pre><code>str1 = "Hello World"
-                        print(len(str1))          # Output: 11
-                        print(str1.upper())       # Output: HELLO WORLD
-                        print(str1.lower())       # Output: hello world
-                        print(str1.replace("World", "Python"))  # Output: Hello Python</code></pre>
-                        </div>
+                       
                     </div>
                 <h3 onclick="toggleContent(this)">3.2 Lists</h3>
                     <div class="content">

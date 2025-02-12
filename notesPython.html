@@ -468,6 +468,41 @@ that spans multiple lines.
                     <pre><code>age = 18
                     if age >= 18:
                         print("You are an adult.")  # Output: You are an adult.</code></pre>
+                        <pre>
+                            <code>
+                                a = 27
+                                if(a%2==0):
+                                print("It is a even number")
+                                if(a%2!=0):
+                                print("It is a odd number")
+                                if(a&lt;0): print("It is a negative number")
+                                if(a>0): print("It is a positive number")
+                            </code>
+                            <code>
+                                It is a odd number
+                                It is a positive number
+
+                            </code>
+                        </pre>
+                        <p><strong>Question:</strong>Find the greatest of two number.</p>
+                        <pre>
+                            <code>
+                                a1 = int(input("Enter first number: "))
+                                b1 = int(input("Enter second number: "))
+                                if(a1>b1):
+                                    print("First number is greater than second number")
+                                if(a1&lt;b1):
+                                    print("Second number is greater than first number")
+                            </code>
+                            <code>
+                            Enter first number: 20
+                            Enter second number: 30
+                            Second number is greater than first number
+                            Enter first number: 45
+                            Enter second number: 43
+                            First number is greater than second number
+                            </code>
+                        </pre>
                     </div>
                     <h4 onclick="toggleContent(this)">2.1.2 if-else Statement</h4>
                     <div class="content">
@@ -477,15 +512,307 @@ that spans multiple lines.
                         print("You are an adult.")
                     else:
                         print("You are a minor.")  # Output: You are a minor.</code></pre>
+                    <h4 onclick="toggleContent(this)">2.1.2 Questions</h4>
+                    <div class="content">
+                        <h3 onclick="toggleContent(this)">Question 1: Write a Python program to find the maximum of two numbers.</h3>
+                        <div class="content">
+                            a = 10
+                            b = 20
+                            if a > b:
+                                print("a is greater than b")
+                            else:
+                                print("b is greater than a")
+                        </code></pre>
+                        <p><strong>Output:</strong></p>
+                        <pre><code>b is greater than a</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 2: Write a C program to find maximum between three numbers.</h3>
+                        <div class="content">        
+                        <pre><code>
+                            a = 10
+                            b = 20
+                            c = 30
+                            if a > b and a > c:
+                                print("a is greater than b and c")
+                            elif b > a and b > c:
+                                print("b is greater than a and c")
+                            else:
+                                print("c is greater than a and b")        
+                                                </code></pre>
+                        <p><strong>Output:</strong></p>
+                        <pre><code>c is greater than a and b</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 3: Write a Python program to check whether a number is positive, negative or zero.</h3>
+                        <div class="content">
+                            a = int(input("Enter a number:"))
+                            if a > 0:
+                                print("Positive number")
+                            elif a < 0:
+                                print("Negative number")
+                            else:
+                                print("Zero")
+                                                </code></pre>
+                        <p><strong>Output:</strong></p>
+                        <pre><code>Enter a number: -5
+                            Negative number</code></pre>
+                        <pre><code>Enter a number: 0
+                            Zero</code></pre>
+                        <pre><code>Enter a number: 5
+                            Positive number</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 4: Write a C program to check whether a number is divisible by 5 and 11 or not.</h3>
+                        <div class="content">
+                            <pre><code>
+                        number = int(input("Enter a number: "))
+                        if number % 5 == 0 and number % 11 == 0:
+                            print("The number is divisible by both 5 and 11")
+                        else:
+                            print("The number is not divisible by both 5 and 11")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 5: Check Even or Odd</h3>
+                        <div class="content">
+                            <pre><code>
+                        number = int(input("Enter a number: "))
+                        if number % 2 == 0:
+                            print("The number is even")
+                        else:
+                            print("The number is odd")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 6: Check Leap Year</h3>
+                        <div class="content">
+                            <pre><code>
+                        year = int(input("Enter a year: "))
+                        if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+                            print("The year is a leap year")
+                        else:
+                            print("The year is not a leap year")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 7: Write a Python program to check whether a character is alphabet or not.</h3>
+                        <div class="content">
+                            <pre><code>
+                        char = input("Enter a character: ")
+                        if char.isalpha():
+                            print("The character is an alphabet")
+                        else:
+                            print("The character is not an alphabet")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 8: Write a Python program to input any alphabet and check whether it is vowel or consonant.</h3>
+                        <div class="content">
+                            <pre><code>
+                        char = input("Enter an alphabet: ").lower()
+                        if char in 'aeiou':
+                            print("The alphabet is a vowel")
+                        else:
+                            print("The alphabet is a consonant")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 9: Write a Python program to input any character and check whether it is alphabet, digit or special character.</h3>
+                        <div class="content">
+                            <pre><code>
+                        char = input("Enter a character: ")
+                        if char.isalpha():
+                            print("The character is an alphabet")
+                        elif char.isdigit():
+                            print("The character is a digit")
+                        else:
+                            print("The character is a special character")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 10: Write a Python program to check whether a character is uppercase or lowercase alphabet.</h3>
+                        <div class="content">
+                            <pre><code>
+                        char = input("Enter an alphabet: ")
+                        if char.isupper():
+                            print("The alphabet is uppercase")
+                        elif char.islower():
+                            print("The alphabet is lowercase")
+                        else:
+                            print("The character is not an alphabet")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 11: Write a Python program to input week number and print week day.</h3>
+                        <div class="content">
+                            <pre><code>
+                        week_number = int(input("Enter week number (1-7): "))
+                        week_days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+                        if 1 <= week_number <= 7:
+                            print("Week day:", week_days[week_number - 1])
+                        else:
+                            print("Invalid week number")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 12: Write a Python program to input month number and print number of days in that month.</h3>
+                        <div class="content">
+                            <pre><code>
+                        month_number = int(input("Enter month number (1-12): "))
+                        if month_number == 2:
+                            print("Number of days: 28/29")
+                        elif month_number in [4, 6, 9, 11]:
+                            print("Number of days: 30")
+                        elif month_number in [1, 3, 5, 7, 8, 10, 12]:
+                            print("Number of days: 31")
+                        else:
+                            print("Invalid month number")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 13: Write a Python program to count total number of notes in given amount.</h3>
+                        <div class="content">
+                            <pre><code>
+                        amount = int(input("Enter amount: "))
+                        notes = [2000, 500, 200, 100, 50, 20, 10, 5, 2, 1]
+                        note_count = {}
+                        for note in notes:
+                            note_count[note] = amount // note
+                            amount %= note
+                        print("Total number of notes:")
+                        for note, count in note_count.items():
+                            print(f"{note}: {count}")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 14: Write a Python program to input angles of a triangle and check whether triangle is valid or not.</h3>
+                        <div class="content">
+                            <pre><code>
+                        angle1 = int(input("Enter first angle: "))
+                        angle2 = int(input("Enter second angle: "))
+                        angle3 = int(input("Enter third angle: "))
+                        if angle1 + angle2 + angle3 == 180:
+                            print("The triangle is valid")
+                        else:
+                            print("The triangle is not valid")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 15: Write a Python program to input all sides of a triangle and check whether triangle is valid or not.</h3>
+                        <div class="content">
+                            <pre><code>
+                        side1 = int(input("Enter first side: "))
+                        side2 = int(input("Enter second side: "))
+                        side3 = int(input("Enter third side: "))
+                        if side1 + side2 > side3 and side1 + side3 > side2 and side2 + side3 > side1:
+                            print("The triangle is valid")
+                        else:
+                            print("The triangle is not valid")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 16: Write a Python program to check whether the triangle is equilateral, isosceles or scalene triangle.</h3>
+                        <div class="content">
+                            <pre><code>
+                        side1 = int(input("Enter first side: "))
+                        side2 = int(input("Enter second side: "))
+                        side3 = int(input("Enter third side: "))
+                        if side1 == side2 == side3:
+                            print("The triangle is equilateral")
+                        elif side1 == side2 or side2 == side3 or side1 == side3:
+                            print("The triangle is isosceles")
+                        else:
+                            print("The triangle is scalene")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 17: Write a Python program to find all roots of a quadratic equation.</h3>
+                        <div class="content">
+                            <pre><code>
+                        import cmath
+                        a = float(input("Enter coefficient a: "))
+                        b = float(input("Enter coefficient b: "))
+                        c = float(input("Enter coefficient c: "))
+                        
+                        d = (b ** 2) - (4 * a * c)
+                        
+                        root1 = (-b + cmath.sqrt(d)) / (2 * a)
+                        root2 = (-b - cmath.sqrt(d)) / (2 * a)
+                        
+                        print(f"The roots are {root1} and {root2}")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 18:  Write a Python program to calculate profit or loss.</h3>
+                        <div class="content">
+                            <pre><code>
+                        cost_price = float(input("Enter cost price: "))
+                        selling_price = float(input("Enter selling price: "))
+                        if selling_price > cost_price:
+                            print(f"Profit: {selling_price - cost_price}")
+                        elif cost_price > selling_price:
+                            print(f"Loss: {cost_price - selling_price}")
+                        else:
+                            print("No profit, no loss")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 19: Write a Python program to input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer. Calculate
+                        percentage and grade according to following.</h3>
+                        <div class="content">
+                            <p>Percentage >= 90% : Grade A
+                            Percentage >= 80% : Grade B
+                            Percentage >= 70% : Grade C
+                            Percentage >= 60% : Grade D
+                            Percentage >= 40% : Grade E
+                            Percentage < 40% : Grade F
+</p>
+                            <pre><code>
+                        physics = float(input("Enter marks in Physics: "))
+                        chemistry = float(input("Enter marks in Chemistry: "))
+                        biology = float(input("Enter marks in Biology: "))
+                        mathematics = float(input("Enter marks in Mathematics: "))
+                        computer = float(input("Enter marks in Computer: "))
+                        
+                        total_marks = physics + chemistry + biology + mathematics + computer
+                        percentage = (total_marks / 500) * 100
+                        
+                        if percentage >= 90:
+                            grade = 'A'
+                        elif percentage >= 80:
+                            grade = 'B'
+                        elif percentage >= 70:
+                            grade = 'C'
+                        elif percentage >= 60:
+                            grade = 'D'
+                        elif percentage >= 40:
+                            grade = 'E'
+                        else:
+                            grade = 'F'
+                        
+                        print(f"Percentage: {percentage}%")
+                        print(f"Grade: {grade}")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 20: Write a Python program to input basic salary of an employee and calculate its Gross salary according to following:</h3>
+                        <div class="content">
+                            <p>Basic Salary <= 10000 : HRA=20%, DA=80% Basic Salary <=20000 : HRA=25%, DA=90% Basic Salary> 20000 : HRA = 30%, DA = 95%</p>
+                            <pre><code>
+                        basic_salary = float(input("Enter basic salary: "))
+                        if basic_salary <= 10000:
+                            hra = basic_salary * 0.20
+                            da = basic_salary * 0.80
+                        elif basic_salary &lt;= 20000:
+                            hra = basic_salary * 0.25
+                            da = basic_salary * 0.90
+                        else:
+                            hra = basic_salary * 0.30
+                            da = basic_salary * 0.95
+                        
+                        gross_salary = basic_salary + hra + da
+                        print(f"Gross Salary: {gross_salary}")</code></pre>
+                        </div>
+                        <h3 onclick="toggleContent(this)">Question 21: Write a Python program to input electricity unit charges and calculate total electricity bill according to the given
+                        condition:</h3>
+                        <div class="content">
+                            <p>For first 50 units Rs. 0.50/unit
+                            For next 100 units Rs. 0.75/unit
+                            For next 100 units Rs. 1.20/unit
+                            For unit above 250 Rs. 1.50/unit
+                            An additional surcharge of 20% is added to the bill</p>
+                            <pre><code>units = float(input("Enter electricity units: "))
+                        if units <= 50:
+                            bill = units * 0.50
+                        elif units &lt;= 150:
+                            bill = (50 * 0.50) + ((units - 50) * 0.75)
+                        elif units &lt;= 250:
+                            bill = (50 * 0.50) + (100 * 0.75) + ((units - 150) * 1.20)
+                        else:
+                            bill = (50 * 0.50) + (100 * 0.75) + (100 * 1.20) + ((units - 250) * 1.50)
+                        
+                        bill += bill * 0.20  # Adding surcharge
+                        print(f"Total Electricity Bill: {bill}")</code></pre>
+                        </div>
+                    </div>
+                    
+
                     </div>
                     <h4 onclick="toggleContent(this)">2.1.3 if-elif-else Statement</h4>
                     <div class="content">
                         <p>Executes one block of code if a specified condition is true, another block of code if a different condition is
                             true, and another block of code if none of the conditions are true.</p>
-                        <pre><code>age = 20
+                        <pre><code>
+                    age = 20
                     if age < 13:
                         print("You are a child.")
-                    elif age < 18:
+                    elif age &lt; 18:
                         print("You are a teenager.")
                     else:
                         print("You are an adult.")  # Output: You are an adult.</code></pre>
@@ -497,7 +824,8 @@ that spans multiple lines.
                         <div class="content">
                             <p>Iterates over a sequence (such as a list, tuple, string, or range) and executes a block of code for each item
                                 in the sequence.</p>
-                            <pre><code>fruits = ["apple", "banana", "cherry"]
+                            <pre><code>
+                    fruits = ["apple", "banana", "cherry"]
                     for fruit in fruits:
                         print(fruit)
                     # Output:
@@ -508,7 +836,8 @@ that spans multiple lines.
                         <h4 onclick="toggleContent(this)">2.2.2 while Loop</h4>
                         <div class="content">
                             <p>Repeatedly executes a block of code as long as a specified condition is true.</p>
-                            <pre><code>count = 0
+                            <pre><code>
+                    count = 0
                     while count < 5:
                         print(count)
                         count += 1

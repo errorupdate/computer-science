@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete C Programming Guide</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f6fa;
+            color: #333;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background: #2c3e50;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            list-style: none;
+            display: flex;
+            padding: 0 20px;
+        }
+
+        .navbar li {
+            position: relative;
+            padding: 15px 25px;
+            color: #ecf0f1;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: absolute;
+            background: #34495e;
+            min-width: 280px;
+            display: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .sub-dropdown {
+            left: 100%;
+            top: 0;
+            background: #3b4f63;
+            min-width: 260px;
+        }
+
+        .sub-sub-dropdown {
+            left: 100%;
+            top: 0;
+            background: #42586d;
+            min-width: 240px;
+        }
+
+        /* Content Section */
+        #content-section {
+            margin-top: 150px;
+            padding: 30px;
+            min-height: 100vh;
+        }
+
+        .content-item {
+            display: none;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .active-content {
+            display: block;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .dropdown {
+                position: static;
+                display: none;
+                background: #3b4f63;
+            }
+
+            #content-section {
+                margin-top: 300px;
+            }
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1001;
+        }
+
+        /* Code Snippet Styles */
+        .codesnippets {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .codesnippets img {
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .codesnippets img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: 5% auto;
+            display: block;
+            width: 90%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Complete C Programming Guide</h1>
+    </header>
+
+<nav>
+    <ul class="navbar">
+        <!-- Unit 1 -->
+        <li class="has-dropdown">
+            Unit 1: Program Logic
+            <ul class="dropdown">
+                <li class="has-dropdown">1.1 Algorithms
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('1-1-1')">1.1.1 Notion of algorithm</li>
+                        <li onclick="showContent('1-1-2')">1.1.2 Pseudo-code conventions</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">1.2 Algorithmic Problems
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('1-2-1')">1.2.1 Importance of Algorithm</li>
+                        <li onclick="showContent('1-2-2')">1.2.2 Algorithmic Problems</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">1.3 Flowchart
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('1-3-1')">1.3.1 FlowChart</li>
+                        <li onclick="showContent('1-3-2')">1.3.2 FlowChart Symbols</li>
+                        <li onclick="showContent('1-3-3')">1.3.3 FlowChart Guidelines</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Unit 2 -->
+        <li class="has-dropdown">
+            Unit 2: C Basics
+            <ul class="dropdown">
+                <li class="has-dropdown">2.1 Introduction
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('2-1-1')">2.1.1 History of C</li>
+                        <li onclick="showContent('2-1-2')">2.1.2 C Structure</li>
+                        <li onclick="showContent('2-1-3')">2.1.3 Header Files</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">2.2 Data Concepts
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('2-2-1')">2.2.1 Character Set</li>
+                        <li onclick="showContent('2-2-2')">2.2.2 Variables</li>
+                        <li onclick="showContent('2-2-3')">2.2.3 Constants</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">2.3 Basic I/O
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('2-3-1')">2.3.1 I/O Statements</li>
+                        <li onclick="showContent('2-3-2')">2.3.2 printf()/scanf()</li>
+                        <li onclick="showContent('2-3-3')">2.3.3 Character I\O</li>
+                        <li onclick="showContent('2-3-4')">2.3.4 Comments</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <!-- Unit 3 -->
+        <li class="has-dropdown ">
+            Unit 3: Decision Making
+            <ul class="dropdown">
+                <li class="has-dropdown">3.1 Decision Making
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('3-1-1')">3.1.1 Relational/Logical Operators</li>
+                        <li onclick="showContent('3-1-2')">3.1.2 if statement</li>
+                        <li onclick="showContent('3-1-3')">3.1.3 if-else</li>
+                        <li onclick="showContent('3-1-4')">3.1.4 Nested if-else</li>
+                        <li onclick="showContent('3-1-5')">3.1.5 if-else ladder</li>
+                        <li onclick="showContent('3-1-6')">3.1.6 switch</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">3.2 Looping
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('3-2-1')">3.2.1 while</li>
+                        <li onclick="showContent('3-2-2')">3.2.2 do-while</li>
+                        <li onclick="showContent('3-2-3')">3.2.3 for</li>
+                        <li onclick="showContent('3-2-4')">3.2.4 goto</li>
+                        <li onclick="showContent('3-2-5')">3.2.5 break/continue</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <!-- Unit 4 -->
+        <li class="has-dropdown ">
+            Unit 4: Arrays & Structures
+            <ul class="dropdown">
+                <li class="has-dropdown">4.1 Array Basics
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('4-1-1')">4.1.1 Characteristics</li>
+                        <li onclick="showContent('4-1-2')">4.1.2 1D/2D Arrays</li>
+                        <li onclick="showContent('4-1-3')">4.1.3 Declaration/Init</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">4.2 Character Arrays
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('4-2-1')">4.2.1 Char Arrays</li>
+                        <li onclick="showContent('4-2-2')">4.2.2 Operations</li>
+                        <li onclick="showContent('4-2-3')">4.2.3 String I/O</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">4.3 Structure
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('4-3-1')">4.3.1 Structures Intro</li>
+                        <li onclick="showContent('4-3-2')">4.3.2 Declaration/Init</li>
+                        <li onclick="showContent('4-3-3')">4.3.3 Enumerated Types</li>
+                        <li onclick="showContent('4-3-4')">4.3.4 Structure Usage</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Unit 5 -->
+        <li class="has-dropdown ">
+            Unit 5: Functions
+            <ul class="dropdown">
+                <li class="has-dropdown">5.1 Library Functions
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('5-1-1')">5.1.1 Math</li>
+                        <li onclick="showContent('5-1-2')">5.1.2 String</li>
+                        <li onclick="showContent('5-1-3')">5.1.3 Miscellaneous</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">5.2 User Functions
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('5-2-1')">5.2.1 Writing Functions</li>
+                        <li onclick="showContent('5-2-2')">5.2.2 Variable Scope</li>
+                        <li onclick="showContent('5-2-3')">5.2.3 Parameters</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">5.3 Recursive
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('5-3-1')">5.3.1 Introduction</li>
+                        <li onclick="showContent('5-3-2')">5.3.2 Writing Recursive</li>
+                        <li onclick="showContent('5-3-3')">5.3.3 Pros/Cons</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Unit 6 -->
+        <li class="has-dropdown ">
+            Unit 6: Pointers
+            <ul class="dropdown">
+                <li class="has-dropdown">6.1 Concepts
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('6-1-1')">6.1.1 Declaring</li>
+                        <li onclick="showContent('6-1-2')">6.1.2 Initializing</li>
+                        <li onclick="showContent('6-1-3')">6.1.3 Accessing</li>
+                        <li onclick="showContent('6-1-4')">6.1.4 Pointer Arithmetic</li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">6.2 Uses
+                    <ul class="sub-dropdown">
+                        <li onclick="showContent('6-2-1')">6.2.1 Arrays</li>
+                        <li onclick="showContent('6-2-2')">6.2.2 Functions</li>
+                        <li onclick="showContent('6-2-3')">6.2.3 Structures</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Add remaining units following same pattern -->
+</nav>
+
+    <section id="content-section">
+        <!-- Unit 1 Content -->
+        <div id="1-1-1" class="content-item">
+            <h2>1.1.1 Notion of Algorithm</h2>
+            <p>An algorithm is a step-by-step procedure or formula for solving a problem. It is a finite
+                sequence of well-defined
+                instructions to achieve a specific goal or perform a computation. Algorithms are fundamental
+                to computer science and
+                programming, as they provide a clear method for solving problems.</p>
+            <ul>
+                <li><strong>Finiteness:</strong> An algorithm must always terminate after a finite number of
+                    steps. It should not
+                    run indefinitely.</li>
+                <li><strong>Well-defined Inputs and Outputs:</strong> An algorithm should have clearly
+                    defined inputs (data it
+                    receives) and outputs (results it produces). The inputs can be zero or more, and the
+                    outputs can also be zero or
+                    more.</li>
+                <li><strong>Effectiveness:</strong> Each step of the algorithm must be basic enough that it
+                    can be performed, in
+                    principle, by a person using only paper and pencil. This means that the operations must
+                    be feasible and not
+                    require advanced technology.</li>
+                <li><strong>Generality:</strong> An algorithm should be applicable to a broad set of
+                    problems, not just a single
+                    instance. It should be able to handle different inputs and produce the correct output
+                    for each.</li>
+                <li><strong>Unambiguous:</strong> Each step of the algorithm must be clear and unambiguous,
+                    leaving no room for
+                    interpretation.</li>
+            </ul>
+        </div>
+
+        <div id="1-1-2" class="content-item">
+            <h2>1.1.2 Pseudo-code Conventions</h2>
+            <p>Pseudo-code uses structured conventions to represent algorithms...</p>
+            <div class="codesnippets">
+                <img src="/cse/computer-science/images/clanguage image/Picture 1.png" alt="pseudocode">
+                <img src="/cse/computer-science/images/clanguage image/Picture 2.png" alt="pseudocode">
+                <img src="/cse/computer-science/images/clanguage image/Picture 3.png" alt="pseudocode">
+            </div>
+        </div>
+        <div class="content-item" id="1-3-1">
+            <h2>1.3.1 Flowchart</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="1-3-2">
+            <h2>1.3.2 Symbol of FlowChart</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="1-3-3">
+            <h2>1.3.3 Guidelines for preparing Flowchart </h2>
+            <p></p>
+        </div>
+
+
+
+        <!-- Unit 2 Content -->
+        <div class="content-item" id="2-1-1">
+            <h2>2.1.1 History of 'C'</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="2-1-2">
+            <h2>2.1.2 Structure of C</h2>
+            <p></p>
+        </div>
+         <div class="content-item" id="2-1-3">
+            <h2>2.1.3 Header Files and 'main' Function</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="2-2-1">
+            <h2>2.2.1 Character set,tokens,keywords,identifiers</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="2-2-2">
+            <h2>2.2.2 Variables</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="2-2-3">
+            <h2>2.2.3 Constant</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="2-2-4">
+            <h2>2.2.4 Data types</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="2-2-5">
+            <h2>2.2.5 C operators</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="2-2-6">
+            <h2>2.2.6 Declaring variables</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="2-2-7">
+            <h2>2.2.7 Data type conversion</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="2-3-1">
+            <h2>2.3.1 Input and Output statements</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="2-3-2">
+            <h2>2.3.2 Using printf() and scanf()</h2>
+            <p></p>
+        </div>
+         <div class="content-item" id="2-3-3">
+            <h2>2.3.3 Character Input/Output formatting</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="2-3-4">
+            <h2>2.3.4 Use of comments</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="">
+            <h2></h2>
+            <p></p>
+        </div>
+        
+        <!-- Unit 3 content -->
+        <div class="content-item" id="3-1-1">
+            <h2>3.1.1 Relational and logical operators</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="3-1-2">
+            <h2>3.1.2 if statement</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="3-1-3">
+            <h2>3.1.3 if else statement</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="3-1-4">
+            <h2>3.1.4 Nested if else statement</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="3-1-5">
+            <h2>3.1.5 if-else ladder</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="3-1-6">
+            <h2>3.1.6 The switch statement</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="3-2-1">
+            <h2>3.2.1 while loop</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="3-2-2">
+            <h2>3.2.2 do....while loop</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="3-2-3">
+            <h2>3.2.3 for loop</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="3-2-4">
+            <h2>3.2.4 go to statements</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="3-2-5">
+            <h2>3.2.5 Use of break and continue statements</h2>
+            <p></p>
+        </div>
+
+        <!-- Unit 4 content -->
+        <div class="content-item" id="4-1-1">
+            <h2>4.1.1 Characteristics of an array</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="4-1-2">
+            <h2>4.1.2 One dimension and Two dimension array</h2>
+            <p></p>
+        </div>
+        
+     
+        
+        
+        
+        
+        <div class="content-item" id="4-1-3">
+            <h2>4.1.3 Array declaration and Initialization</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="4-2-1">
+            <h2>4.2.1 Array of characters</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="4-2-2">
+            <h2>4.2.2 Operation on array Character</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="4-2-3">
+            <h2>4.2.3 String input/output</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="4-3-1">
+            <h2>4.3.1 Introduction and features of Structures</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="4-3-2">
+            <h2>4.3.2 Declaration and Initialization of Structures Typedef</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="4-3-3">
+            <h2>4.3.3 Enumerated Data Type</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="4-3-4">
+            <h2>4.3.4 Use of structures in C program</h2>
+            <p></p>
+        </div>
+
+        <!-- Unit 5 content -->
+        <div class="content-item" id="5-1-1">
+            <h2>5.1.1 Math functions</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="5-1-2">
+            <h2>5.1.2 String handling function</h2>
+            <p></p>
+        </div>
+         <div class="content-item" id="5-1-3">
+            <h2>5.1.3 other miscellaneous functions</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="5-2-1">
+            <h2>5.2.1 Writing User defined Functions</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="5-2-2">
+            <h2>5.2.2 Scope of variables</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="5-2-2">
+            <h2>5.2.3 Parameter pass</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="5-3-1">
+            <h2>5.3.1 Introduction to Recursive Functions</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="5-3-2">
+            <h2>5.3.2 Writing Recursive Functions</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="5-3-3">
+            <h2>5.3.3 Advantages and Disadvantages of Recursive Functions</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="">
+            <h2></h2>
+            <p></p>
+        </div>
+ 
+        <!-- Unit 6 content -->
+        <div class="content-item" id="6-1-1">
+            <h2>6.1.1 Declaring</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="6-1-2">
+            <h2>6.1.2 initializing</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="6-1-3">
+            <h2>6.1.3 accessing</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="6-1-4">
+            <h2>6.1.4 Pointer Arithmetic</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="6-2-1">
+            <h2>6.2.1 Handling arrays using pointers</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="6-2-2">
+            <h2>6.2.2 Handling functions using pointers</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="6-2-3">
+            <h2>6.2.3 Handling structures using pointers</h2>
+            <p></p>
+        </div>
+        <div class="content-item" id="">
+            <h2></h2>
+            <p></p>
+        </div>
+
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="expandedImage">
+    </div>
+
+    <script>
+        // Content Display System
+        function showContent(contentId) {
+            // Hide all content items
+            document.querySelectorAll('.content-item').forEach(item => {
+                item.classList.remove('active-content');
+            });
+
+            // Show selected content
+            const content = document.getElementById(contentId);
+            if (content) {
+                content.classList.add('active-content');
+                content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // Close all dropdown menus
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown.style.display = 'none';
+            });
+        }
+
+        // Image Modal System
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("expandedImage");
+
+        document.querySelectorAll('.codesnippets img').forEach(img => {
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        document.querySelector('.close').onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Menu Handling
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropdowns = document.querySelectorAll('.has-dropdown');
+            let hoverTimeout;
+
+            // Desktop Hover Handling
+            dropdowns.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    if (window.innerWidth > 768) {
+                        clearTimeout(hoverTimeout);
+                        const dropdown = item.querySelector('.dropdown');
+                        if (dropdown) dropdown.style.display = 'block';
+                    }
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    if (window.innerWidth > 768) {
+                        hoverTimeout = setTimeout(() => {
+                            const dropdown = item.querySelector('.dropdown');
+                            if (dropdown) dropdown.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+
+            // Mobile Click Handling
+            dropdowns.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const dropdown = item.querySelector('.dropdown');
+                        if (dropdown) {
+                            dropdown.style.display =
+                                dropdown.style.display === 'block' ? 'none' : 'block';
+                        }
+                    }
+                });
+            });
+
+            // Close menus when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.navbar li')) {
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        dropdown.style.display = 'none';
+                    });
+                }
+            });
+
+            // Window Resize Handler
+            window.addEventListener('resize', () => {
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.style.display = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

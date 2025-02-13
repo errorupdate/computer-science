@@ -14,17 +14,160 @@
             padding: 0;
         }
 
+      /* navbar full css style */
+
+        nav {
+            background: #2c3e50;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            list-style: none;
+            display: flex;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .navbar li {
+            position: relative;
+            padding: 15px 25px;
+            color: #ecf0f1;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #34495e;
+            min-width: 280px;
+            display: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .sub-dropdown {
+            left: 100%;
+            top: -10px;
+            background: #3b4f63;
+            min-width: 260px;
+            opacity: 0;
+            transform: translateX(15px);
+            transition: all 0.2s ease;
+            pointer-events: none;
+        }
+
+        .sub-sub-dropdown {
+            left: 100%;
+            top: -10px;
+            background: #42586d;
+            min-width: 240px;
+            opacity: 0;
+            transform: translateX(15px);
+            transition: all 0.2s ease;
+            pointer-events: none;
+        }
+
+        /* Hover Effects */
+        .navbar li:hover {
+            background: #34495e;
+        }
+
+        .dropdown li:hover {
+            background: #3b4f63;
+        }
+
+        .sub-dropdown li:hover {
+            background: #42586d;
+        }
+
+        .sub-sub-dropdown li:hover {
+            background: #4a6176;
+        }
+
+        /* Dropdown Activation */
+        .navbar li:hover>.dropdown {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .dropdown li:hover>.sub-dropdown {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+            display: block;
+        }
+
+        .sub-dropdown li:hover>.sub-sub-dropdown {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+            display: block;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Indicators */
+        .has-dropdown::after {
+            content: "▾";
+            margin-left: 8px;
+            font-size: 0.9em;
+            transition: transform 0.2s ease;
+        }
+
+        .dropdown .has-dropdown::after,
+        .sub-dropdown .has-dropdown::after {
+            content: "▸";
+            float: right;
+        }
+
+        .dropdown li:hover>.has-dropdown::after {
+            transform: rotate(90deg);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .dropdown {
+                position: static;
+                display: none;
+                background: #3b4f63;
+            }
+
+            .sub-dropdown {
+                position: static;
+                background: #42586d;
+            }
+        }
+    /* navbar style end  */
+
         header {
             background-color: #FF5733;
             color: white;
             padding: 20px 0;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
-            font-size:2em;
+            font-size: 2em;
             animation: fadeIn 2s ease-in-out;
         }
 
@@ -33,49 +176,52 @@
             animation: slideIn 2s ease-in-out;
         }
 
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            padding: 10px;
+        }
+
+
         section {
             margin-bottom: 20px;
         }
 
         h2 {
             color: #2c3e50;
-            border-bottom: 1px solid #33ffaa;
-            padding-bottom: 5px;
-            cursor: pointer;
-            transition: colored 0.3s ease;
-        }
-        h2:hover {
-            color: #FF5733;
-        }
-
-        .unit {
-            margin-bottom: 20px;
-            
-        }
-
-        .unit h3 {
-            color: #be33ff;
+            color: #3498db;
             cursor: pointer;
             transition: color 0.3s ease;
         }
-        .unit h3:hover {
-            color: #2c3e50;
+        .unit{
+            cursor: pointer;
+            
         }
 
-        .unit h4 {
-            color: #3498db;
-            cursor: pointer;
-            transition:color 0.3s ease;
-        }
         .unit h4:hover {
             color: #2c3e50;
+            
+        }
+         .unit h2:hover {
+            color: #2c3e50;
+            
+            
+        }
+        h4 .content {
+            display: none;
+            margin-left: 20px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #f0f0f0;
         }
 
         .unit .content {
             display: none;
             margin-left: 20px;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            transition: max-height 0.50s ease-in-out;
+           
         }
 
         .unit .content.show {
@@ -88,106 +234,129 @@
             color: #333;
             opacity: 1;
         }
+
         pre {
             background-color: #e8e8e8;
-            padding:10px;
+            padding: 10px;
             border-radius: 5px;
             overflow-x: auto;
         }
+
         code {
             background-color: #e8e8e8;
             padding: 2px 4px;
-            border-radius:3px;
+            border-radius: 3px;
         }
-      .codesnippets {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
 
-.codesnippets img {
-    width: 100%;
-    border-radius: 5px;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
+        .codesnippets {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
 
-.codesnippets img:hover {
-    transform: scale(1.05);
-}
+        .codesnippets img {
+            width: 100%;
+            border-radius: 5px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-}
+        .codesnippets img:hover {
+            transform: scale(1.05);
+        }
 
-.modal-content {
-    margin: 15% auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
+        .modal-content {
+            margin: 15% auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
 
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-        @media(max-width:600px){
-            body{
-                padding:10px;
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media(max-width:600px) {
+            body {
+                padding: 10px;
 
             }
-            header{
-                padding:10px 0;
+
+            header {
+                padding: 10px 0;
             }
-            main{
+
+            main {
                 padding: 10px;
             }
-            .unit .content{
-                margin-left:10px;
-                padding:10px;
+
+            .unit .content {
+                margin-left: 10px;
+                padding: 10px;
             }
-            pre{
-                padding:5px;
+
+            pre {
+                padding: 5px;
             }
         }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
         }
+
         @keyframes slideIn {
             from {
                 transform: translateY(20px);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
             }
+        }
+        .card{
+            background-color: #f1d1d1;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            color: #333;
+            opacity: 1;
+            animation: fadeIn 1s;
+            animation-fill-mode: forwards;
+            display:inline-flexbox;
         }
     </style>
 </head>
@@ -196,378 +365,573 @@
     <header>
         <h1>C language Notes</h1>
     </header>
+    <nav>
+        <ul class="navbar">
+            <!-- Unit 1 -->
+            <li class="has-dropdown course-unit">
+                Unit 1: Program Logic Development
+                <ul class="dropdown">
+                    <li class="has-dropdown">1.1 Fundamentals of Algorithms
+                        <ul class="sub-dropdown">
+                            <li>1.1.1 Notion of an algorithm</li>
+                            <li>1.1.2 Pseudo-code convention</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">1.2 Algorithmic Problems
+                        <ul class="sub-dropdown">
+                            <li>1.2.1 Importance of Algorithm</li>
+                            <li>1.2.2 Some Algorithmic problems</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">1.3 Flowchart
+                        <ul class="sub-dropdown">
+                            <li>1.3.1 FlowChart</li>
+                            <li>1.3.2 Symbol of FlowChart</li>
+                            <li>1.3.3 Flowchart Guidelines</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+    
+            <!-- Unit 2 -->
+            <li class="has-dropdown course-unit">
+                Unit 2: C Programming Basics
+                <ul class="dropdown">
+                    <li class="has-dropdown">2.1 Introduction to C
+                        <ul class="sub-dropdown">
+                            <li>2.1.1 History</li>
+                            <li>2.1.2 Structure</li>
+                            <li>2.1.3 Header Files & main()</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">2.2 Data Concepts
+                        <ul class="sub-dropdown">
+                            <li>2.2.1 Character set & Tokens</li>
+                            <li>2.2.2 Variables</li>
+                            <li>2.2.3 Constants</li>
+                            <li>2.2.4 Data Types</li>
+                            <li>2.2.5 Operators</li>
+                            <li>2.2.6 Variable Declaration</li>
+                            <li>2.2.7 Type Conversion</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">2.3 Basic I/O
+                        <ul class="sub-dropdown">
+                            <li>2.3.1 I/O Statements</li>
+                            <li>2.3.2 printf()/scanf()</li>
+                            <li>2.3.3 Character I/O</li>
+                            <li>2.3.4 Comments</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+    
+            <!-- Unit 3 -->
+            <li class="has-dropdown course-unit">
+                Unit 3: Decision Making
+                <ul class="dropdown">
+                    <li class="has-dropdown">3.1 Decision Making
+                        <ul class="sub-dropdown">
+                            <li>3.1.1 Relational/Logical Operators</li>
+                            <li>3.1.2 if statement</li>
+                            <li>3.1.3 if-else</li>
+                            <li>3.1.4 Nested if-else</li>
+                            <li>3.1.5 if-else ladder</li>
+                            <li>3.1.6 switch</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">3.2 Looping
+                        <ul class="sub-dropdown">
+                            <li>3.2.1 while</li>
+                            <li>3.2.2 do-while</li>
+                            <li>3.2.3 for</li>
+                            <li>3.2.4 goto</li>
+                            <li>3.2.5 break/continue</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+    
+            <!-- Unit 4 -->
+            <li class="has-dropdown course-unit">
+                Unit 4: Arrays & Structures
+                <ul class="dropdown">
+                    <li class="has-dropdown">4.1 Array Basics
+                        <ul class="sub-dropdown">
+                            <li>4.1.1 Characteristics</li>
+                            <li>4.1.2 1D/2D Arrays</li>
+                            <li>4.1.3 Declaration/Init</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">4.2 Character Arrays
+                        <ul class="sub-dropdown">
+                            <li>4.2.1 Char Arrays</li>
+                            <li>4.2.2 Operations</li>
+                            <li>4.2.3 String I/O</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">4.3 Features
+                        <ul class="sub-dropdown">
+                            <li>4.3.1 Structures Intro</li>
+                            <li>4.3.2 Declaration/Init</li>
+                            <li>4.3.3 Enumerated Types</li>
+                            <li>4.3.4 Structure Usage</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+    
+            <!-- Unit 5 -->
+            <li class="has-dropdown course-unit">
+                Unit 5: Functions
+                <ul class="dropdown">
+                    <li class="has-dropdown">5.1 Library Functions
+                        <ul class="sub-dropdown">
+                            <li>5.1.1 Math</li>
+                            <li>5.1.2 String</li>
+                            <li>5.1.3 Miscellaneous</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">5.2 User Functions
+                        <ul class="sub-dropdown">
+                            <li>5.2.1 Writing Functions</li>
+                            <li>5.2.2 Variable Scope</li>
+                            <li>5.2.3 Parameters</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">5.3 Recursive
+                        <ul class="sub-dropdown">
+                            <li>5.3.1 Introduction</li>
+                            <li>5.3.2 Writing Recursive</li>
+                            <li>5.3.3 Pros/Cons</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+    
+            <!-- Unit 6 -->
+            <li class="has-dropdown course-unit">
+                Unit 6: Pointers
+                <ul class="dropdown">
+                    <li class="has-dropdown">6.1 Concepts
+                        <ul class="sub-dropdown">
+                            <li>6.1.1 Declaring</li>
+                            <li>6.1.2 Initializing</li>
+                            <li>6.1.3 Accessing</li>
+                            <li>6.1.4 Pointer Arithmetic</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">6.2 Uses
+                        <ul class="sub-dropdown">
+                            <li>6.2.1 Arrays</li>
+                            <li>6.2.2 Functions</li>
+                            <li>6.2.3 Structures</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+
+    </div>
     <main>
-    <section class="unit" id="unit1">
+        <div class="card">
+        <section class="unit" id="unit1">
             <h2 onclick="toggleContent(this)">Unit 1: Program Logic Development</h2>
-            <!-- <div class="content">
-                <h3 onclick="toggleContent(this)">1.1 Fundamentals of Algorithms</h3>
+            <div class="content">
+                <h3 onclick="toggleContent(this)" >1.1 Fundamentals of Algorithms</h3>
                 <div class="content">
                     <h4 onclick="toggleContent(this)">1.1.1 Notion of an algorithm</h4>
                     <div class="content">
-                        <p>An algorithm is a step-by-step procedure or formula for solving a problem. It is a finite sequence of well-defined
-                            instructions to achieve a specific goal or perform a computation. Algorithms are fundamental to computer science and
+                        <p>An algorithm is a step-by-step procedure or formula for solving a problem. It is a finite
+                            sequence of well-defined
+                            instructions to achieve a specific goal or perform a computation. Algorithms are fundamental
+                            to computer science and
                             programming, as they provide a clear method for solving problems.</p>
                         <ul>
-                            <li><strong>Finiteness:</strong> An algorithm must always terminate after a finite number of steps. It should not
+                            <li><strong>Finiteness:</strong> An algorithm must always terminate after a finite number of
+                                steps. It should not
                                 run indefinitely.</li>
-                            <li><strong>Well-defined Inputs and Outputs:</strong> An algorithm should have clearly defined inputs (data it
-                                receives) and outputs (results it produces). The inputs can be zero or more, and the outputs can also be zero or
+                            <li><strong>Well-defined Inputs and Outputs:</strong> An algorithm should have clearly
+                                defined inputs (data it
+                                receives) and outputs (results it produces). The inputs can be zero or more, and the
+                                outputs can also be zero or
                                 more.</li>
-                            <li><strong>Effectiveness:</strong> Each step of the algorithm must be basic enough that it can be performed, in
-                                principle, by a person using only paper and pencil. This means that the operations must be feasible and not
+                            <li><strong>Effectiveness:</strong> Each step of the algorithm must be basic enough that it
+                                can be performed, in
+                                principle, by a person using only paper and pencil. This means that the operations must
+                                be feasible and not
                                 require advanced technology.</li>
-                            <li><strong>Generality:</strong> An algorithm should be applicable to a broad set of problems, not just a single
-                                instance. It should be able to handle different inputs and produce the correct output for each.</li>
-                            <li><strong>Unambiguous:</strong> Each step of the algorithm must be clear and unambiguous, leaving no room for
+                            <li><strong>Generality:</strong> An algorithm should be applicable to a broad set of
+                                problems, not just a single
+                                instance. It should be able to handle different inputs and produce the correct output
+                                for each.</li>
+                            <li><strong>Unambiguous:</strong> Each step of the algorithm must be clear and unambiguous,
+                                leaving no room for
                                 interpretation.</li>
                         </ul>
                     </div>
-                    <h4 onclick="toggleContent(this)">1.1.2 Pseudo-code convention like assignment statements and Basic control Structures.</h4>
+                    <h4 onclick="toggleContent(this)">1.1.2 Pseudo-code convention like assignment statements and Basic
+                        control Structures.</h4>
                     <div class="content">
-                       <p>Pseudo-code is a way to express algorithms in a structured but informal manner. It uses the conventions of programming
-                    languages but is designed for human readability rather than machine execution. Pseudo-code helps programmers plan and
-                    communicate algorithms without getting bogged down in the syntax of a specific programming language.
-                </p>
-                <div class="codesnippets">
-                   
-                <img src="/cse/computer-science/images/clanguage image/Picture 1.png" alt="pseudocode">
-                <img src="/cse/computer-science/images/clanguage image/Picture 2.png" alt="pseudocode">
-                <img src="/cse/computer-science/images/clanguage image/Picture 3.png" alt="pseudocode">
-                </div>
-                 <div id="myModal" class="modal">
-                        <span class="close">&times;</span>
-                        <img class="modal-content" id="img01">
-                    </div>
+                        <p>Pseudo-code is a way to express algorithms in a structured but informal manner. It uses the
+                            conventions of programming
+                            languages but is designed for human readability rather than machine execution. Pseudo-code
+                            helps programmers plan and
+                            communicate algorithms without getting bogged down in the syntax of a specific programming
+                            language.
+                        </p>
+                        <div class="codesnippets">
+
+                            <img src="/cse/computer-science/images/clanguage image/Picture 1.png" alt="pseudocode">
+                            <img src="/cse/computer-science/images/clanguage image/Picture 2.png" alt="pseudocode">
+                            <img src="/cse/computer-science/images/clanguage image/Picture 3.png" alt="pseudocode">
+                        </div>
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                        </div>
 
                     </div>
                 </div>
-                <h3 onclick="toggleContent(this)">1.2 Algorithmic Problems</h3>
+                <h3 onclick="toggleContent(this)" >1.2 Algorithmic Problems</h3>
                 <div class="content">
                     <h4 onclick="toggleContent(this)">1.2.1 Importance of Algorithm</h4>
-                    <div class="content">
-                    <p>An algorithm is a step-by-step procedure or formula for solving a problem. It is a finite sequence of well-defined
-                        instructions to achieve a specific goal or perform a computation. Algorithms are fundamental to computer science and
-                        programming, as they provide a clear method for solving problems.</p>
-                    <ul>
-                        <li><strong>Efficiency:</strong> Algorithms help in optimizing the use of resources (time and space). A
-                            well-designed algorithm can significantly reduce the time complexity of a problem.</li>
-                        <li><strong>Problem Solving:</strong> Algorithms provide a systematic approach to solving problems, making it easier
-                            to understand and implement solutions.</li>
-                        <li><strong>Reusability:</strong> Once an algorithm is developed, it can be reused in different programs or
-                            applications, saving time and effort.</li>
-                        <li><strong>Foundation of Programming:</strong> Understanding algorithms is crucial for programming, as they form
-                            the basis for writing efficient and effective code.</li>
-                        <li><strong>Communication:</strong> Pseudo-code and flowcharts allow programmers to communicate their ideas clearly
-                            with others, regardless of the programming language they use.</li>
-                    </ul>
+                    <div class="content " >
+                        <p>An algorithm is a step-by-step procedure or formula for solving a problem. It is a finite
+                            sequence of well-defined
+                            instructions to achieve a specific goal or perform a computation. Algorithms are fundamental
+                            to computer science and
+                            programming, as they provide a clear method for solving problems.</p>
+                        <ul>
+                            <li><strong>Efficiency:</strong> Algorithms help in optimizing the use of resources (time
+                                and space). A
+                                well-designed algorithm can significantly reduce the time complexity of a problem.</li>
+                            <li><strong>Problem Solving:</strong> Algorithms provide a systematic approach to solving
+                                problems, making it easier
+                                to understand and implement solutions.</li>
+                            <li><strong>Reusability:</strong> Once an algorithm is developed, it can be reused in
+                                different programs or
+                                applications, saving time and effort.</li>
+                            <li><strong>Foundation of Programming:</strong> Understanding algorithms is crucial for
+                                programming, as they form
+                                the basis for writing efficient and effective code.</li>
+                            <li><strong>Communication:</strong> Pseudo-code and flowcharts allow programmers to
+                                communicate their ideas clearly
+                                with others, regardless of the programming language they use.</li>
+                        </ul>
                     </div>
-                        <h4 onclick="toggleContent(this)">1.2.2 Some Algorithmic problems</h4>
-                        <div class="content">
-                            <p>These algorithms are essential for understanding basic programming concepts and developing problem-solving skills. We
-                            will cover four specific problems: solving simple arithmetic expressions, finding the greatest of three numbers,
+                    <h4 onclick="toggleContent(this)">1.2.2 Some Algorithmic problems</h4>
+                    <div class="content">
+                        <p>These algorithms are essential for understanding basic programming concepts and developing
+                            problem-solving skills. We
+                            will cover four specific problems: solving simple arithmetic expressions, finding the
+                            greatest of three numbers,
                             determining whether a number is even or odd, and checking if a number is prime.</p>
 
-                        </div>
+                    </div>
                 </div>
-                <h3 onclick="toggleContent(this)">1.3 Flowchart</h3>
+                <h3 onclick="toggleContent(this)" id="unit1-3">1.3 Flowchart</h3>
                 <div class="content">
                     <h4 onclick="toggleContent(this)">1.3.1 FlowChart</h4>
                     <div class="content">
-                       
+
                     </div>
                     <h4 onclick="toggleContent(this)">1.3.2 Symbol of FlowChart</h4>
                     <div class="content">
-                       
+
                     </div>
                     <h4 onclick="toggleContent(this)">1.3.3 Guidelines for preparing Flowchart</h4>
                     <div class="content">
-                        
+
                     </div>
-                    
-                </div> -->
-            </div>
-    </section>
-    <section class="unit" id="unit2">
-        <h2 onclick="toggleContent(this)">Unit 2: Basics of C Programming</h2>
-        <div class="content">
-            <h3 onclick="toggleContent(this)">2.1 Introduction to C</h3>
-            <div class="content">
-                <h4 onclick="toggleContent(this)">2.1.1 History of 'C'</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">2.1.2 Structure of C</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">2.1.3 Header Files and 'main' Function</h4>
-                <div class="content">
-    
+
                 </div>
             </div>
-            <h3 onclick="toggleContent(this)">2.2 Data Concepts</h3>
+        </section>
+        <section class="unit" id="unit2">
+            <h2 onclick="toggleContent(this)">Unit 2: Basics of C Programming</h2>
             <div class="content">
-                <h4 onclick="toggleContent(this)">2.2.1 Character set,tokens,keywords,identifiers</h4>
+                <h3 onclick="toggleContent(this)" >2.1 Introduction to C</h3>
                 <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">2.2.2 Variables</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">2.2.3 Constant </h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">2.2.4 Data types</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">2.2.5 C operators</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">2.2.6 Declaring variables</h4>
-                <div class="content">
-    
-    
-                </div>
-                <h4 onclick="toggleContent(this)">2.2.7 Data type conversion</h4>
-                <div class="content">
-                
-                
-                </div>
-            </div>
-            <h3 onclick="toggleContent(this)">2.3 Basic Input Output</h3>
-            <div class="content">
-                <h4 onclick="toggleContent(this)">2.3.1 Input and Output statements</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">2.3.2 Using printf() and scanf()</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">2.3.3 Character Input/Output formatting</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">2.3.4 Use of comments</h4>
-                <div class="content">
-    
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="unit" id="unit3">
-        <h2 onclick="toggleContent(this)">Unit 3: Decision Making and Branching</h2>
-        <div class="content">
-            <h3 onclick="toggleContent(this)">3.1 Decision Making and Branching</h3>
-            <div class="content">
-                <h4 onclick="toggleContent(this)">3.1.1 Relational and logical operators</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">3.1.2 if statement</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">3.1.3 if else statement</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">3.1.4 Nested if else statement</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">3.1.5 if-else ladder</h4>
-                <div class="content">
-    
-                    
-                </div>
-                <h4 onclick="toggleContent(this)">3.1.5 The switch statement</h4>
-                <div class="content">
-                
-                
-                </div>
-            </div>
-            <h3 onclick="toggleContent(this)">3.2 Looping</h3>
-            <div class="content">
-                <h4 onclick="toggleContent(this)">3.2.1 while loop</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">3.2.2 do....while loop</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">3.2.3 for loop</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">3.2.4 go to statements</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">3.2.5 Use of break and continue statements</h4>
-                <div class="content">
-    
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="unit" id="unit4">
-        <h2 onclick="toggleContent(this)">Unit 4: Array and Structure</h2>
-        <div class="content">
-            <h3 onclick="toggleContent(this)">4.1 Basic of Array</h3>
-            <div class="content">
-                <h4 onclick="toggleContent(this)">4.1.1 Characteristics of an array</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">4.1.2 One dimension and Two dimension array</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">4.1.3 Array declaration and Initialization</h4>
-                <div class="content">
-    
-                </div>
-            </div>
-            <h3 onclick="toggleContent(this)">4.2 Array of Characters </h3>
-            <div class="content">
-                <h4 onclick="toggleContent(this)">4.2.1 Array of characters</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">4.2.2 Operation on array Character</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">4.2.3 String input/output</h4>
-                <div class="content">
-    
-                </div>
-            </div>
-            <h3 onclick="toggleContent(this)">4.3 Features of array</h3>
-            <div class="content">
-                <h4 onclick="toggleContent(this)">4.3.1 Introduction and features of Structures</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">4.3.2 Declaration and Initialization of Structures Typedef</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">4.3.3 Enumerated Data Type</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">4.3.4 Use of structures in C program</h4>
-                <div class="content">
-    
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="unit" id="unit5">
-        <h2 onclick="toggleContent(this)">Unit 5: Concept and Need of Functions</h2>
-        <div class="content">
-            <h3 onclick="toggleContent(this)">5.1 Library functions</h3>
-            <div class="content">
-                <h4 onclick="toggleContent(this)">5.1.1 Math functions</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">5.1.2 String handling function</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">5.1.3 other miscellaneous functions</h4>
-                <div class="content">
-    
-                </div>
-            </div>
-            <h3 onclick="toggleContent(this)">5.2 User defined functions</h3>
-            <div class="content">
-                <h4 onclick="toggleContent(this)">5.2.1 Writing User defined Functions</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">5.2.2 Scope of variables</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">5.2.3 Parameter pass</h4>
-                <div class="content">
-                    <h4 onclick="toggleContent(this)">5.2.3.1 call by value</h4>
+                    <h4 onclick="toggleContent(this)">2.1.1 History of 'C'</h4>
                     <div class="content">
-                    
+
                     </div>
-                    <h4 onclick="toggleContent(this)">5.2.3.1 call by reference</h4>
+                    <h4 onclick="toggleContent(this)">2.1.2 Structure of C</h4>
                     <div class="content">
-                    
+
                     </div>
-    
+                    <h4 onclick="toggleContent(this)">2.1.3 Header Files and 'main' Function</h4>
+                    <div class="content">
+
+                    </div>
                 </div>
-               
+                <h3 onclick="toggleContent(this)" >2.2 Data Concepts</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">2.2.1 Character set,tokens,keywords,identifiers</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.2.2 Variables</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.2.3 Constant </h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.2.4 Data types</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.2.5 C operators</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.2.6 Declaring variables</h4>
+                    <div class="content">
+
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.2.7 Data type conversion</h4>
+                    <div class="content">
+
+
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)" >2.3 Basic Input Output</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">2.3.1 Input and Output statements</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.3.2 Using printf() and scanf()</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.3.3 Character Input/Output formatting</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">2.3.4 Use of comments</h4>
+                    <div class="content">
+
+                    </div>
+                </div>
             </div>
-            <h3 onclick="toggleContent(this)">5.3 Recursive Functions</h3>
+        </section>
+        <section class="unit" id="unit3">
+            <h2 onclick="toggleContent(this)">Unit 3: Decision Making and Branching</h2>
             <div class="content">
-                <h4 onclick="toggleContent(this)">5.3.1 Introduction to Recursive Functions</h4>
+                <h3 onclick="toggleContent(this)" >3.1 Decision Making and Branching</h3>
                 <div class="content">
-    
+                    <h4 onclick="toggleContent(this)">3.1.1 Relational and logical operators</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.1.2 if statement</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.1.3 if else statement</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.1.4 Nested if else statement</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.1.5 if-else ladder</h4>
+                    <div class="content">
+
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.1.5 The switch statement</h4>
+                    <div class="content">
+
+
+                    </div>
                 </div>
-                <h4 onclick="toggleContent(this)">5.3.2 Writing Recursive Functions</h4>
+                <h3 onclick="toggleContent(this)" >3.2 Looping</h3>
                 <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">5.3.3 Advantages and Disadvantages of Recursive Functions</h4>
-                <div class="content">
-    
+                    <h4 onclick="toggleContent(this)">3.2.1 while loop</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.2.2 do....while loop</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.2.3 for loop</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.2.4 go to statements</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">3.2.5 Use of break and continue statements</h4>
+                    <div class="content">
+
+                    </div>
                 </div>
             </div>
+        </section>
+        <section class="unit" id="unit4">
+            <h2 onclick="toggleContent(this)">Unit 4: Array and Structure</h2>
+            <div class="content">
+                <h3 onclick="toggleContent(this)" >4.1 Basic of Array</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">4.1.1 Characteristics of an array</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">4.1.2 One dimension and Two dimension array</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">4.1.3 Array declaration and Initialization</h4>
+                    <div class="content">
+
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)" >4.2 Array of Characters </h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">4.2.1 Array of characters</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">4.2.2 Operation on array Character</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">4.2.3 String input/output</h4>
+                    <div class="content">
+
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)" >4.3 Features of array</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">4.3.1 Introduction and features of Structures</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">4.3.2 Declaration and Initialization of Structures Typedef</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">4.3.3 Enumerated Data Type</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">4.3.4 Use of structures in C program</h4>
+                    <div class="content">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="unit" id="unit5">
+            <h2 onclick="toggleContent(this)">Unit 5: Concept and Need of Functions</h2>
+            <div class="content">
+                <h3 onclick="toggleContent(this)" >5.1 Library functions</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">5.1.1 Math functions</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">5.1.2 String handling function</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">5.1.3 other miscellaneous functions</h4>
+                    <div class="content">
+
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)" >5.2 User defined functions</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">5.2.1 Writing User defined Functions</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">5.2.2 Scope of variables</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">5.2.3 Parameter pass</h4>
+                    <div class="content">
+                        <h4 onclick="toggleContent(this)">5.2.3.1 call by value</h4>
+                        <div class="content">
+
+                        </div>
+                        <h4 onclick="toggleContent(this)">5.2.3.1 call by reference</h4>
+                        <div class="content">
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <h3 onclick="toggleContent(this)" >5.3 Recursive Functions</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">5.3.1 Introduction to Recursive Functions</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">5.3.2 Writing Recursive Functions</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">5.3.3 Advantages and Disadvantages of Recursive Functions</h4>
+                    <div class="content">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="unit" id="unit6">
+            <h2 onclick="toggleContent(this)">Unit 6: Pointers</h2>
+            <div class="content">
+                <h3 onclick="toggleContent(this)"> 6.1 Concepts of Pointers</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">6.1.1 Declaring</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">6.1.2 initializing</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">6.1.3 accessing</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">6.1.4 Pointer Arithmetic</h4>
+                    <div class="content">
+
+                    </div>
+                </div>
+                <h3 onclick="toggleContent(this)" >6.2 Pointers Uses</h3>
+                <div class="content">
+                    <h4 onclick="toggleContent(this)">6.2.1 Handling arrays using pointers</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">6.2.2 Handling functions using pointers</h4>
+                    <div class="content">
+
+                    </div>
+                    <h4 onclick="toggleContent(this)">6.2.3 Handling structures using pointers</h4>
+                    <div class="content">
+
+                    </div>
+                </div>
+            </div>
+        </section>
         </div>
-    </section>
-    <section class="unit" id="unit6">
-        <h2 onclick="toggleContent(this)">Unit 6: Pointers</h2>
-        <div class="content">
-            <h3 onclick="toggleContent(this)">6.1 Concepts of Pointers</h3>
-            <div class="content">
-                <h4 onclick="toggleContent(this)">6.1.1 Declaring</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">6.1.2 initializing</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">6.1.3 accessing</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">6.1.4 Pointer Arithmetic</h4>
-                <div class="content">
-    
-                </div>
-            </div>
-            <h3 onclick="toggleContent(this)">6.2 Pointers Uses</h3>
-            <div class="content">
-                <h4 onclick="toggleContent(this)">6.2.1 Handling arrays using pointers</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">6.2.2 Handling functions using pointers</h4>
-                <div class="content">
-    
-                </div>
-                <h4 onclick="toggleContent(this)">6.2.3 Handling structures using pointers</h4>
-                <div class="content">
-    
-                </div>
-            </div>
-        </div>
-    </section>
     </main>
     <script>
         function toggleContent(element) {
@@ -578,28 +942,83 @@
                 content.style.display = "block";
             }
         }
-         // Get the modal
-            var modal = document.getElementById("myModal");
+        // Get the modal
+        var modal = document.getElementById("myModal");
 
-            // Get the image and insert it inside the modal - use its "alt" text as a caption
-            var modalImg = document.getElementById("img01");
-            var images = document.querySelectorAll(".codesnippets img");
-            images.forEach(img => {
-                img.onclick = function () {
-                    modal.style.display = "block";
-                    modalImg.src = this.src;
-                }
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var modalImg = document.getElementById("img01");
+        var images = document.querySelectorAll(".codesnippets img");
+        images.forEach(img => {
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }// Mobile Menu Handling
+            document.addEventListener('DOMContentLoaded', () => {
+                const dropdowns = document.querySelectorAll('.has-dropdown');
+                let hoverTimeout;
+
+                // Desktop Hover Handling
+                dropdowns.forEach(item => {
+                    item.addEventListener('mouseenter', () => {
+                        if (window.innerWidth > 768) {
+                            clearTimeout(hoverTimeout);
+                            const dropdown = item.querySelector('.dropdown, .sub-dropdown');
+                            if (dropdown) dropdown.style.display = 'block';
+                        }
+                    });
+
+                    item.addEventListener('mouseleave', () => {
+                        if (window.innerWidth > 768) {
+                            hoverTimeout = setTimeout(() => {
+                                const dropdown = item.querySelector('.dropdown, .sub-dropdown');
+                                if (dropdown) dropdown.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+
+                // Mobile Click Handling
+                dropdowns.forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            const dropdown = item.querySelector('.dropdown, .sub-dropdown');
+                            if (dropdown) {
+                                dropdown.style.display =
+                                    dropdown.style.display === 'block' ? 'none' : 'block';
+                            }
+                        }
+                    });
+                });
+
+                // Close menus when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.navbar li')) {
+                        document.querySelectorAll('.dropdown, .sub-dropdown').forEach(dropdown => {
+                            dropdown.style.display = 'none';
+                        });
+                    }
+                });
+
+                // Window Resize Handler
+                window.addEventListener('resize', () => {
+                    document.querySelectorAll('.dropdown, .sub-dropdown').forEach(dropdown => {
+                        dropdown.style.display = 'none';
+                    });
+                });
             });
 
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function () {
-                modal.style.display = "none";
-            }
     </script>
-   
+
 
 </body>
 

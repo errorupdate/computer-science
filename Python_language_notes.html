@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete C Programming Guide</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f6fa;
+            color: #333;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background: #2c3e50;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            list-style: none;
+            display: flex;
+            padding: 0 20px;
+        }
+
+        .navbar li {
+            position: relative;
+            padding: 15px 25px;
+            color: #ecf0f1;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: absolute;
+            background: #34495e;
+            min-width: 280px;
+            display: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .sub-dropdown {
+            left: 100%;
+            top: 0;
+            background: #3b4f63;
+            min-width: 260px;
+        }
+
+        .sub-sub-dropdown {
+            left: 100%;
+            top: 0;
+            background: #42586d;
+            min-width: 240px;
+        }
+
+        /* Content Section */
+        #content-section {
+            margin-top: 150px;
+            padding: 30px;
+            min-height: 100vh;
+        }
+
+        .content-item {
+            display: none;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .active-content {
+            display: block;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .dropdown {
+                position: static;
+                display: none;
+                background: #3b4f63;
+            }
+
+            #content-section {
+                margin-top: 300px;
+            }
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1001;
+        }
+
+        /* Code Snippet Styles */
+        .codesnippets {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .codesnippets img {
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .codesnippets img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: 5% auto;
+            display: block;
+            width: 90%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Complete Python Programming Guide</h1>
+    </header>
+
+    <nav>
+        <ul class="navbar">
+            <!-- Unit 1 -->
+            <li class="has-dropdown">
+                Unit 1: Introduction to Python
+                <ul class="dropdown">
+                    <li class="has-dropdown">1.1 Overview of Python
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('1-1-1')">1.1.1 Introduction to Python Character Set</li>
+                            <li onclick="showContent('1-1-2')">1.1.2 Python Tokens</li>
+                            <li onclick="showContent('1-1-3')">1.1.3 Variables</li>
+                            <li onclick="showContent('1-1-4')">1.1.4 Lvalue and Rvalue Concepts</li>
+                            <li onclick="showContent('1-1-5')"> 1.1.5 Use of Comments</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        1.2 Overview of Data Types
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('1-2-1')">1.2.1 Number Types: Integer, Floating Point, Complex</li>
+                            <li onclick="showContent('1-2-2')">1.2.2 Boolean Type</li>
+                            <li onclick="showContent('1-2-3')">1.2.3 Sequence Types: String, List, Tuple</li>
+                            <li onclick="showContent('1-2-4')">1.2.4 None Type</li>
+                            <li onclick="showContent('1-2-5')">1.2.5 Mapping Type: Dictionary</li>
+                            <li onclick="showContent('1-2-6')">1.2.6 Distinction between Mutable and Immutable Data Types</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        1.3 Understanding Operators
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('1-3-1')">1.3.1 Arithmetic Operator</li>
+                            <li onclick="showContent('1-3-2')">1.3.2 Relational Operator</li>
+                            <li onclick="showContent('1-3-3')">1.3.3 Logical Operator</li>
+                            <li onclick="showContent('1-3-4')">1.3.4 Augmented Assignment Operator</li>
+                            <li onclick="showContent('1-3-5')">1.3.5 Assignment Operator</li>
+                            <li onclick="showContent('1-3-6')">1.3.6 Expression and Statements</li>
+                            <li onclick="showContent('1-3-7')">1.3.7 Type Conversion and Input/Output Mechanism</li>
+                            <li onclick="showContent('1-3-8')">1.3.8 Precedence of Operators</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Unit 2 -->
+            <li class="has-dropdown">Unit 2: Conditional and Iterative statements
+                <ul class="dropdown">
+                    <li class="has-dropdown">
+                        2.1 Conditional Statements
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('2-1-1')">2.1.1 simple if Statements</li>
+                            <li onclick="showContent('2-1-2')">2.1.2 if-else Statement</li>
+                            <li onclick="showContent('2-1-3')">2.1.3 if-elif-else Statements</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        2.2 Iterative Statements
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('2-2-1')">2-2-1 for loop</li>
+                            <li onclick="showContent('2-2-2')">2-2-2 while loop</li>
+                            <li onclick="showContent('2-2-3')">2-2-3 Range Function</li>
+                            <li onclick="showContent('2-2-4')">2-2-4 Break and Continue Statements</li>
+                            <li onclick="showContent('2-2-5')">2-2-5 Nested Loops</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <!-- Unit 3 -->
+            <li class="has-dropdown">
+                Unit 3: String, List, Tuples, Set, and Dictionary
+                <ul class="dropdown">
+                    <li class="has-dropdown"> 3.1 String
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('3-1-1')">3.1.1 String Basics</li>
+                            <li onclick="showContent('3-1-2')">3.1.2 String Operations and built-in Function</li>
+                            <li onclick="showContent('3-1-3')">3.1.3 Traversing a string Using Loops</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">3.2 Lists
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('3-2-1')">3.2.1 Introduction to List</li>
+                            <li onclick="showContent('3-2-2')">3.2.2 Index in List</li>
+                            <li onclick="showContent('3-2-3')">3.2.3 List Operations</li>
+                            <li onclick="showContent('3-2-4')">3.2.4 Traversing a List</li>
+                            <li onclick="showContent('3-2-5')">3.2.5 Built-in List Functions</li>
+                            <li onclick="showContent('3-2-6')">3.2.6 Linear Search on List of Numbers</li>
+                            <li onclick="showContent('3-2-7')">3.2.7 Counting the frequency of Elements</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        3.3 Tuples
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('3-3-1')">3.3.1 Tuple Basics</li>
+                            <li onclick="showContent('3-3-2')">3.3.2 Creating and initializing Tuples</li>
+                            <li onclick="showContent('3-3-3')">3.3.3 Accessing Element</li>
+                            <li onclick="showContent('3-3-4')">3.3.4 Tuple Assignments</li>
+                            <li onclick="showContent('3-3-5')">3.3.5 Performing Operations on Tuples</li>
+                            <li onclick="showContent('3-3-6')">3.3.6 Tuple Methods and Built-in Functions</li>
+                            <li onclick="showContent('3-3-7')">3.3.7 Nested Tuples</li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        3.4 Sets
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('3-4-1')">3.4.1 </li>
+                            <li onclick="showContent('3-4-2')">3.4.2 </li>
+                            <li onclick="showContent('3-4-3')">3.4.3 </li>
+                            <li onclick="showContent('3-4-4')">3.4.4 </li>
+                            <li onclick="showContent('3-4-5')">3.4.5 </li>
+                            <li onclick="showContent('3-4-6')">3.4.6 </li>
+                            <li onclick="showContent('3-4-7')">3.4.7 </li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        3.5 Dictionary
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('3-5-1')">3.5.1 </li>
+                            <li onclick="showContent('3-5-2')">3.5.2 </li>
+                            <li onclick="showContent('3-5-3')">3.5.3 </li>
+                            <li onclick="showContent('3-5-4')">3.5.4 </li>
+                            <li onclick="showContent('3-5-5')">3.5.5 </li>
+                            <li onclick="showContent('3-5-6')">3.5.6 </li>
+                            <li onclick="showContent('3-5-7')">3.5.7 </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <!-- Unit 4 -->
+            <li class="has-dropdown' ">
+                <ul class="dropdown">
+                    <li class="has-dropdown">
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Unit 5 -->
+            <li class="has-dropdown' ">
+                <ul class="dropdown">
+                    <li class="has-dropdown">
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Unit 6 -->
+            <li class="has-dropdown' ">
+                <ul class="dropdown">
+                    <li class="has-dropdown">
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <ul class="sub-dropdown">
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                            <li onclick="showContent('')"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- Add remaining units following same pattern -->
+    </nav>
+
+    <section id="content-section">
+        <!-- Unit 1 Content -->
+        <div id="1-1-1" class="content-item">
+            <h2>1.1.1 Introduction to Python Character Set</h2>
+            <p>The Python character set includes letters, digits, and special symbols that are used to write Python programs. It consists of:</p>
+                        <ul>
+                            <li><strong>Letters:</strong> A-Z, a-z</li>
+                            <li><strong>Digits:</strong> 0-9</li>
+                            <li><strong>Special Symbols:</strong> + - * / % = <> ( ) [ ] { } , . : ; ' " # @</li>
+                            <li><strong>Whitespace characters:</strong> space, tab, newline</li>
+                        </ul>
+        </div>
+        <div id="1-1-2" class="content-item">
+            <h2>1.1.2 Python Tokens</h2>
+             <p>Tokens are the smallest units in a Python program. They include:</p>
+                        <ul>
+                            <li><strong>Keywords:</strong> Reserved words with special meaning, e.g., <code>if</code>, <code>else</code>, <code>while</code>, <code>for</code>, <code>def</code>, <code>return</code>.</li>
+                            <li><strong>Identifiers:</strong> Names given to variables, functions, classes, etc. Must start with a letter or underscore, followed by letters, digits, or underscores.</li>
+                            <li><strong>Literals:</strong> Fixed values such as numbers (<code>123</code>), strings (<code>"hello"</code>), booleans (<code>True</code>, <code>False</code>).</li>
+                            <li><strong>Operators:</strong> Symbols that perform operations, e.g., <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>==</code>, <code>!=</code>.</li>
+                            <li><strong>Delimiters:</strong> Characters that separate tokens, e.g., <code>()</code>, <code>{}</code>, <code>[]</code>, <code>,</code>, <code>:</code>, <code>.</code>.</li>
+                        </ul>
+        </div>
+        <div id="1-1-3" class="content-item">
+            <h2>1.1.3 Variables</h2>
+            <p>Variables are used to store data values. In Python, you don't need to declare a variable before using it. You can assign a value to a variable using the assignment operator.<p>Variables are a big part of Python and all computer programming languages.
+                        A variable is simply a placeholder for information that may vary (change). For
+                        example, when you browse Amazon today, you can see your name and “member
+                        since” date appear on their home page.</p></p>
+                        <pre><code>example_integer = 42
+negative_integer = -42</code></pre>
+                            <h5>Creating valid variable names</h5>
+                            <ol>
+                                <li>The variable start with letter or underscore(_).</li>
+                                <li>After the first letter use letters,numbers,or underscores.</li>
+                                <li>Variable names are case-sensitive, so once you make up a name, any other
+                                reference to that variable must use the same uppercase and lowercase letters
+                                as the name you originally made up</li>
+                                <li>Variable names cannot be enclosed in, or contain, single or double quotation
+                                marks.</li>
+                            </ol>
+                            <h3>some built-in function for numbers</h3>
+                            <ul>
+                                <li>math.acos(x) Returns the arc cosine of x in radians.</li>
+                                <li>math.atan(x) Returns the arc tangent of x, in radians.</li>
+                                <li>math.atan2(y, x) Returns atan(y / x), in radians.</li>
+                                <li>math.ceil(x) Returns the ceiling of x, the smallest integer greater than or equal to x.</li>
+                                <li>math.cos(x) Returns the cosine of x radians.</li>
+                                <li>math.degrees(x) Converts angle x from radians to degrees.</li>
+                                <li>math.e Returns the mathematical constant e (2.718281 . . .).</li>
+                                <li>math.exp(x) Returns e raised to the power x, where e is the base of natural logarithms.</li>
+                                <li>math.factorial(x) Returns the factorial of x.</li>
+                                <li>math.floor() Returns the floor of x, the largest integer less than or equal to x.</li>
+                                <li>math.isnan(x) Returns True if x is not a number, otherwise returns False.</li>
+                                <li>math.log(x,y) Returns the natural logarithm of x to base y.</li>
+                                <li>math.log2(x) Returns the base-2 logarithm of x.</li>
+                                <li>math.pi Returns the mathematical constant pi (3.141592 . . .).</li>
+                                <li>math.pow(x, y) Returns x raised to the power y.</li>
+                                <li>math.radians(x) Converts angle x from degrees to radians.</li>
+                                <li>math.sin(x) Returns the arc sine of x, in radians.</li>
+                                <li>math.sqrt(x) Takes any number of numeric arguments and returns whichever one is
+                                the smallest.</li>
+                                <li>math.tan(x) Returns the tangent of x radians.</li>
+                                <li>math.tau() Returns the mathematical constant tau (6.283185 . . .).</li>
+                            </ul>
+                            <div class="code">
+                            <pre>
+                                <code>
+                                    pi = 3.14159265358979
+                                    x = 128
+                                    y = -345.6789087
+                                    z = -999.9999
+                                    print(abs(z))
+                                    print(int(z))
+                                    print(int(abs(z)))
+                                    print(round(pi,4))
+                                    print(bin(x))
+                                    print(hex(x))
+                                    print(oct(x))
+                                    print(max(pi,x,y,z))
+                                    print(min(pi,x,y,z))
+                                    print(type(pi))
+                                    print(type(str(y)))
+                                </code>
+                                <code>
+                                    999.9999
+                                    -999
+                                    999
+                                    3.1416
+                                    0b10000000
+                                    0x80
+                                    0o200
+                                    128
+                                    -999.9999
+                                    <class 'float'>
+                                        <class 'str'>
+
+                                </code>
+                            </pre>
+                            </div>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+        <div id="" class="content-item">
+            <h2></h2>
+        </div>
+
+
+
+
+
+
+
+
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="expandedImage">
+    </div>
+
+    <script>
+        // Content Display System
+        function showContent(contentId) {
+            // Hide all content items
+            document.querySelectorAll('.content-item').forEach(item => {
+                item.classList.remove('active-content');
+            });
+
+            // Show selected content
+            const content = document.getElementById(contentId);
+            if (content) {
+                content.classList.add('active-content');
+                content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+
+            // Close all dropdown menus
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown.style.display = 'none';
+            });
+        }
+
+        // Image Modal System
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("expandedImage");
+
+        document.querySelectorAll('.codesnippets img').forEach(img => {
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        document.querySelector('.close').onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Menu Handling
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropdowns = document.querySelectorAll('.has-dropdown');
+            let hoverTimeout;
+
+            // Desktop Hover Handling
+            dropdowns.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    if (window.innerWidth > 768) {
+                        clearTimeout(hoverTimeout);
+                        const dropdown = item.querySelector('.dropdown');
+                        if (dropdown) dropdown.style.display = 'block';
+                    }
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    if (window.innerWidth > 768) {
+                        hoverTimeout = setTimeout(() => {
+                            const dropdown = item.querySelector('.dropdown');
+                            if (dropdown) dropdown.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+
+            // Mobile Click Handling
+            dropdowns.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const dropdown = item.querySelector('.dropdown');
+                        if (dropdown) {
+                            dropdown.style.display =
+                                dropdown.style.display === 'block' ? 'none' : 'block';
+                        }
+                    }
+                });
+            });
+
+            // Close menus when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.navbar li')) {
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        dropdown.style.display = 'none';
+                    });
+                }
+            });
+
+            // Window Resize Handler
+            window.addEventListener('resize', () => {
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.style.display = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

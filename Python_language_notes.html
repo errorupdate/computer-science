@@ -44,19 +44,22 @@
 
         /* Dropdown Styles */
         .dropdown {
-            position: absolute;
-            background: #34495e;
+            position:absolute;
+            background: #34385e;
             min-width: 280px;
+            height: max-content;
             display: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(205, 121, 121, 0.2);
             z-index: 1000;
+  
         }
-
+        
         .sub-dropdown {
             left: 100%;
             top: 0;
             background: #3b4f63;
             min-width: 260px;
+           
         }
 
         .sub-sub-dropdown {
@@ -64,6 +67,7 @@
             top: 0;
             background: #42586d;
             min-width: 240px;
+            
         }
 
         /* Content Section */
@@ -86,7 +90,8 @@
         .active-content {
             display: block;
         }
-
+        
+        
         /* Animations */
         @keyframes fadeIn {
             from {
@@ -116,6 +121,7 @@
                 margin-top: 300px;
             }
         }
+        
 
         /* Header Styles */
         header {
@@ -504,23 +510,298 @@ negative_integer = -42</code></pre>
                             </pre>
                             </div>
         </div>
-        <div id="" class="content-item">
-            <h2></h2>
+        <div id="1-1-4" class="content-item">
+            <h2>1.1.4 Lvalue and Rvalue Concepts</h2>
+            <p><strong>Lvalue (Left Value):</strong> Refers to a memory location that identifies an object. It appears on the
+                left-hand side of an assignment operator.</p>
+            <p><strong>Rvalue (Right Value):</strong> Refers to the data value that is stored at some address in memory. It appears
+                on the right-hand side of an assignment operator.</p>
+            <pre><code>x = 5</code></pre>
+            <p>Here, <code>x</code> is an Lvalue, and <code>5</code> is an Rvalue.</p>
+            </div>
+        <div id="1-1-5" class="content-item">
+            <h2>1.1.5 Use of Comments</h2>
+            <p>Comments are used to explain code and make it more readable. They are ignored by the Python interpreter.</p>
+            <ul>
+                <li><strong>Single-line comments:</strong> Start with <code>#</code>.</li>
+                <pre><code># This is a single-line comment
+            x = 10  # This is an inline comment</code></pre>
+                <li><strong>Multi-line comments:</strong> Enclosed in triple quotes (<code>'''</code> or <code>"""</code>).</li>
+                <pre><code>"""
+            This is a multi-line comment
+            that spans multiple lines.
+            """</code></pre>
+            </ul>
+        </div>
+        <div id="1-2-1" class="content-item">
+            <h2>1.2.1 Number Types: Integer, Floating Point, Complex</h2>
+            <h5>Integer</h5>
+            <p>Whole numbers without a fractional part. They can be positive or negative.</p>
+            <p>
+            <h5>Definition:</h5> An integer is a whole number that can be positive, negative, or zero. It does not have a fractional
+            part.</p>
+            <p>
+            <h5>Characteristic:</h5> Integers in Python can be of arbitrary size, limited only by the available memory of the
+            system.
+            <br>Integers in Python can be of arbitrary size, limited only by the available memory of the system.
+            </p>
+            <pre><code>example_integer = 42
+                                negative_integer = -42</code></pre>
+            <pre>
+                                    <code>a = 10 # Decimal integer
+                                    b = -5 # Negative integer
+                                    c = 0 # Zero
+                                    d = 0b1010 # Binary representation (10 in decimal)
+                                    e = 0o12 # Octal representation (10 in decimal)
+                                    f = 0xA # Hexadecimal representation (10 in decimal)
+                                    print(a, b, c, d, e, f)
+                                    print(a+b+c)</code>
+                                    <code>
+                                        10 -5 0 10 10 10
+                                        5
+                                    </code>
+                                </pre>
+            <h5>Floating Point</h5>
+            <p>Numbers with a decimal point. They are used to represent real numbers.</p>
+            <pre><code>example_float = 3.14
+                                negative_float = -3.14</code></pre>
+            <h5>Complex</h5>
+            <p>Numbers with a real and an imaginary part. They are written in the form <code>a + bj</code>, where
+                <code>a</code> is the real part and <code>b</code> is the imaginary part.
+            </p>
+            <pre><code>example_complex = 2 + 3j
+                                negative_complex = -2 - 3j</code></pre>
+        </div>
+        <div id="1-2-2" class="content-item">
+            <h2>1.2.2 Boolean Type</h2>
+            <p>Represents one of two values: <code>True</code> or <code>False</code>.</p>
+            <pre><code>is_active = True
+                                is_closed = False</code></pre>
+        </div>
+        <div id="1-2-3" class="content-item">
+            <h2>1.2.3 Sequence Types: String, List, Tuple</h2>
+            <h5>String</h5>
+            <p>A sequence of characters. Strings are immutable.</p>
+            <pre><code>example_string = "Hello, World!"</code></pre>
+            <h5>List</h5>
+            <p>An ordered collection of items that are mutable and can contain elements of different types.</p>
+            <pre><code>example_list = [1, 2, 3, "a", "b", "c"]</code></pre>
+            <h5>Tuple</h5>
+            <p>An ordered collection of items that are immutable and can contain elements of different types.</p>
+            <pre><code>example_tuple = (1, 2, 3, "a", "b", "c")</code></pre>
+        </div>
+        <div id="1-2-4" class="content-item">
+            <h2>1.2.4 None Type</h2>
+            <p>Represents the absence of a value or a null value. It is an object of its own datatype, the
+                <code>NoneType</code>.
+            </p>
+            <pre><code>example_none = None</code></pre>
+        </div>
+        <div id="1-2-5" class="content-item">
+            <h2>1.2.5 Mapping Type: Dictionary</h2>
+            <p>An unordered collection of key-value pairs. Keys must be unique and immutable.</p>
+            <pre><code>example_dict = {"name": "Alice", "age": 25, "city": "New York"}</code></pre>
+        </div>
+        <div id="1-2-6" class="content-item">
+            <h2>1.2.6 Distinction between Mutable and Immutable Data Types</h2>
+            <h5>Mutable</h5>
+            <p>Objects that can be changed after they are created (e.g., lists, dictionaries).</p>
+            <pre><code>example_list = [1, 2, 3]
+                                example_list[0] = 10  # List is mutable</code></pre>
+            <h5>Immutable</h5>
+            <p>Objects that cannot be changed after they are created (e.g., strings, tuples).</p>
+            <pre><code>example_string = "Hello"
+                                # example_string[0] = "h"  # This will raise an error because strings are immutable</code></pre>
+        </div>
+        <div id="1-3-1" class="content-item">
+            <h2>1.3.1 Arithmetic Operators</h2>
+            <p>Arithmetic operators are used to perform mathematical operations such as addition, subtraction, multiplication,
+                division, modulus, exponentiation, and floor division.</p>
+            <pre><code>a = 10
+                                b = 3
+                                print(a + b)  # Addition: 13
+                                print(a - b)  # Subtraction: 7
+                                print(a * b)  # Multiplication: 30
+                                print(a / b)  # Division: 3.3333333333333335
+                                print(a % b)  # Modulus: 1
+                                print(a ** b) # Exponentiation: 1000
+                                print(a // b) # Floor Division: 3</code></pre>
+        </div>
+        <div id="1-3-1" class="content-item">
+            <h2>1.3.2 Relational Operators</h2>
+            <p>Relational operators are used to compare two values. They include operators like equal to, not equal to, greater
+                than, less than, greater than or equal to, and less than or equal to.</p>
+            <pre><code>a = 10
+                                b = 3
+                                print(a == b)  # Equal to: False
+                                print(a != b)  # Not equal to: True
+                                print(a > b)   # Greater than: True
+                                print(a < b)   # Less than: False
+                                print(a >= b)  # Greater than or equal to: True
+                                print(a <= b)  # Less than or equal to: False</code></pre>
+        </div>
+        <div id="1-3-1" class="content-item">
+            <h2>1.3.3 Logical Operators</h2>
+            <p>Logical operators are used to combine conditional statements. They include <code>and</code>, <code>or</code>, and
+                <code>not</code>.
+            </p>
+            <pre><code>a = True
+                                b = False
+                                print(a and b)  # Logical AND: False
+                                print(a or b)   # Logical OR: True
+                                print(not a)    # Logical NOT: False</code></pre>
+        </div>
+        <div id="1-3-1" class="content-item">
+            <h2>1.3.4 Augmented Assignment Operators</h2>
+            <p>Augmented assignment operators are used to assign a value to a variable after performing an operation on it. They
+                include <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>**=</code>,
+                and <code>//=</code>.</p>
+            <pre><code>a = 10
+                                a += 3  # Equivalent to a = a + 3
+                                print(a)  # 13
+                                a -= 3  # Equivalent to a = a - 3
+                                print(a)  # 10
+                                a *= 3  # Equivalent to a = a * 3
+                                print(a)  # 30
+                                a /= 3  # Equivalent to a = a / 3
+                                print(a)  # 10.0
+                                a %= 3  # Equivalent to a = a % 3
+                                print(a)  # 1.0
+                                a **= 3  # Equivalent to a = a ** 3
+                                print(a)  # 1.0
+                                a //= 3  # Equivalent to a = a // 3
+                                print(a)  # 0.0</code></pre>
+        </div>
+        <div id="1-3-5" class="content-item">
+            <h2>1.3.5 Assignment Operators</h2>
+            <p>Assignment operators are used to assign values to variables. The basic assignment operator is <code>=</code>.</p>
+            <pre><code>a = 10
+                                b = 3
+                                c = a + b
+                                print(c)  # 13</code></pre>
+        </div>
+        <div id="1-3-6" class="content-item">
+            <h2>1.3.6 Expression and Statements</h2>
+            <p>An expression is a combination of values, variables, operators, and function calls that are evaluated to produce
+                a result. A statement is an instruction that the Python interpreter can execute.</p>
+            <pre><code>a = 10
+                                b = 3
+                                c = a + b  # Expression
+                                print(c)  # Statement</code></pre>
+        </div>
+        <div id="1-3-7" class="content-item">
+            <h2>1.3.7 Type Conversion and Input/Output Mechanisms</h2>
+            <p>Type conversion is converting one data type to another using functions like <code>int()</code>,
+                <code>float()</code>, <code>str()</code>, etc. Input/Output mechanisms include functions like
+                <code>input()</code> for taking input from the user and <code>print()</code> for displaying output.
+            </p>
+            <pre><code>a = "10"
+                                b = int(a)  # Type conversion from string to integer
+                                print(b)  # 10
+                                c = float(a)  # Type conversion from string to float
+                                print(c)  # 10.0
+                                d = str(b)  # Type conversion from integer to string
+                                print(d)  # "10"
+                                name = input("Enter your name: ")  # Input from user
+                                print("Hello, " + name)  # Output to user</code></pre>
+            </div>
+           
+        <div id="1-3-8" class="content-item">
+            <h2>1.3.8 Precedence of Operators</h2>
+            <p>The precedence of operators is the order in which operations are performed in an expression. Operators with
+                higher precedence are evaluated before operators with lower precedence.</p>
+            <pre><code>a = 10
+                                b = 3
+                                c = 2
+                                result = a + b * c  # Multiplication has higher precedence than addition
+                                print(result)  # 16
+                                result = (a + b) * c  # Parentheses change the order of evaluation
+                                print(result)  # 26</code></pre>
         </div>
         <div id="" class="content-item">
-            <h2></h2>
+            <h2>2.1.1 simple if Statement</h2>
+                <!-- Content for simple if Statement -->
+                <p>Executes a block of code if a specified condition is true.</p>
+                <pre><code>age = 18
+                                    if age >= 18:
+                                        print("You are an adult.")  # Output: You are an adult.</code></pre>
+                <pre>
+                                            <code>
+                                                a = 27
+                                                if(a%2==0):
+                                                print("It is a even number")
+                                                if(a%2!=0):
+                                                print("It is a odd number")
+                                                if(a&lt;0): print("It is a negative number")
+                                                if(a>0): print("It is a positive number")
+                                            </code>
+                                            <code>
+                                                It is a odd number
+                                                It is a positive number
+                
+                                            </code>
+                                        </pre>
+                <p><strong>Question:</strong>Find the greatest of two number.</p>
+                <pre>
+                                            <code>
+                                                a1 = int(input("Enter first number: "))
+                                                b1 = int(input("Enter second number: "))
+                                                if(a1>b1):
+                                                    print("First number is greater than second number")
+                                                if(a1&lt;b1):
+                                                    print("Second number is greater than first number")
+                                            </code>
+                                            <code>
+                                            Enter first number: 20
+                                            Enter second number: 30
+                                            Second number is greater than first number
+                                            Enter first number: 45
+                                            Enter second number: 43
+                                            First number is greater than second number
+                                            </code>
+                                        </pre>
         </div>
         <div id="" class="content-item">
-            <h2></h2>
+            <h2>2.1.2 if-else Statement</h2>
+            <p>Executes one block of code if a specified condition is true, and another block of code if it is false.</p>
+            <pre><code>age = 16
+                                if age >= 18:
+                                    print("You are an adult.")
+                                else:
+                                    print("You are a minor.")  # Output: You are a minor.</code></pre>
         </div>
         <div id="" class="content-item">
-            <h2></h2>
+            <h2>2.1.3 if-elif-else Statement</h2>
+            <p>Executes one block of code if a specified condition is true, another block of code if a different condition is
+                true, and another block of code if none of the conditions are true.</p>
+            <pre><code>
+                                age = 20
+                                if age < 13:
+                                    print("You are a child.")
+                                elif age &lt; 18:
+                                    print("You are a teenager.")
+                                else:
+                                    print("You are an adult.")  # Output: You are an adult.</code></pre>
+        </div>
+        </div>
+        <div id="2-1-4" class="content-item">
+            <h2>Questions on Conditional Statements</h2>
+
         </div>
         <div id="" class="content-item">
-            <h2></h2>
+            <h2>2.2.1 for Loop</h2>
         </div>
         <div id="" class="content-item">
-            <h2></h2>
+            <h2>2.2.2 while Loop</h2>
+        </div>
+        <div id="" class="content-item">
+            <h2>2.2.3 Range Function</h2>
+        </div>
+        <div id="" class="content-item">
+            <h2>2.2.4 Break and Continue Statements</h2>
+        </div>
+        <div id="" class="content-item">
+            <h2>2.2.5 Nested Loops</h2>
         </div>
         <div id="" class="content-item">
             <h2></h2>
@@ -587,6 +868,14 @@ negative_integer = -42</code></pre>
     </div>
 
     <script>
+        //   function toggleContent(element) {
+        //         const content = element.nextElementSibling;
+        //         if (content.style.display === "block") {
+        //             content.style.display = "none";
+        //         } else {
+        //             content.style.display = "block";
+        //         }
+        //     }
         // Content Display System
         function showContent(contentId) {
             // Hide all content items

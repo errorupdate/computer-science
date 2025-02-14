@@ -14,148 +14,7 @@
             padding: 0;
         }
 
-      /* navbar full css style */
 
-        nav {
-            background: #2c3e50;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .navbar {
-            list-style: none;
-            display: flex;
-            padding: 0 20px;
-            position: relative;
-        }
-
-        .navbar li {
-            position: relative;
-            padding: 15px 25px;
-            color: #ecf0f1;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        /* Dropdown Styles */
-        .dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: #34495e;
-            min-width: 280px;
-            display: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-
-        .sub-dropdown {
-            left: 100%;
-            top: -10px;
-            background: #3b4f63;
-            min-width: 260px;
-            opacity: 0;
-            transform: translateX(15px);
-            transition: all 0.2s ease;
-            pointer-events: none;
-        }
-
-        .sub-sub-dropdown {
-            left: 100%;
-            top: -10px;
-            background: #42586d;
-            min-width: 240px;
-            opacity: 0;
-            transform: translateX(15px);
-            transition: all 0.2s ease;
-            pointer-events: none;
-        }
-
-        /* Hover Effects */
-        .navbar li:hover {
-            background: #34495e;
-        }
-
-        .dropdown li:hover {
-            background: #3b4f63;
-        }
-
-        .sub-dropdown li:hover {
-            background: #42586d;
-        }
-
-        .sub-sub-dropdown li:hover {
-            background: #4a6176;
-        }
-
-        /* Dropdown Activation */
-        .navbar li:hover>.dropdown {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .dropdown li:hover>.sub-dropdown {
-            opacity: 1;
-            transform: translateX(0);
-            pointer-events: auto;
-            display: block;
-        }
-
-        .sub-dropdown li:hover>.sub-sub-dropdown {
-            opacity: 1;
-            transform: translateX(0);
-            pointer-events: auto;
-            display: block;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Indicators */
-        .has-dropdown::after {
-            content: "▾";
-            margin-left: 8px;
-            font-size: 0.9em;
-            transition: transform 0.2s ease;
-        }
-
-        .dropdown .has-dropdown::after,
-        .sub-dropdown .has-dropdown::after {
-            content: "▸";
-            float: right;
-        }
-
-        .dropdown li:hover>.has-dropdown::after {
-            transform: rotate(90deg);
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-            }
-
-            .dropdown {
-                position: static;
-                display: none;
-                background: #3b4f63;
-            }
-
-            .sub-dropdown {
-                position: static;
-                background: #42586d;
-            }
-        }
-    /* navbar style end  */
 
         header {
             background-color: #FF5733;
@@ -196,32 +55,17 @@
         }
         .unit{
             cursor: pointer;
-            
         }
 
         .unit h4:hover {
             color: #2c3e50;
-            
-        }
-         .unit h2:hover {
-            color: #2c3e50;
-            
-            
-        }
-        h4 .content {
-            display: none;
-            margin-left: 20px;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background-color: #f0f0f0;
         }
 
         .unit .content {
             display: none;
             margin-left: 20px;
             overflow: hidden;
-            transition: max-height 0.50s ease-in-out;
-           
+            transition: max-height 0.3s ease-out;
         }
 
         .unit .content.show {
@@ -347,17 +191,6 @@
                 opacity: 1;
             }
         }
-        .card{
-            background-color: #f1d1d1;
-            padding: 10px;
-            border-radius: 5px;
-            font-family: Arial, sans-serif;
-            color: #333;
-            opacity: 1;
-            animation: fadeIn 1s;
-            animation-fill-mode: forwards;
-            display:inline-flexbox;
-        }
     </style>
 </head>
 
@@ -365,178 +198,10 @@
     <header>
         <h1>C language Notes</h1>
     </header>
-    <nav>
-        <ul class="navbar">
-            <!-- Unit 1 -->
-            <li class="has-dropdown course-unit">
-                Unit 1: Program Logic Development
-                <ul class="dropdown">
-                    <li class="has-dropdown">1.1 Fundamentals of Algorithms
-                        <ul class="sub-dropdown">
-                            <li>1.1.1 Notion of an algorithm</li>
-                            <li>1.1.2 Pseudo-code convention</li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">1.2 Algorithmic Problems
-                        <ul class="sub-dropdown">
-                            <li>1.2.1 Importance of Algorithm</li>
-                            <li>1.2.2 Some Algorithmic problems</li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">1.3 Flowchart
-                        <ul class="sub-dropdown">
-                            <li>1.3.1 FlowChart</li>
-                            <li>1.3.2 Symbol of FlowChart</li>
-                            <li>1.3.3 Flowchart Guidelines</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-    
-            <!-- Unit 2 -->
-            <li class="has-dropdown course-unit">
-                Unit 2: C Programming Basics
-                <ul class="dropdown">
-                    <li class="has-dropdown">2.1 Introduction to C
-                        <ul class="sub-dropdown">
-                            <li>2.1.1 History</li>
-                            <li>2.1.2 Structure</li>
-                            <li>2.1.3 Header Files & main()</li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">2.2 Data Concepts
-                        <ul class="sub-dropdown">
-                            <li>2.2.1 Character set & Tokens</li>
-                            <li>2.2.2 Variables</li>
-                            <li>2.2.3 Constants</li>
-                            <li>2.2.4 Data Types</li>
-                            <li>2.2.5 Operators</li>
-                            <li>2.2.6 Variable Declaration</li>
-                            <li>2.2.7 Type Conversion</li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">2.3 Basic I/O
-                        <ul class="sub-dropdown">
-                            <li>2.3.1 I/O Statements</li>
-                            <li>2.3.2 printf()/scanf()</li>
-                            <li>2.3.3 Character I/O</li>
-                            <li>2.3.4 Comments</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-    
-            <!-- Unit 3 -->
-            <li class="has-dropdown course-unit">
-                Unit 3: Decision Making
-                <ul class="dropdown">
-                    <li class="has-dropdown">3.1 Decision Making
-                        <ul class="sub-dropdown">
-                            <li>3.1.1 Relational/Logical Operators</li>
-                            <li>3.1.2 if statement</li>
-                            <li>3.1.3 if-else</li>
-                            <li>3.1.4 Nested if-else</li>
-                            <li>3.1.5 if-else ladder</li>
-                            <li>3.1.6 switch</li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">3.2 Looping
-                        <ul class="sub-dropdown">
-                            <li>3.2.1 while</li>
-                            <li>3.2.2 do-while</li>
-                            <li>3.2.3 for</li>
-                            <li>3.2.4 goto</li>
-                            <li>3.2.5 break/continue</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-    
-            <!-- Unit 4 -->
-            <li class="has-dropdown course-unit">
-                Unit 4: Arrays & Structures
-                <ul class="dropdown">
-                    <li class="has-dropdown">4.1 Array Basics
-                        <ul class="sub-dropdown">
-                            <li>4.1.1 Characteristics</li>
-                            <li>4.1.2 1D/2D Arrays</li>
-                            <li>4.1.3 Declaration/Init</li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">4.2 Character Arrays
-                        <ul class="sub-dropdown">
-                            <li>4.2.1 Char Arrays</li>
-                            <li>4.2.2 Operations</li>
-                            <li>4.2.3 String I/O</li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">4.3 Features
-                        <ul class="sub-dropdown">
-                            <li>4.3.1 Structures Intro</li>
-                            <li>4.3.2 Declaration/Init</li>
-                            <li>4.3.3 Enumerated Types</li>
-                            <li>4.3.4 Structure Usage</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-    
-            <!-- Unit 5 -->
-            <li class="has-dropdown course-unit">
-                Unit 5: Functions
-                <ul class="dropdown">
-                    <li class="has-dropdown">5.1 Library Functions
-                        <ul class="sub-dropdown">
-                            <li>5.1.1 Math</li>
-                            <li>5.1.2 String</li>
-                            <li>5.1.3 Miscellaneous</li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">5.2 User Functions
-                        <ul class="sub-dropdown">
-                            <li>5.2.1 Writing Functions</li>
-                            <li>5.2.2 Variable Scope</li>
-                            <li>5.2.3 Parameters</li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">5.3 Recursive
-                        <ul class="sub-dropdown">
-                            <li>5.3.1 Introduction</li>
-                            <li>5.3.2 Writing Recursive</li>
-                            <li>5.3.3 Pros/Cons</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-    
-            <!-- Unit 6 -->
-            <li class="has-dropdown course-unit">
-                Unit 6: Pointers
-                <ul class="dropdown">
-                    <li class="has-dropdown">6.1 Concepts
-                        <ul class="sub-dropdown">
-                            <li>6.1.1 Declaring</li>
-                            <li>6.1.2 Initializing</li>
-                            <li>6.1.3 Accessing</li>
-                            <li>6.1.4 Pointer Arithmetic</li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">6.2 Uses
-                        <ul class="sub-dropdown">
-                            <li>6.2.1 Arrays</li>
-                            <li>6.2.2 Functions</li>
-                            <li>6.2.3 Structures</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
     <div class="container">
-
+        
     </div>
     <main>
-        <div class="card">
         <section class="unit" id="unit1">
             <h2 onclick="toggleContent(this)">Unit 1: Program Logic Development</h2>
             <div class="content">
@@ -598,7 +263,7 @@
                 <h3 onclick="toggleContent(this)" >1.2 Algorithmic Problems</h3>
                 <div class="content">
                     <h4 onclick="toggleContent(this)">1.2.1 Importance of Algorithm</h4>
-                    <div class="content " >
+                    <div class="content">
                         <p>An algorithm is a step-by-step procedure or formula for solving a problem. It is a finite
                             sequence of well-defined
                             instructions to achieve a specific goal or perform a computation. Algorithms are fundamental
@@ -895,7 +560,7 @@
         <section class="unit" id="unit6">
             <h2 onclick="toggleContent(this)">Unit 6: Pointers</h2>
             <div class="content">
-                <h3 onclick="toggleContent(this)"> 6.1 Concepts of Pointers</h3>
+                <h3 onclick="toggleContent(this)" 6.1 Concepts of Pointers</h3>
                 <div class="content">
                     <h4 onclick="toggleContent(this)">6.1.1 Declaring</h4>
                     <div class="content">
@@ -931,7 +596,6 @@
                 </div>
             </div>
         </section>
-        </div>
     </main>
     <script>
         function toggleContent(element) {
@@ -961,62 +625,7 @@
         // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
             modal.style.display = "none";
-        }// Mobile Menu Handling
-            document.addEventListener('DOMContentLoaded', () => {
-                const dropdowns = document.querySelectorAll('.has-dropdown');
-                let hoverTimeout;
-
-                // Desktop Hover Handling
-                dropdowns.forEach(item => {
-                    item.addEventListener('mouseenter', () => {
-                        if (window.innerWidth > 768) {
-                            clearTimeout(hoverTimeout);
-                            const dropdown = item.querySelector('.dropdown, .sub-dropdown');
-                            if (dropdown) dropdown.style.display = 'block';
-                        }
-                    });
-
-                    item.addEventListener('mouseleave', () => {
-                        if (window.innerWidth > 768) {
-                            hoverTimeout = setTimeout(() => {
-                                const dropdown = item.querySelector('.dropdown, .sub-dropdown');
-                                if (dropdown) dropdown.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                });
-
-                // Mobile Click Handling
-                dropdowns.forEach(item => {
-                    item.addEventListener('click', (e) => {
-                        if (window.innerWidth <= 768) {
-                            e.preventDefault();
-                            const dropdown = item.querySelector('.dropdown, .sub-dropdown');
-                            if (dropdown) {
-                                dropdown.style.display =
-                                    dropdown.style.display === 'block' ? 'none' : 'block';
-                            }
-                        }
-                    });
-                });
-
-                // Close menus when clicking outside
-                document.addEventListener('click', (e) => {
-                    if (!e.target.closest('.navbar li')) {
-                        document.querySelectorAll('.dropdown, .sub-dropdown').forEach(dropdown => {
-                            dropdown.style.display = 'none';
-                        });
-                    }
-                });
-
-                // Window Resize Handler
-                window.addEventListener('resize', () => {
-                    document.querySelectorAll('.dropdown, .sub-dropdown').forEach(dropdown => {
-                        dropdown.style.display = 'none';
-                    });
-                });
-            });
-
+        }
     </script>
 
 
